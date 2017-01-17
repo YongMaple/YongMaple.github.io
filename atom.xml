@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YongMaple</title>
+  <subtitle>我不生产代码，我只是代码的搬运工</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://YongMaple.github.io/"/>
+  <updated>2017-01-17T07:41:49.000Z</updated>
+  <id>http://YongMaple.github.io/</id>
+  
+  <author>
+    <name>YongMaple</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Atom已安装package记录</title>
+    <link href="http://YongMaple.github.io/2017/01/17/Atom%E5%B7%B2%E5%AE%89%E8%A3%85package%E8%AE%B0%E5%BD%95/"/>
+    <id>http://YongMaple.github.io/2017/01/17/Atom已安装package记录/</id>
+    <published>2017-01-17T07:36:13.000Z</published>
+    <updated>2017-01-17T07:41:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="atom-terminal-panel"><a href="#atom-terminal-panel" class="headerlink" title="atom-terminal-panel"></a>atom-terminal-panel</h3><blockquote>
+<p>命令行工具<br>快捷键：control+`呼出</p>
+</blockquote>
+<h3 id="activate-power-mode"><a href="#activate-power-mode" class="headerlink" title="activate-power-mode"></a>activate-power-mode</h3><blockquote>
+<p>炫酷的打字特效</p>
+</blockquote>
+<h3 id="atom-beautify"><a href="#atom-beautify" class="headerlink" title="atom-beautify"></a>atom-beautify</h3><blockquote>
+<p>美化、整理代码</p>
+</blockquote>
+<h3 id="atom-ctags"><a href="#atom-ctags" class="headerlink" title="atom-ctags"></a>atom-ctags</h3><blockquote>
+<p>强化版的自动完成，借助于autocomplete-plus</p>
+</blockquote>
+<h3 id="atom-ternjs"><a href="#atom-ternjs" class="headerlink" title="atom-ternjs"></a>atom-ternjs</h3><blockquote>
+<p>JS代码智能提示</p>
+</blockquote>
+<h3 id="autocomplete-paths"><a href="#autocomplete-paths" class="headerlink" title="autocomplete-paths"></a>autocomplete-paths</h3><blockquote>
+<p>文件路径智能提示</p>
+</blockquote>
+<h3 id="color-picker"><a href="#color-picker" class="headerlink" title="color-picker"></a>color-picker</h3><blockquote>
+<p>颜色拾取器<br>快捷键：commod+shift+c</p>
+</blockquote>
+<h3 id="docblockr"><a href="#docblockr" class="headerlink" title="docblockr"></a>docblockr</h3><blockquote>
+<p>代码注释自动生成</p>
+</blockquote>
+<h3 id="file-icons"><a href="#file-icons" class="headerlink" title="file-icons"></a>file-icons</h3><blockquote>
+<p>文件图标</p>
+</blockquote>
+<h3 id="git-plus"><a href="#git-plus" class="headerlink" title="git-plus"></a>git-plus</h3><blockquote>
+<p>git插件</p>
+</blockquote>
+<h3 id="highlight-selected"><a href="#highlight-selected" class="headerlink" title="highlight-selected"></a>highlight-selected</h3><blockquote>
+<p>选中高亮</p>
+</blockquote>
+<h3 id="language-vue"><a href="#language-vue" class="headerlink" title="language-vue"></a>language-vue</h3><blockquote>
+<p>识别Vue</p>
+</blockquote>
+<h3 id="linter"><a href="#linter" class="headerlink" title="linter"></a>linter</h3><blockquote>
+<p>代码校验基础工具</p>
+</blockquote>
+<h3 id="linter-csslint"><a href="#linter-csslint" class="headerlink" title="linter-csslint"></a>linter-csslint</h3><blockquote>
+<p>校验css</p>
+</blockquote>
+<h3 id="linter-eslint"><a href="#linter-eslint" class="headerlink" title="linter-eslint"></a>linter-eslint</h3><blockquote>
+<p>校验js，配合.eslintrc使用</p>
+</blockquote>
+<h3 id="linter-sass-lint"><a href="#linter-sass-lint" class="headerlink" title="linter-sass-lint"></a>linter-sass-lint</h3><blockquote>
+<p>校验sass</p>
+</blockquote>
+<h3 id="minimap"><a href="#minimap" class="headerlink" title="minimap"></a>minimap</h3><blockquote>
+<p>右边小地图</p>
+</blockquote>
+<h3 id="minimap-find-and-replace"><a href="#minimap-find-and-replace" class="headerlink" title="minimap-find-and-replace"></a>minimap-find-and-replace</h3><blockquote>
+<p>在小地图上显示搜索匹配</p>
+</blockquote>
+<h3 id="minimap-highlight-selected"><a href="#minimap-highlight-selected" class="headerlink" title="minimap-highlight-selected"></a>minimap-highlight-selected</h3><blockquote>
+<p>在小地图上显示选中的</p>
+</blockquote>
+<h3 id="pigments"><a href="#pigments" class="headerlink" title="pigments"></a>pigments</h3><blockquote>
+<p>根据色值直接显示颜色</p>
+</blockquote>
+<h3 id="simplified-chinese-menu"><a href="#simplified-chinese-menu" class="headerlink" title="simplified-chinese-menu"></a>simplified-chinese-menu</h3><blockquote>
+<p>中文汉化包</p>
+</blockquote>
+<h3 id="vue-autocomplete"><a href="#vue-autocomplete" class="headerlink" title="vue-autocomplete"></a>vue-autocomplete</h3><blockquote>
+<p>Vue自动完成</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;atom-terminal-panel&quot;&gt;&lt;a href=&quot;#atom-terminal-panel&quot; class=&quot;headerlink&quot; title=&quot;atom-terminal-panel&quot;&gt;&lt;/a&gt;atom-terminal-panel&lt;/h3&gt;&lt;bloc
+    
+    </summary>
+    
+    
+      <category term="Atom 开发工具 配置" scheme="http://YongMaple.github.io/tags/Atom-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://YongMaple.github.io/2017/01/17/hello-world/"/>
+    <id>http://YongMaple.github.io/2017/01/17/hello-world/</id>
+    <published>2017-01-17T03:36:20.000Z</published>
+    <updated>2017-01-17T03:36:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
