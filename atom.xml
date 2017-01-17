@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-01-17T07:58:22.000Z</updated>
+  <updated>2017-01-17T09:00:54.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -14,6 +14,174 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 源代码阅读工具</title>
+    <link href="http://YongMaple.github.io/2017/01/17/JavaScript-%E6%BA%90%E4%BB%A3%E7%A0%81%E9%98%85%E8%AF%BB%E5%B7%A5%E5%85%B7/"/>
+    <id>http://YongMaple.github.io/2017/01/17/JavaScript-源代码阅读工具/</id>
+    <published>2017-01-17T08:41:07.000Z</published>
+    <updated>2017-01-17T09:00:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="lambda-view"><a href="#lambda-view" class="headerlink" title="lambda-view"></a>lambda-view</h2><p><a href="https://github.com/Jianru-Lin/lambda-view" target="_blank" rel="external">https://github.com/Jianru-Lin/lambda-view</a></p>
+<p>命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lv /path/somewhere/xyz.js</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lv http://vuejs.org/js/vue.js</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;lambda-view&quot;&gt;&lt;a href=&quot;#lambda-view&quot; class=&quot;headerlink&quot; title=&quot;lambda-view&quot;&gt;&lt;/a&gt;lambda-view&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/Jianru
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://YongMaple.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="源代码查看" scheme="http://YongMaple.github.io/tags/%E6%BA%90%E4%BB%A3%E7%A0%81%E6%9F%A5%E7%9C%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Atom使用eslint需要安装的包</title>
+    <link href="http://YongMaple.github.io/2017/01/17/Atom%E4%BD%BF%E7%94%A8eslint%E9%9C%80%E8%A6%81%E5%AE%89%E8%A3%85%E7%9A%84%E5%8C%85/"/>
+    <id>http://YongMaple.github.io/2017/01/17/Atom使用eslint需要安装的包/</id>
+    <published>2017-01-17T08:39:41.000Z</published>
+    <updated>2017-01-17T09:00:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="string">"dependencies"</span>: &#123;</div><div class="line">    <span class="string">"eslint"</span>: <span class="string">"^3.13.1"</span>,</div><div class="line">    <span class="string">"eslint-config-airbnb"</span>: <span class="string">"^14.0.0"</span>,</div><div class="line">    <span class="string">"eslint-plugin-import"</span>: <span class="string">"^2.2.0"</span>,</div><div class="line">    <span class="string">"eslint-plugin-jsx-a11y"</span>: <span class="string">"^3.0.2"</span>,</div><div class="line">    <span class="string">"eslint-plugin-react"</span>: <span class="string">"^6.9.0"</span></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install eslint --save</div><div class="line">eslint -v</div><div class="line">eslint --init</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install eslint-config-airbnb --save</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install eslint-plugin-import --save</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install eslint-plugin-jsx-a11y --save</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install eslint-plugin-react --save</div></pre></td></tr></table></figure>
+<p>.eslintrc.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="string">"extends"</span>: <span class="string">"airbnb"</span>,    <span class="comment">//使用airbnb前端编码规范</span></div><div class="line">    <span class="string">"installedESLint"</span>: <span class="literal">true</span>,</div><div class="line">    <span class="string">"rules"</span>: &#123;</div><div class="line">        <span class="string">"indent"</span>: [<span class="string">"error"</span>, <span class="number">4</span>]  <span class="comment">//缩进4个空格</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://YongMaple.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="Atom" scheme="http://YongMaple.github.io/tags/Atom/"/>
+    
+      <category term="eslint" scheme="http://YongMaple.github.io/tags/eslint/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>带数字字符串排序</title>
+    <link href="http://YongMaple.github.io/2017/01/17/%E5%B8%A6%E6%95%B0%E5%AD%97%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%92%E5%BA%8F/"/>
+    <id>http://YongMaple.github.io/2017/01/17/带数字字符串排序/</id>
+    <published>2017-01-17T08:35:25.000Z</published>
+    <updated>2017-01-17T09:00:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="今天组里在Q群发了一个问题："><a href="#今天组里在Q群发了一个问题：" class="headerlink" title="今天组里在Q群发了一个问题："></a>今天组里在Q群发了一个问题：</h3><p>为一个给定字符串排序，这个字符串里的每一个单词都包含一个数字，请按数字大小给这些单词排序。</p>
+<p>例如：is2 Thi1s T4est 3a 的结果是 Thi1s is2 3a T4est<br>然后出现了3种解题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> a = <span class="string">'is2 Thi1s T4est 3a'</span></div><div class="line"><span class="keyword">var</span> newArr = a.split(<span class="string">' '</span>).map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line"> <span class="built_in">console</span>.log(item)</div><div class="line"> <span class="keyword">var</span> arr = item.match(<span class="regexp">/\d+/</span>)</div><div class="line"> <span class="keyword">return</span> arr</div><div class="line">&#125;)</div><div class="line"><span class="keyword">var</span> str = newArr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line"><span class="keyword">return</span> +a[<span class="number">0</span>] &gt; +b[<span class="number">0</span>]</div><div class="line">&#125;).map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</div><div class="line"><span class="keyword">return</span> item[<span class="string">'input'</span>]</div><div class="line">&#125;).join(<span class="string">' '</span>)</div><div class="line"><span class="built_in">console</span>.log(str)</div></pre></td></tr></table></figure></p>
+<p>将原字符串用’ ‘分割成数组，然后遍历，返回由match后生成的数组组成的数组<br>将新的数组按照match数组第0个元素（匹配正则的数字）排序，然后遍历返回match数组input元素（原来的String），最后拼接成字符串<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> words = <span class="string">'is2 Thi1s T4est 3a'</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">orderNew</span>(<span class="params">words</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> ordered = [];</div><div class="line">  <span class="keyword">var</span> arr = words.split(<span class="string">' '</span>);  </div><div class="line"></div><div class="line">    arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> match = <span class="regexp">/\d+/</span>.exec(item);</div><div class="line">        ordered[<span class="built_in">parseInt</span>(match[<span class="number">0</span>])] = item;</div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> ordered.join(<span class="string">' '</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(orderNew(words));</div></pre></td></tr></table></figure></p>
+<p>同样的将原字符串用’ ‘分割成数组，然后遍历<br>遍历时将原数组元素放入新数组第[macth数组第0个元素（匹配正则的数字）]个元素<br>最后将新数组拼接成字符串<br>因为是数字排序，所有将找到的数据当成索引用，但是可能存在问题，如果有重复数字时，会覆盖掉<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> words = <span class="string">'is2 Thi1s T4est 3a'</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">order</span>(<span class="params">words</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> words.split(<span class="string">' '</span>).sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</div><div class="line">      <span class="keyword">return</span> a.match(<span class="regexp">/\d+/</span>) - b.match(<span class="regexp">/\d+/</span>);</div><div class="line">   &#125;).join(<span class="string">' '</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(order(words));</div></pre></td></tr></table></figure></p>
+<p>更加简化，将原字符串分割后直接按照数组元素匹配正则后的结果排序后，拼接</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;今天组里在Q群发了一个问题：&quot;&gt;&lt;a href=&quot;#今天组里在Q群发了一个问题：&quot; class=&quot;headerlink&quot; title=&quot;今天组里在Q群发了一个问题：&quot;&gt;&lt;/a&gt;今天组里在Q群发了一个问题：&lt;/h3&gt;&lt;p&gt;为一个给定字符串排序，这个字符串里的每一个单
+    
+    </summary>
+    
+      <category term="编程思考" scheme="http://YongMaple.github.io/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="排序" scheme="http://YongMaple.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Vue生命周期的一些理解记录</title>
+    <link href="http://YongMaple.github.io/2017/01/17/%E5%85%B3%E4%BA%8EVue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E4%B8%80%E4%BA%9B%E7%90%86%E8%A7%A3%E8%AE%B0%E5%BD%95/"/>
+    <id>http://YongMaple.github.io/2017/01/17/关于Vue生命周期的一些理解记录/</id>
+    <published>2017-01-17T08:34:06.000Z</published>
+    <updated>2017-01-17T09:01:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天遇到个问题，大致是这样的：从父组件向子组件传值，第三层数据终端报错undefined，先上测试代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//父组件</div><div class="line">&lt;template lang="html"&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;son :data="data1"&gt;&lt;/son&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">import Son from '../son/index.vue'</div><div class="line">export default &#123;</div><div class="line">    data()&#123;</div><div class="line">        return &#123;</div><div class="line">            data1:&#123;&#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    mounted()&#123;</div><div class="line">        this.data1=&#123;</div><div class="line">            name:'最外层',</div><div class="line">            value1:&#123;</div><div class="line">                name:'第一层',</div><div class="line">                value2:&#123;</div><div class="line">                    name:'第二层',</div><div class="line">                    value3:&#123;</div><div class="line">                        name:'第三层'</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    components:&#123;</div><div class="line">        Son</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//子组件</div><div class="line">&lt;template lang="html"&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">      最外层</div><div class="line">      &#123;&#123;data.name&#125;&#125;</div><div class="line">      &lt;div&gt;</div><div class="line">          第一层</div><div class="line">          &#123;&#123;data.value1.name&#125;&#125;</div><div class="line">          &lt;div&gt;</div><div class="line">              第二层</div><div class="line">              &#123;&#123;data.value1.value2.name&#125;&#125;</div><div class="line">              &lt;div&gt;</div><div class="line">                  第三层</div><div class="line">                  &#123;&#123;data.value1.value2.value3.name&#125;&#125;</div><div class="line">              &lt;/div&gt;</div><div class="line">          &lt;/div&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line">export default &#123;</div><div class="line">    props:['data']</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>解决办法是将<code>mounted</code>中的赋值过程，改在<code>beforeMount</code>或者<code>created</code>中进行。或者先给<code>data</code>一个空的数据结构。<br>原因是子组件渲染时，<code>data</code>的赋值还没进行，所以属性都是undefined</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天遇到个问题，大致是这样的：从父组件向子组件传值，第三层数据终端报错undefined，先上测试代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1
+    
+    </summary>
+    
+      <category term="Vue笔记" scheme="http://YongMaple.github.io/categories/Vue%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Vue" scheme="http://YongMaple.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>扩展运算符(…)结合的使用</title>
+    <link href="http://YongMaple.github.io/2017/01/17/%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6-%E2%80%A6-%E7%BB%93%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://YongMaple.github.io/2017/01/17/扩展运算符-…-结合的使用/</id>
+    <published>2017-01-17T08:32:23.000Z</published>
+    <updated>2017-01-17T09:01:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>引入mapActions<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; mapActions, mapGetters &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></div></pre></td></tr></table></figure></p>
+<p>在<code>methods</code>中写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...mapActions([</div><div class="line">  <span class="string">'SET_MAIL_LIST'</span></div><div class="line">]),</div></pre></td></tr></table></figure></p>
+<p>数组中的所有方法会被引入，在使用时只要<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">this</span>.SET_MAIL_LIST(&#123;mailList&#125;)</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;引入mapActions&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;co
+    
+    </summary>
+    
+      <category term="Vue笔记" scheme="http://YongMaple.github.io/categories/Vue%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Vue" scheme="http://YongMaple.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac拼音输入法</title>
+    <link href="http://YongMaple.github.io/2017/01/17/Mac%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    <id>http://YongMaple.github.io/2017/01/17/Mac拼音输入法/</id>
+    <published>2017-01-17T08:30:47.000Z</published>
+    <updated>2017-01-17T09:01:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li>中英文切换<br>mac自身输入法：==Command＋空格==</li>
+<li>汉字输入切换下一页（用鼠标去点，太low了吧）<br>假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“==［==”，下一页是键盘上的“==］==”。<br>mac自身的输入法，也可以使用上下箭头来操作，但是，总是要低头找这个箭头，不方便。</li>
+<li>输入特殊符号<br>如果你记住了某个特殊字符的快捷键，那么，你只需使用 ==shift+option+键盘上的任何字符==，来输入。如：==shift+option+p==是符号：∏<br>当然，所有特殊符号都记住，是不可能的事情 ，所以，你也可以调出mac的特殊符号集，快捷键是==control+coomand+空格==，快去试试看，找到你想要的</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;中英文切换&lt;br&gt;mac自身输入法：==Command＋空格==&lt;/li&gt;
+&lt;li&gt;汉字输入切换下一页（用鼠标去点，太low了吧）&lt;br&gt;假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“==［==”，下一页是键盘上的“==］==”。&lt;br&gt;m
+    
+    </summary>
+    
+      <category term="工具使用" scheme="http://YongMaple.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
+    
+    
+      <category term="开发工具" scheme="http://YongMaple.github.io/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+    
+      <category term="Mac" scheme="http://YongMaple.github.io/tags/Mac/"/>
+    
+      <category term="输入法" scheme="http://YongMaple.github.io/tags/%E8%BE%93%E5%85%A5%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Atom已安装package记录</title>
