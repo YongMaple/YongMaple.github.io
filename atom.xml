@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-01-17T09:00:54.000Z</updated>
+  <updated>2017-01-18T02:39:35.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -14,6 +14,340 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS-forEach和map</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-forEach%E5%92%8Cmap/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-forEach和map/</id>
+    <published>2017-01-18T02:38:49.000Z</published>
+    <updated>2017-01-18T02:39:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>第1个是遍历的数组内容；<br>第2个是对应的数组索引;<br>第3个是数组本身<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, array</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>举个栗子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>)</span>&#123;<span class="keyword">return</span> v &gt; <span class="number">3</span>;&#125;);</div><div class="line"><span class="comment">//[false, false, false, true, true]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>)</span>&#123;<span class="keyword">return</span> v &gt; <span class="number">3</span>;&#125;);</div><div class="line"><span class="comment">//undefined</span></div></pre></td></tr></table></figure></p>
+<p>==map()方法==：<br>若这个回调函数有返回值，map()方法会产生一个新数组，这个新数组由原数组元素对应的回调函数的返回值构成。<br>若没有返回值，则新数组的所有元素为undefined。<br>==forEach方法==：<br>仅仅为每个数组元素执行回调函数。   </p>
+<p>再举一个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> v+<span class="number">1</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);    <span class="comment">//[2, 3, 4, 5, 6]</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(v,i)    <span class="comment">//1 0</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;第1个是遍历的数组内容；&lt;br&gt;第2个是对应的数组索引;&lt;br&gt;第3个是数组本身&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="forEach" scheme="http://YongMaple.github.io/tags/forEach/"/>
+    
+      <category term="map" scheme="http://YongMaple.github.io/tags/map/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-sort</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-sort/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-sort/</id>
+    <published>2017-01-18T02:37:54.000Z</published>
+    <updated>2017-01-18T02:38:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>);</div><div class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> b-a</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(arrSimple2.join());</div></pre></td></tr></table></figure>
+<p>==解释==：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br>==简化一下==：a-b输出从小到大排序，b-a输出从大到小排序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> objectList = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Persion</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'jack'</span>, <span class="number">20</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'tony'</span>, <span class="number">25</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'stone'</span>, <span class="number">26</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'mandy'</span>, <span class="number">23</span>));</div><div class="line"><span class="comment">//按年龄从小到大排序</span></div><div class="line">objectList.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.age - b.age</div><div class="line">&#125;);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objectList.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'age:'</span> + objectList[i].age + <span class="string">' name:'</span> + objectList[i].name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>也可以对对象的属性进行排序</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="sort" scheme="http://YongMaple.github.io/tags/sort/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-match和exec</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-match%E5%92%8Cexec/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-match和exec/</id>
+    <published>2017-01-18T02:34:52.000Z</published>
+    <updated>2017-01-18T02:35:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>举个栗子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> order = <span class="string">'is2'</span></div><div class="line"><span class="keyword">var</span> arr = order.match(<span class="regexp">/\d+/</span>)</div><div class="line"><span class="built_in">console</span>.log(arr)</div><div class="line"><span class="comment">//["2", index: 2, input: "is2"]</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> arr2 = <span class="regexp">/\d+/</span>.exec(order);</div><div class="line"><span class="built_in">console</span>.log(arr2)</div><div class="line"><span class="comment">//["2", index: 2, input: "is2"]</span></div></pre></td></tr></table></figure></p>
+<p>值得注意的是match和exec返回的结果都是数组</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;举个栗子&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div cl
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="match" scheme="http://YongMaple.github.io/tags/match/"/>
+    
+      <category term="exec" scheme="http://YongMaple.github.io/tags/exec/"/>
+    
+      <category term="正则" scheme="http://YongMaple.github.io/tags/%E6%AD%A3%E5%88%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-includes和indexOf</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-includes%E5%92%8CindexOf/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-includes和indexOf/</id>
+    <published>2017-01-18T02:33:03.000Z</published>
+    <updated>2017-01-18T02:34:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>举个栗子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'hahaha123'</span></div><div class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">'1'</span>));     <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">'1'</span>));      <span class="comment">//6</span></div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</div><div class="line"><span class="built_in">console</span>.log(arr.includes(<span class="number">1</span>));       <span class="comment">//true</span></div><div class="line"><span class="built_in">console</span>.log(arr.indexOf(<span class="number">1</span>));        <span class="comment">//0</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;举个栗子&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div cl
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="includes" scheme="http://YongMaple.github.io/tags/includes/"/>
+    
+      <category term="indexOf" scheme="http://YongMaple.github.io/tags/indexOf/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-join拼接</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-join%E6%8B%BC%E6%8E%A5/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-join拼接/</id>
+    <published>2017-01-18T02:30:45.000Z</published>
+    <updated>2017-01-18T02:32:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>)</div><div class="line">arr[<span class="number">0</span>] = <span class="string">"George"</span></div><div class="line">arr[<span class="number">1</span>] = <span class="string">"John"</span></div><div class="line">arr[<span class="number">2</span>] = <span class="string">"Thomas"</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr.join(<span class="string">' '</span>))  <span class="comment">//George John Thomas</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="数组" scheme="http://YongMaple.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="拼接" scheme="http://YongMaple.github.io/tags/%E6%8B%BC%E6%8E%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-arguments</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-arguments/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-arguments/</id>
+    <published>2017-01-18T02:29:30.000Z</published>
+    <updated>2017-01-18T02:31:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">a,b</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);         <span class="comment">//["123"]</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>.length);  <span class="comment">//1</span></div><div class="line">    <span class="built_in">console</span>.log(test.length);       <span class="comment">//2</span></div><div class="line">&#125;</div><div class="line">test(<span class="string">'123'</span>)</div></pre></td></tr></table></figure>
+<p>通过arguments可以获取传入的参数，function.length可以获取本该传入的参数</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="参数" scheme="http://YongMaple.github.io/tags/%E5%8F%82%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-数组比较</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-%E6%95%B0%E7%BB%84%E6%AF%94%E8%BE%83/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-数组比较/</id>
+    <published>2017-01-18T02:27:39.000Z</published>
+    <updated>2017-01-18T02:31:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = [<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> y = [<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(x == y);     <span class="comment">//false</span></div><div class="line"><span class="built_in">console</span>.log(x === y );   <span class="comment">//false</span></div></pre></td></tr></table></figure>
+<p>javascript不能直接用==或者===来判断两个数组是否相等，无论是相等还是全等都不行。<br>要判断数组是否相等，要先将数组转换为字符串，再作比较<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = [<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="keyword">var</span> y = [<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="built_in">console</span>.log(x.toString() == y.toString())</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="数组" scheme="http://YongMaple.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="比较" scheme="http://YongMaple.github.io/tags/%E6%AF%94%E8%BE%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-String转数字类型</title>
+    <link href="http://YongMaple.github.io/2017/01/18/JS-String%E8%BD%AC%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B/"/>
+    <id>http://YongMaple.github.io/2017/01/18/JS-String转数字类型/</id>
+    <published>2017-01-18T02:24:43.000Z</published>
+    <updated>2017-01-18T02:31:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="需要将string转成数字时，如果需要保留小数，只要用-就行了"><a href="#需要将string转成数字时，如果需要保留小数，只要用-就行了" class="headerlink" title="需要将string转成数字时，如果需要保留小数，只要用+就行了"></a>需要将string转成数字时，如果需要保留小数，只要用+就行了</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str = <span class="string">'123'</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(str))</div><div class="line"><span class="comment">//转整数时没问题</span></div><div class="line"><span class="keyword">var</span> str1 = <span class="string">'123.45'</span></div><div class="line"><span class="built_in">console</span>.log(+str1)</div><div class="line"><span class="comment">//只要用+就行了</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;需要将string转成数字时，如果需要保留小数，只要用-就行了&quot;&gt;&lt;a href=&quot;#需要将string转成数字时，如果需要保留小数，只要用-就行了&quot; class=&quot;headerlink&quot; title=&quot;需要将string转成数字时，如果需要保留小数，只要用+就行
+    
+    </summary>
+    
+      <category term="JS基础" scheme="http://YongMaple.github.io/categories/JS%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="JavaScript" scheme="http://YongMaple.github.io/tags/JavaScript/"/>
+    
+      <category term="JS" scheme="http://YongMaple.github.io/tags/JS/"/>
+    
+      <category term="基础" scheme="http://YongMaple.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="转换" scheme="http://YongMaple.github.io/tags/%E8%BD%AC%E6%8D%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-set</title>
+    <link href="http://YongMaple.github.io/2017/01/18/ES6-set/"/>
+    <id>http://YongMaple.github.io/2017/01/18/ES6-set/</id>
+    <published>2017-01-18T02:22:29.000Z</published>
+    <updated>2017-01-18T02:22:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><p>set是类数组</p>
+<h2 id="可以用来做什么？"><a href="#可以用来做什么？" class="headerlink" title="可以用来做什么？"></a>可以用来做什么？</h2><p>可以用来给数组去重<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr =  [<span class="string">'jiayongfeng'</span>,<span class="string">'jimmy'</span>,<span class="string">'jimmy'</span>]</div><div class="line"><span class="keyword">let</span> newArr = <span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr))</div><div class="line"><span class="built_in">console</span>.log(newArr)</div></pre></td></tr></table></figure></p>
+<h2 id="怎么用？"><a href="#怎么用？" class="headerlink" title="怎么用？"></a>怎么用？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> user = &#123;<span class="attr">name</span>:<span class="string">'jiayongfeng'</span>,<span class="attr">age</span>:<span class="string">'28'</span>&#125;</div><div class="line"><span class="keyword">let</span> st = <span class="keyword">new</span> <span class="built_in">Set</span>()  </div><div class="line">st.add(user)        <span class="comment">//添加</span></div><div class="line">st.delete(user)     <span class="comment">//删除</span></div><div class="line">st.has(user)        <span class="comment">//判断有无</span></div><div class="line">st.clear()          <span class="comment">//清空</span></div><div class="line"><span class="built_in">console</span>.log(st.size)    <span class="comment">//查看数量</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> o <span class="keyword">of</span> st)&#123;       <span class="comment">//遍历</span></div><div class="line">    <span class="built_in">console</span>.log(o)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;是什么？&quot;&gt;&lt;a href=&quot;#是什么？&quot; class=&quot;headerlink&quot; title=&quot;是什么？&quot;&gt;&lt;/a&gt;是什么？&lt;/h2&gt;&lt;p&gt;set是类数组&lt;/p&gt;
+&lt;h2 id=&quot;可以用来做什么？&quot;&gt;&lt;a href=&quot;#可以用来做什么？&quot; class=&quot;heade
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-map</title>
+    <link href="http://YongMaple.github.io/2017/01/18/ES6-map/"/>
+    <id>http://YongMaple.github.io/2017/01/18/ES6-map/</id>
+    <published>2017-01-18T02:21:15.000Z</published>
+    <updated>2017-01-18T02:21:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><p>map是键值对的类数组</p>
+<h2 id="可以用来做什么？"><a href="#可以用来做什么？" class="headerlink" title="可以用来做什么？"></a>可以用来做什么？</h2><p>对象中的key必须是<code>string</code>，map中key可以是任意值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> user = &#123;</div><div class="line">    <span class="attr">name</span> : <span class="string">'jiayongfeng'</span>,</div><div class="line">    <span class="attr">age</span> : <span class="number">28</span>,</div><div class="line">    <span class="string">'english name'</span>:<span class="string">'jimmy'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([</div><div class="line">    [user,<span class="string">'shuai'</span>],     <span class="comment">//key可以是对象</span></div><div class="line">    [<span class="string">'qq'</span>,<span class="string">'740534248'</span>]</div><div class="line">])</div></pre></td></tr></table></figure></p>
+<h2 id="怎么用？"><a href="#怎么用？" class="headerlink" title="怎么用？"></a>怎么用？</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>()</div><div class="line">map.set(<span class="string">'name'</span>,<span class="string">'jiayongfeng'</span>)   <span class="comment">//赋值</span></div><div class="line">map.set(<span class="string">'age'</span>,<span class="number">28</span>)</div><div class="line"><span class="built_in">console</span>.log(map.get(<span class="string">'age'</span>))     <span class="comment">//取值</span></div><div class="line"><span class="built_in">console</span>.log(map.size)           <span class="comment">//查看大小</span></div><div class="line">map.delete(<span class="string">'age'</span>)               <span class="comment">//删除</span></div><div class="line">map.has(<span class="string">'name'</span>)                 <span class="comment">//判断有无</span></div><div class="line">map.clear()                     <span class="comment">//清空</span></div><div class="line"><span class="comment">//值得注意NaN在map和set是全等的</span></div><div class="line"><span class="built_in">console</span>.log(<span class="literal">NaN</span> === <span class="literal">NaN</span>)    <span class="comment">//false</span></div><div class="line">map.set(<span class="literal">NaN</span>,<span class="string">'1111'</span>);</div><div class="line">map.set(<span class="literal">NaN</span>,<span class="string">'2222'</span>);</div><div class="line"><span class="built_in">console</span>.log(map.get(<span class="literal">NaN</span>));    <span class="comment">//2222</span></div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> o <span class="keyword">of</span> map)&#123;              <span class="comment">//遍历</span></div><div class="line">    <span class="built_in">console</span>.log(o)</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> keys = map.keys()           <span class="comment">//获取所有的key</span></div><div class="line"><span class="keyword">let</span> values = map.values()       <span class="comment">//获取所有的value</span></div><div class="line"><span class="keyword">let</span> entries = map.ertries()     <span class="comment">//获取所有的键值对</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> o <span class="keyword">of</span> entries)&#123;</div><div class="line">    <span class="built_in">console</span>.log(o)              <span class="comment">//等同于上面的遍历</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> _this = &#123;</div><div class="line">    <span class="attr">des</span> : <span class="string">'shuai'</span></div><div class="line">&#125;;</div><div class="line">map.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">k, v</span>) </span>&#123;       <span class="comment">//遍历，同时可以传入this</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.des,k, v);</div><div class="line">&#125;,_this);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;是什么？&quot;&gt;&lt;a href=&quot;#是什么？&quot; class=&quot;headerlink&quot; title=&quot;是什么？&quot;&gt;&lt;/a&gt;是什么？&lt;/h2&gt;&lt;p&gt;map是键值对的类数组&lt;/p&gt;
+&lt;h2 id=&quot;可以用来做什么？&quot;&gt;&lt;a href=&quot;#可以用来做什么？&quot; class=&quot;h
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-Array</title>
+    <link href="http://YongMaple.github.io/2017/01/18/ES6-Array/"/>
+    <id>http://YongMaple.github.io/2017/01/18/ES6-Array/</id>
+    <published>2017-01-18T02:20:04.000Z</published>
+    <updated>2017-01-18T02:20:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from"></a>Array.from</h3><p>类似数组的数据结构转换为数组<br>可以把带有length属性的对象和实现了iterator接口的对象转换为数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = <span class="built_in">Array</span>.from(&#123;</div><div class="line"><span class="string">'0'</span>:<span class="string">'qq 740534248'</span>,</div><div class="line"><span class="string">'1'</span>:<span class="string">'jimmy'</span>,</div><div class="line"><span class="string">'length'</span>:<span class="number">2</span></div><div class="line">&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line"> <span class="keyword">return</span> item + <span class="string">'---'</span> + index</div><div class="line">&#125;);</div><div class="line"><span class="comment">//必须是这种样子的对象，其他的不行</span></div><div class="line"><span class="built_in">console</span>.log(arr);</div><div class="line"></div><div class="line"><span class="keyword">var</span> set = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="string">'me'</span>,<span class="string">'book'</span>,<span class="string">'leo'</span>]);</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(set));</div></pre></td></tr></table></figure></p>
+<p>querySelectorAll查询出的类数组也能转换<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>item5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">var</span> list = <span class="built_in">document</span>.querySelectorAll(<span class="string">'li'</span>);</div><div class="line">    <span class="built_in">console</span>.log(list)  <span class="comment">//NodeList[5]</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">Array</span>.from(list));  <span class="comment">//ArrayList[5]</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of"></a>Array.of</h3><p>用来构建数组，防止Array(7)这种情况发生<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Array</span>.of(<span class="number">7</span>);       <span class="comment">// [7]</span></div><div class="line"><span class="built_in">Array</span>.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">// [1, 2, 3]</span></div><div class="line"></div><div class="line"><span class="built_in">Array</span>(<span class="number">7</span>);          <span class="comment">// [ , , , , , , ]</span></div><div class="line"><span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);    <span class="comment">// [1, 2, 3]</span></div></pre></td></tr></table></figure></p>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>找到符合函数的第一个值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [  <span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span> ];</div><div class="line"></div><div class="line"><span class="keyword">var</span> value = arr.find(<span class="function"><span class="keyword">function</span>(<span class="params">value,index,arr</span>)</span>&#123; <span class="comment">//值，索引，原数组</span></div><div class="line">   <span class="keyword">return</span> value &gt; <span class="number">33</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(value); <span class="comment">//44</span></div></pre></td></tr></table></figure></p>
+<h3 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex"></a>findIndex</h3><p>找到符合函数的第一个值的索引<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [  <span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>,<span class="number">55</span> ];</div><div class="line"></div><div class="line"><span class="keyword">var</span> value = arr.findIndex(<span class="function"><span class="keyword">function</span>(<span class="params">value,index,arr</span>)</span>&#123; <span class="comment">//值，索引，原数组</span></div><div class="line">   <span class="keyword">return</span> value &gt; <span class="number">33</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(value); <span class="comment">//2</span></div></pre></td></tr></table></figure></p>
+<p>IndexOf比较<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr2 = [<span class="number">22</span>,<span class="literal">NaN</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(arr2.indexOf(<span class="literal">NaN</span>))  <span class="comment">//-1</span></div><div class="line"><span class="built_in">console</span>.log(arr2.findIndex(<span class="function"><span class="keyword">function</span>(<span class="params">v</span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> <span class="built_in">Object</span>.is(<span class="literal">NaN</span>,v);</div><div class="line">&#125;));    <span class="comment">//1</span></div></pre></td></tr></table></figure></p>
+<h3 id="copyWithin"><a href="#copyWithin" class="headerlink" title="copyWithin"></a>copyWithin</h3><p>copyWithin(position,start,end);<br>要被替换的开始位置，用于替换的起始位置，用于替换的结束位置（不包含）<br>也可以用负数，代表从后往前数第几个，如-3代表正数第4个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ar arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</div><div class="line"></div><div class="line"><span class="comment">//arr.copyWithin(1,5,7);  //[ 1, 6, 7, 4, 5, 6, 7 ]</span></div><div class="line">arr.copyWithin(<span class="number">2</span>,<span class="number">-3</span>,<span class="number">6</span>); <span class="comment">//[ 1, 2, 5, 6, 5, 6, 7 ]</span></div><div class="line"><span class="built_in">console</span>.log(arr);</div></pre></td></tr></table></figure></p>
+<h3 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h3><p>填充数组<br>fill(value,start,end)<br>用来填充的值，被填充的起始位置，被填充的结束位置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</div><div class="line"><span class="comment">//arr.fill(10)</span></div><div class="line"><span class="built_in">console</span>.log(arr)    <span class="comment">//[10,10,10,10,10,10,10]</span></div><div class="line">arr.fill(<span class="number">10</span>,<span class="number">2</span>,<span class="number">5</span>)</div><div class="line"><span class="built_in">console</span>.log(arr)    <span class="comment">//[1,2,10,10,10,6,7]</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Array-from&quot;&gt;&lt;a href=&quot;#Array-from&quot; class=&quot;headerlink&quot; title=&quot;Array.from&quot;&gt;&lt;/a&gt;Array.from&lt;/h3&gt;&lt;p&gt;类似数组的数据结构转换为数组&lt;br&gt;可以把带有length属性的对象和实现了
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>JavaScript 源代码阅读工具</title>

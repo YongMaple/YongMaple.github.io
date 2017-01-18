@@ -151,14 +151,14 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
-            <article id="post-JavaScript-源代码阅读工具"
+            <article id="post-JS-forEach和map"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 16:41" datetime="2017-01-17T08:41:07.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:38" datetime="2017-01-18T02:38:49.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具使用/">工具使用</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -171,7 +171,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/JavaScript-源代码阅读工具/">JavaScript 源代码阅读工具</a>
+      <a class="post-title-link" href="/2017/01/18/JS-forEach和map/">JS-forEach和map</a>
     </h3>
   
 
@@ -181,20 +181,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        lambda-viewhttps://github.com/Jianru-Lin/lambda-view
-命令行输入1lv /path/somewhere/xyz.js
-1lv http://vuejs.org/js/vue.js
-
+        第1个是遍历的数组内容；第2个是对应的数组索引;第3个是数组本身123[].forEach(function(value, index, array) &#123;  // ...&#125;);
+举个栗子1234[1,2,3,4,5].map(function(v, i)&#123;return v &gt; 3;&#125;);//[false, false, false, true, ...
     
 
-        <a href="/2017/01/17/JavaScript-源代码阅读工具/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-forEach和map/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/源代码查看/">源代码查看</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/forEach/">forEach</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map/">map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
 
     </div>
     
@@ -203,14 +201,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Atom使用eslint需要安装的包"
+            <article id="post-JS-sort"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 16:39" datetime="2017-01-17T08:39:41.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:37" datetime="2017-01-18T02:37:54.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具使用/">工具使用</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -223,7 +221,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/Atom使用eslint需要安装的包/">Atom使用eslint需要安装的包</a>
+      <a class="post-title-link" href="/2017/01/18/JS-sort/">JS-sort</a>
     </h3>
   
 
@@ -233,17 +231,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1234567"dependencies": &#123;    "eslint": "^3.13.1",    "eslint-config-airbnb": "^14.0.0",    "eslint-plugin-import": "^2.2.0",    "eslint-plugin-jsx-a11y": "^3.0.2",    "eslint-plugin-react": "^6...
+        12345var arr=new Array(1,8,7,6);arr.sort(function(a,b)&#123;    return b-a&#125;);console.log(arrSimple2.join());
+==解释==：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容==简化一下==：a...
     
 
-        <a href="/2017/01/17/Atom使用eslint需要安装的包/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-sort/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eslint/">eslint</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
 
     </div>
     
@@ -252,14 +251,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-带数字字符串排序"
+            <article id="post-JS-match和exec"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 16:35" datetime="2017-01-17T08:35:25.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:34" datetime="2017-01-18T02:34:52.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程思考/">编程思考</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -272,7 +271,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/带数字字符串排序/">带数字字符串排序</a>
+      <a class="post-title-link" href="/2017/01/18/JS-match和exec/">JS-match和exec</a>
     </h3>
   
 
@@ -282,18 +281,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        今天组里在Q群发了一个问题：为一个给定字符串排序，这个字符串里的每一个单词都包含一个数字，请按数字大小给这些单词排序。
-例如：is2 Thi1s T4est 3a 的结果是 Thi1s is2 3a T4est然后出现了3种解题：123456789101112var a = 'is2 Thi1s T4est 3a'var newArr = a.split(' ').map(function(...
+        举个栗子12345678var order = 'is2'var arr = order.match(/\d+/)console.log(arr)//["2", index: 2, input: "is2"]var arr2 = /\d+/.exec(order);console.log(arr2)//["2", index: 2, input: "is2"]
+值得注意的是match和exe...
     
 
-        <a href="/2017/01/17/带数字字符串排序/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-match和exec/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/exec/">exec</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/match/">match</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
 
     </div>
     
@@ -302,14 +301,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-关于Vue生命周期的一些理解记录"
+            <article id="post-JS-includes和indexOf"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 16:34" datetime="2017-01-17T08:34:06.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:33" datetime="2017-01-18T02:33:03.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue笔记/">Vue笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -322,7 +321,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/关于Vue生命周期的一些理解记录/">关于Vue生命周期的一些理解记录</a>
+      <a class="post-title-link" href="/2017/01/18/JS-includes和indexOf/">JS-includes和indexOf</a>
     </h3>
   
 
@@ -332,18 +331,17 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        今天遇到个问题，大致是这样的：从父组件向子组件传值，第三层数据终端报错undefined，先上测试代码：
-12345678910111213141516171819202122232425262728293031323334//父组件&lt;template lang="html"&gt;    &lt;div&gt;        &lt;son :data="data1"&gt;&lt;...
+        举个栗子123456var str = 'hahaha123'console.log(str.includes('1'));     //trueconsole.log(str.indexOf('1'));      //6var arr = [1,2,3,4,5]console.log(arr.includes(1));       //trueconsole.log(arr.indexO...
     
 
-        <a href="/2017/01/17/关于Vue生命周期的一些理解记录/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-includes和indexOf/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/includes/">includes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/indexOf/">indexOf</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
 
     </div>
     
@@ -352,14 +350,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-扩展运算符-…-结合的使用"
+            <article id="post-JS-join拼接"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 16:32" datetime="2017-01-17T08:32:23.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:30" datetime="2017-01-18T02:30:45.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Vue笔记/">Vue笔记</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -372,7 +370,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/扩展运算符-…-结合的使用/">扩展运算符(…)结合的使用</a>
+      <a class="post-title-link" href="/2017/01/18/JS-join拼接/">JS-join拼接</a>
     </h3>
   
 
@@ -382,20 +380,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        引入mapActions1import &#123; mapActions, mapGetters &#125; from 'vuex'
-在methods中写123...mapActions([  'SET_MAIL_LIST']),
-数组中的所有方法会被引入，在使用时只要1this.SET_MAIL_LIST(&#123;mailList&#125;)
+        123456var arr = new Array(3)arr[0] = "George"arr[1] = "John"arr[2] = "Thomas"console.log(arr.join(' '))  //George John Thomas
 
     
 
-        <a href="/2017/01/17/扩展运算符-…-结合的使用/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-join拼接/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拼接/">拼接</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li></ul>
 
     </div>
     
@@ -404,14 +400,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Mac拼音输入法"
+            <article id="post-JS-arguments"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 16:30" datetime="2017-01-17T08:30:47.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:29" datetime="2017-01-18T02:29:30.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具使用/">工具使用</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -424,7 +420,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/Mac拼音输入法/">Mac拼音输入法</a>
+      <a class="post-title-link" href="/2017/01/18/JS-arguments/">JS-arguments</a>
     </h3>
   
 
@@ -434,20 +430,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
-中英文切换mac自身输入法：==Command＋空格==
-汉字输入切换下一页（用鼠标去点，太low了吧）假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“==［==”，下一页是键盘上的“==］==”。mac自身的输入法，也可以使用上下箭头来操作，但是，总是要低头找这个箭头，不方便。
-输入特殊符号如果你记住了某个特殊字符的快捷键，那么，你只需使用 ==shift+optio...
+        123456function test(a,b) &#123;    console.log(arguments);         //["123"]    console.log(arguments.length);  //1    console.log(test.length);       //2&#125;test('123')
+通过arguments可以获取传入的参数，func...
     
 
-        <a href="/2017/01/17/Mac拼音输入法/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-arguments/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mac/">Mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/输入法/">输入法</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/参数/">参数</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
 
     </div>
     
@@ -456,14 +450,14 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-Atom已安装package记录"
+            <article id="post-JS-数组比较"
   class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
-        <time class="post-time" title="2017年01月17日 15:36" datetime="2017-01-17T07:36:13.000Z"  itemprop="datePublished">2017-01-17</time>
+        <time class="post-time" title="2017年01月18日 10:27" datetime="2017-01-18T02:27:39.000Z"  itemprop="datePublished">2017-01-18</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/工具使用/">工具使用</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
 
 
 
@@ -476,7 +470,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/17/Atom已安装package记录/">Atom已安装package记录</a>
+      <a class="post-title-link" href="/2017/01/18/JS-数组比较/">JS-数组比较</a>
     </h3>
   
 
@@ -486,35 +480,169 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        atom-terminal-panel
-命令行工具快捷键：control+`呼出
-
-activate-power-mode
-炫酷的打字特效
-
-atom-beautify
-美化、整理代码
-
-atom-ctags
-强化版的自动完成，借助于autocomplete-plus
-
-atom-ternjs
-JS代码智能提示
-
-autocomplete-paths
-文件路径智能提示
-
-color-pick...
+        12345var x = [1,2];var y = [1,2];console.log(x == y);     //falseconsole.log(x === y );   //false
+javascript不能直接用==或者===来判断两个数组是否相等，无论是相等还是全等都不行。要判断数组是否相等，要先将数组转换为字符串，再作比较123var x = [1,2];var y = [...
     
 
-        <a href="/2017/01/17/Atom已安装package记录/" class="post-more waves-effect waves-button">
+        <a href="/2017/01/18/JS-数组比较/" class="post-more waves-effect waves-button">
             阅读全文...
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Atom/">Atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开发工具/">开发工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/配置/">配置</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比较/">比较</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-JS-String转数字类型"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月18日 10:24" datetime="2017-01-18T02:24:43.000Z"  itemprop="datePublished">2017-01-18</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/18/JS-String转数字类型/">JS-String转数字类型</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        需要将string转成数字时，如果需要保留小数，只要用+就行了123456var str = '123'console.log(parseInt(str))//转整数时没问题var str1 = '123.45'console.log(+str1)//只要用+就行了
+
+    
+
+        <a href="/2017/01/18/JS-String转数字类型/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转换/">转换</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-ES6-set"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月18日 10:22" datetime="2017-01-18T02:22:29.000Z"  itemprop="datePublished">2017-01-18</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ES6笔记/">ES6笔记</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/18/ES6-set/">ES6-set</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        是什么？set是类数组
+可以用来做什么？可以用来给数组去重123let arr =  ['jiayongfeng','jimmy','jimmy']let newArr = Array.from(new Set(arr))console.log(newArr)
+怎么用？12345678910let user = &#123;name:'jiayongfeng',age:'28'&#125;l...
+    
+
+        <a href="/2017/01/18/ES6-set/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-ES6-map"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月18日 10:21" datetime="2017-01-18T02:21:15.000Z"  itemprop="datePublished">2017-01-18</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ES6笔记/">ES6笔记</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/18/ES6-map/">ES6-map</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        是什么？map是键值对的类数组
+可以用来做什么？对象中的key必须是string，map中key可以是任意值123456789let user = &#123;    name : 'jiayongfeng',    age : 28,    'english name':'jimmy'&#125;let map = new Map([    [user,'shuai'],     //ke...
+    
+
+        <a href="/2017/01/18/ES6-map/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
 
     </div>
     
@@ -525,6 +653,12 @@ color-pick...
     </ul>
 
     
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
 
 </div>
 
