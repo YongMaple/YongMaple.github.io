@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>ES6-对象属性的新写法 | YongMaple | 我不生产代码，我只是代码的搬运工</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ES6">
+    <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class A &amp;#123;    constructor() &amp;#123;        this.name = &apos;leo&apos;;    &amp;#125;    getName() &amp;#123;    &amp;#125;&amp;#125;cla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6-对象属性的新写法">
+<meta property="og:url" content="http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/index.html">
+<meta property="og:site_name" content="YongMaple">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class A &amp;#123;    constructor() &amp;#123;        this.name = &apos;leo&apos;;    &amp;#125;    getName() &amp;#123;    &amp;#125;&amp;#125;cla">
+<meta property="og:updated_time" content="2017-01-19T07:08:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6-对象属性的新写法">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839404142434445464748class A &amp;#123;    constructor() &amp;#123;        this.name = &apos;leo&apos;;    &amp;#125;    getName() &amp;#123;    &amp;#125;&amp;#125;cla">
+    
+        <link rel="alternative" href="/atom.xml" title="YongMaple" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.6">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">YongMaple</h5>
+          <a href="mailto:740534248@qq.com" title="740534248@qq.com" class="mail">740534248@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/YongMaple" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/hiimj" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">ES6-对象属性的新写法</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">ES6-对象属性的新写法</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-19T07:07:22.000Z" itemprop="datePublished" class="page-time">
+  2017-01-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ES6笔记/">ES6笔记</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-ES6-对象属性的新写法"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">ES6-对象属性的新写法</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月19日 15:07" datetime="2017-01-19T07:07:22.000Z"  itemprop="datePublished">2017-01-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ES6笔记/">ES6笔记</a></li></ul>
+
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.name = <span class="string">'leo'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getName() &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.age = <span class="number">22</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getAge()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [<span class="built_in">Symbol</span>(<span class="string">'fullname'</span>)]()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.prototype.getClass = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</div><div class="line"></div><div class="line"><span class="comment">// Object.keys 能够得到自身的可枚举的属性,但得不到原型链上的属性.</span></div><div class="line"><span class="comment">// 得不到 Symbols 属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// Object.getOwnPropertyNames(b) 能够得到自身属性,</span></div><div class="line"><span class="comment">// 包括不可枚举的属性,但得不到原型链上的属性.</span></div><div class="line"><span class="comment">// 得不到 Symbols 属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// 可以得到自身的 Symbols 属性,包括不可枚举的属性.</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// 可以得到自身和继承的原型链上的属性,但必须是可枚举属性.</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> b)&#123;</div><div class="line">    <span class="built_in">console</span>.log(key);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 判断是否可枚举，enumerable为true可枚举</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(B.prototype,<span class="string">'getAge'</span>));</div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-19T07:08:46.000Z" itemprop="dateUpdated">2017年1月19日 15:08</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/2017/01/19/ES6-对象属性的新写法/" target="_blank" rel="external">http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/</a>
+    </div>
+    <footer>
+        <a href="http://YongMaple.github.io">
+            <img src="/img/avatar.jpg" alt="YongMaple">
+            YongMaple
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/&title=《ES6-对象属性的新写法》 — YongMaple&pic=http://YongMaple.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/&title=《ES6-对象属性的新写法》 — YongMaple&source=我不生产代码，我只是代码的搬运工" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6-对象属性的新写法》 — YongMaple&url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/&via=http://YongMaple.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/01/19/ES6-Object-is/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ES6-Object.is</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/18/JS-forEach和map/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JS-forEach和map</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="ES6-对象属性的新写法" data-title="ES6-对象属性的新写法" data-url="http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'yongmaple', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.6');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>YongMaple &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/&title=《ES6-对象属性的新写法》 — YongMaple&pic=http://YongMaple.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/&title=《ES6-对象属性的新写法》 — YongMaple&source=我不生产代码，我只是代码的搬运工" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《ES6-对象属性的新写法》 — YongMaple&url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/&via=http://YongMaple.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3ay1LDMAwF0P7/T5cZVixIuHq4ZHG8YkpwfMyMrUp6veLx/h4/f/75ydWTySdXs70vxuvEwMPDw2st/X665GX3f3UPy5/M14yHh4d3mte7DBJSfm4nW5CvGQ8PD+8JvDxovgdUL4ZkDXh4eHjP5yUXwNai8fDw8J7Jm6QG8hRwNU1cTY7g4eHhfYbXK4D978/H63t4eHh4rap6NYWaBNyT1EN5tXh4eHgHePMiUy/Mnbdt5cliPDw8vF1eMlE1JXH/eY7JC2aX78LDw8M7zMsTtXnrVW+D5kkQPDw8vNO8vMhUbZmqbsT9M/fb/cuceHh4eP/EqwbTvXauJKlRyK/k/wE8PDy8Fq/3hb+agKge973SWpRrwcPDwxvzksugcBzHCYVJ20FUGMPDw8M7wOsx8hC8GhZXNyLaPjw8PLxVXjVILRfvA8Bk/IHHw8PDO8Yr3yRxkncr4ZsH2Xh4eHif4SWHbxIW91qjejNHbQd4eHh4B3j5FHnStjry9oVmAhoPDw/vGK/aHNArj+VlrTyNG10MeHh4eEu8vOmqHMgWQ+dJY8HlW/Dw8PA+wjvRRFW9AJJyWnmheHh4eEu8arI1f8HWM5PLAw8PD+8cL/+Snx/c1ZL/pPFrYW/w8PDwBrz8ephswRap18yKh4eHN+FVD9leqSwpob2LI7pg8PDw8D7Cq4a/yW97l0E+W9QTgYeHh7fEm4fFvVG9ErYKcnh4eHhzXi+QTQ7i3XRwXpCLQmo8PDy8AW+3ZlRNQCSbcs+oJkrw8PDwtni9hOlW/S0/4pNQu5BxwcPDwxvzeuFvuSjVKqdVG8Xw8PDwnsNLErvN47sYQOcFPDw8PLwn8HrUSdKh17iAh4eHd5q3lVaYtBdsNXLh4eHhneb1CmC9vqZe2awcRs/re3h4eHi/P/kFrZ1zqOLek8YAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261153759&web_id=1261153759')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.6"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.6" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

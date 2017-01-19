@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Retina视网膜屏幕适配 | YongMaple | 我不生产代码，我只是代码的搬运工</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="适配,手机端,Retina">
+    <meta name="description" content="1234567891011121314151617181920212223242526272829&amp;lt;!DOCTYPE&amp;gt;&amp;lt;html&amp;gt;&amp;lt;header&amp;gt;    &amp;lt;style&amp;gt;        div &amp;#123;            border: 1px solid #bbb;        &amp;#125;        .hairlines div &amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retina视网膜屏幕适配">
+<meta property="og:url" content="http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/index.html">
+<meta property="og:site_name" content="YongMaple">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829&amp;lt;!DOCTYPE&amp;gt;&amp;lt;html&amp;gt;&amp;lt;header&amp;gt;    &amp;lt;style&amp;gt;        div &amp;#123;            border: 1px solid #bbb;        &amp;#125;        .hairlines div &amp;#">
+<meta property="og:updated_time" content="2017-01-19T07:11:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Retina视网膜屏幕适配">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829&amp;lt;!DOCTYPE&amp;gt;&amp;lt;html&amp;gt;&amp;lt;header&amp;gt;    &amp;lt;style&amp;gt;        div &amp;#123;            border: 1px solid #bbb;        &amp;#125;        .hairlines div &amp;#">
+    
+        <link rel="alternative" href="/atom.xml" title="YongMaple" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.6">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">YongMaple</h5>
+          <a href="mailto:740534248@qq.com" title="740534248@qq.com" class="mail">740534248@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/YongMaple" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/hiimj" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Retina视网膜屏幕适配</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Retina视网膜屏幕适配</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-19T07:10:57.000Z" itemprop="datePublished" class="page-time">
+  2017-01-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程思考/">编程思考</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-Retina视网膜屏幕适配"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Retina视网膜屏幕适配</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月19日 15:10" datetime="2017-01-19T07:10:57.000Z"  itemprop="datePublished">2017-01-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程思考/">编程思考</a></li></ul>
+
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        div &#123;</div><div class="line">            border: 1px solid #bbb;</div><div class="line">        &#125;</div><div class="line">        .hairlines div &#123;</div><div class="line">            border-width: .5px;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.devicePixelRatio &amp;&amp; devicePixelRatio &gt;= <span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">var</span> testElem = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">        testElem.style.border = <span class="string">'.5px solid transparent'</span>;</div><div class="line">        <span class="built_in">document</span>.body.appendChild(testElem);</div><div class="line">        <span class="keyword">if</span> (testElem.offsetHeight == <span class="number">1</span>)&#123;</div><div class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).classList.add(<span class="string">'hairlines'</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">document</span>.body.removeChild(testElem);</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。<br>公式表示就是：window.devicePixelRatio = 物理像素 / dips  </p>
+<p>offsetHeight = clientHeight + 滚动条 + 边框   </p>
+</blockquote>
+<p>如果是retina屏，会先创建个div来测试浏览器是否能探测到0.5px，如果可以会才会使用0.5px的样式   </p>
+<p>原文地址：<a href="http://dieulot.net/css-retina-hairline" target="_blank" rel="external">http://dieulot.net/css-retina-hairline</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-19T07:11:49.000Z" itemprop="dateUpdated">2017年1月19日 15:11</time>
+</span><br>
+
+
+        转载请注明出处：<a href="/2017/01/19/Retina视网膜屏幕适配/" target="_blank" rel="external">http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/</a>
+    </div>
+    <footer>
+        <a href="http://YongMaple.github.io">
+            <img src="/img/avatar.jpg" alt="YongMaple">
+            YongMaple
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Retina/">Retina</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手机端/">手机端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/适配/">适配</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/&title=《Retina视网膜屏幕适配》 — YongMaple&pic=http://YongMaple.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/&title=《Retina视网膜屏幕适配》 — YongMaple&source=我不生产代码，我只是代码的搬运工" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Retina视网膜屏幕适配》 — YongMaple&url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/&via=http://YongMaple.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/19/ES6-遍历对象属性/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ES6-遍历对象属性</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+<div class="comments" id="comments">
+    <div class="ds-thread" data-thread-key="Retina视网膜屏幕适配" data-title="Retina视网膜屏幕适配" data-url="http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/"></div>
+</div>
+<script>
+lazyScripts.push('//cdn.bootcss.com/marked/0.3.6/marked.min.js');
+
+var duoshuoQuery = {short_name:'yongmaple', theme: 'none'};
+lazyScripts.push('/js/embed.min.js?v=1.4.6');
+
+
+</script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>YongMaple &copy; 2015 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/&title=《Retina视网膜屏幕适配》 — YongMaple&pic=http://YongMaple.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/&title=《Retina视网膜屏幕适配》 — YongMaple&source=我不生产代码，我只是代码的搬运工" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Retina视网膜屏幕适配》 — YongMaple&url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/&via=http://YongMaple.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3bQU7EMAwF0N7/0oOEWLBp+LaTmSK9rBB0krwg1cYO1xWP1/e4+/7vsX4mn+F1M64TAw8PD6+19fV0dwusn1l/KmEna/0xGx4eHt4x3nqB9RTVJ5NDSfYTBTA8PDy8j/J6KXgvaV6z8fDw8P4XL9lWNS1ODhEPDw/vabzJpnuF4Dz5zoMKHh4e3nt4vRT5s18f7O/h4eHhDbrq+Uv5RNd+ss+f2fDw8PAO8JIy6+SOU36BIL+kla+Lh4eHd4637RUcL5aUdycHcYvEw8PDG/N6iXKOyUu0+Zu8sCIeHh7eAd6kYV+OOYMUPEn3b3+Kh4eHt5WXJ8q9ZDp5ce9aq1lFxsPDw9vKqybZE/CueTb09/Dw8PA6FYDyv8Tnpds8dZ4Elav6e8DDw8Mr8tYLJMWI9TN5mSMvZBRKJHh4eHhbeXvT6GrwSA4iP+7b+jQeHh7eVl6Sqvb++K+m2ldxFAISHh4e3lt41enyckY1je615fDw8PDew8tLq7s2VC0ZjwIDHh4e3jFeNaktt+1bIaS6Oh4eHt45XrXYWk5nt95ryHeLh4eHd443DwO9a1W9Em3vs3h4eHgneL3mVo7pNcC2Nczw8PDwjvF6Bdbkp73LB/O2GR4eHt45XnWiSQOs2r5aFxoKQQgPDw9vE2/esqoun/OSMjEeHh7ec3jN2LJp9MoTUazDw8PDG/OSl35yXWBXk6x3CaDQYMPDw8Mb817F0QsP+en22mm3n8LDw8M7wJtfL8hT2+qVrLy0sSHdx8PDwyvyJsGgmgon17mqgeGPI8bDw8M7xstT4V7jqhdCeik7Hh4e3nN41VZZnoLnRYrqDvHw8PCexkswSRm3WpIotM3w8PDwjvHyYkR+jWCeTFfLHOULBHh4eHgtXq8BNmmMzTt1zT4eHh4e3pT3BXM6K/D1H281AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261153759&web_id=1261153759')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.6"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.6" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

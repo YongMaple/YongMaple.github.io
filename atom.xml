@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-01-18T02:39:35.000Z</updated>
+  <updated>2017-01-19T07:11:49.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -14,6 +14,131 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Retina视网膜屏幕适配</title>
+    <link href="http://YongMaple.github.io/2017/01/19/Retina%E8%A7%86%E7%BD%91%E8%86%9C%E5%B1%8F%E5%B9%95%E9%80%82%E9%85%8D/"/>
+    <id>http://YongMaple.github.io/2017/01/19/Retina视网膜屏幕适配/</id>
+    <published>2017-01-19T07:10:57.000Z</published>
+    <updated>2017-01-19T07:11:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">        div &#123;</div><div class="line">            border: 1px solid #bbb;</div><div class="line">        &#125;</div><div class="line">        .hairlines div &#123;</div><div class="line">            border-width: .5px;</div><div class="line">        &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.devicePixelRatio &amp;&amp; devicePixelRatio &gt;= <span class="number">2</span>) &#123;</div><div class="line">        <span class="keyword">var</span> testElem = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</div><div class="line">        testElem.style.border = <span class="string">'.5px solid transparent'</span>;</div><div class="line">        <span class="built_in">document</span>.body.appendChild(testElem);</div><div class="line">        <span class="keyword">if</span> (testElem.offsetHeight == <span class="number">1</span>)&#123;</div><div class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'html'</span>).classList.add(<span class="string">'hairlines'</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">document</span>.body.removeChild(testElem);</div><div class="line">    &#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>window.devicePixelRatio是设备上物理像素和设备独立像素(device-independent pixels (dips))的比例。<br>公式表示就是：window.devicePixelRatio = 物理像素 / dips  </p>
+<p>offsetHeight = clientHeight + 滚动条 + 边框   </p>
+</blockquote>
+<p>如果是retina屏，会先创建个div来测试浏览器是否能探测到0.5px，如果可以会才会使用0.5px的样式   </p>
+<p>原文地址：<a href="http://dieulot.net/css-retina-hairline" target="_blank" rel="external">http://dieulot.net/css-retina-hairline</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div
+    
+    </summary>
+    
+      <category term="编程思考" scheme="http://YongMaple.github.io/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="适配" scheme="http://YongMaple.github.io/tags/%E9%80%82%E9%85%8D/"/>
+    
+      <category term="手机端" scheme="http://YongMaple.github.io/tags/%E6%89%8B%E6%9C%BA%E7%AB%AF/"/>
+    
+      <category term="Retina" scheme="http://YongMaple.github.io/tags/Retina/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-遍历对象属性</title>
+    <link href="http://YongMaple.github.io/2017/01/19/ES6-%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7/"/>
+    <id>http://YongMaple.github.io/2017/01/19/ES6-遍历对象属性/</id>
+    <published>2017-01-19T07:07:58.000Z</published>
+    <updated>2017-01-19T07:09:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.name = <span class="string">'leo'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getName() &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.age = <span class="number">22</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getAge()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [<span class="built_in">Symbol</span>(<span class="string">'fullname'</span>)]()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.prototype.getClass = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</div><div class="line"></div><div class="line"><span class="comment">// Object.keys 能够得到自身的可枚举的属性,但得不到原型链上的属性.</span></div><div class="line"><span class="comment">// 得不到 Symbols 属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// Object.getOwnPropertyNames(b) 能够得到自身属性,</span></div><div class="line"><span class="comment">// 包括不可枚举的属性,但得不到原型链上的属性.</span></div><div class="line"><span class="comment">// 得不到 Symbols 属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// 可以得到自身的 Symbols 属性,包括不可枚举的属性.</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// 可以得到自身和继承的原型链上的属性,但必须是可枚举属性.</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> b)&#123;</div><div class="line">    <span class="built_in">console</span>.log(key);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 判断是否可枚举，enumerable为true可枚举</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(B.prototype,<span class="string">'getAge'</span>));</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-Object.assign</title>
+    <link href="http://YongMaple.github.io/2017/01/19/ES6-Object-assign/"/>
+    <id>http://YongMaple.github.io/2017/01/19/ES6-Object-assign/</id>
+    <published>2017-01-19T07:07:47.000Z</published>
+    <updated>2017-01-19T07:09:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Object.assign将可以枚举的属性赋值给对象<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> skey = <span class="built_in">Symbol</span>(<span class="string">'testname'</span>);</div><div class="line"><span class="keyword">var</span> obj2 = <span class="built_in">Object</span>.assign(obj, &#123;<span class="attr">name</span>: <span class="string">'leo'</span>&#125;, &#123;<span class="attr">age</span>: <span class="number">30</span>&#125;,&#123;[skey]:<span class="string">'ok good'</span>&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj === obj2, obj);</div><div class="line"><span class="built_in">console</span>.log(obj[skey]);</div><div class="line"></div><div class="line"><span class="keyword">const</span> DEFAULT_OPTIONS = &#123;</div><div class="line">    <span class="attr">name</span>: <span class="string">'leo'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params">opts</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> options = <span class="built_in">Object</span>.assign(&#123;&#125;, DEFAULT_OPTIONS, opts);</div><div class="line">    <span class="built_in">console</span>.log(options);</div><div class="line">&#125;</div><div class="line"></div><div class="line">test();</div><div class="line"></div><div class="line">test(&#123;<span class="attr">name</span>:<span class="string">'zengliang'</span>&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Object.assign将可以枚举的属性赋值给对象&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-Object.is</title>
+    <link href="http://YongMaple.github.io/2017/01/19/ES6-Object-is/"/>
+    <id>http://YongMaple.github.io/2017/01/19/ES6-Object-is/</id>
+    <published>2017-01-19T07:07:35.000Z</published>
+    <updated>2017-01-19T07:09:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Object.is相当于全等又有些区别<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(&#123;&#125;,&#123;&#125;) , &#123;&#125; === &#123;&#125; ); <span class="comment">//fasle false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(<span class="literal">NaN</span>,<span class="literal">NaN</span>) , <span class="literal">NaN</span> === <span class="literal">NaN</span>);  <span class="comment">//true false</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.is(+<span class="number">0</span>,<span class="number">-0</span>) , +<span class="number">0</span> === <span class="number">-0</span>);  <span class="comment">//false true</span></div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Object.is相当于全等又有些区别&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES6-对象属性的新写法</title>
+    <link href="http://YongMaple.github.io/2017/01/19/ES6-%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E7%9A%84%E6%96%B0%E5%86%99%E6%B3%95/"/>
+    <id>http://YongMaple.github.io/2017/01/19/ES6-对象属性的新写法/</id>
+    <published>2017-01-19T07:07:22.000Z</published>
+    <updated>2017-01-19T07:08:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>.name = <span class="string">'leo'</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getName() &#123;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>.age = <span class="number">22</span>;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    getAge()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    [<span class="built_in">Symbol</span>(<span class="string">'fullname'</span>)]()&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">B.prototype.getClass = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> B;</div><div class="line"></div><div class="line"><span class="comment">// Object.keys 能够得到自身的可枚举的属性,但得不到原型链上的属性.</span></div><div class="line"><span class="comment">// 得不到 Symbols 属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.keys(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// Object.getOwnPropertyNames(b) 能够得到自身属性,</span></div><div class="line"><span class="comment">// 包括不可枚举的属性,但得不到原型链上的属性.</span></div><div class="line"><span class="comment">// 得不到 Symbols 属性</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyNames(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// 可以得到自身的 Symbols 属性,包括不可枚举的属性.</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertySymbols(B.prototype));</div><div class="line"></div><div class="line"><span class="comment">// 可以得到自身和继承的原型链上的属性,但必须是可枚举属性.</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> b)&#123;</div><div class="line">    <span class="built_in">console</span>.log(key);</div><div class="line">&#125;</div><div class="line"><span class="comment">// 判断是否可枚举，enumerable为true可枚举</span></div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(B.prototype,<span class="string">'getAge'</span>));</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;
+    
+    </summary>
+    
+      <category term="ES6笔记" scheme="http://YongMaple.github.io/categories/ES6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ES6" scheme="http://YongMaple.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>JS-forEach和map</title>
