@@ -56,7 +56,7 @@
     <link href="http://YongMaple.github.io/2017/02/02/Mongoose%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>http://YongMaple.github.io/2017/02/02/Mongoose入门（一）/</id>
     <published>2017-02-02T06:05:05.000Z</published>
-    <updated>2017-02-02T06:08:02.000Z</updated>
+    <updated>2017-02-04T07:39:35.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1. 准备工作"></a>1. 准备工作</h2><p>安装Node.js，地址：<a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a><br>安装MongoDB，地址：<a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank" rel="external">https://www.mongodb.com/</a>    </p>
 <h2 id="2-启动MongoDB"><a href="#2-启动MongoDB" class="headerlink" title="2. 启动MongoDB"></a>2. 启动MongoDB</h2><p>cd到mongodb下的bin文件夹，执行<code>./mongod</code>即可，但是我们执行后会出如下错误<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-131657.png" alt=""><br>这里提示我们没有/data/db文件夹，需要我们自己来新建，这里我在mongodb-3.4.0下新建了mydata文件夹，并通过<code>./mongod --dbpath ../mydata</code>启动了MongoDB，<code>--datapath</code>是用来指定路径的<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-133558@2x.png" alt=""><br>那么让我们来体验一下mongodb吧，首先要新建一个tab，然后同样cd到bin目录下，执行<code>./mongo</code><br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134433.png" alt=""><br>然后我们切回之前的tab可以看到有一个新的连接<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134649.png" alt="">   </p>
@@ -77,7 +77,7 @@
 <h2 id="5-通过mongoose连接数据库"><a href="#5-通过mongoose连接数据库" class="headerlink" title="5. 通过mongoose连接数据库"></a>5. 通过mongoose连接数据库</h2><p>新建一个js文件，复制以下代码并在shell运行<code>node xxx.js</code>，xxx为你的文件名<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</div><div class="line">mongoose.connect(<span class="string">"mongodb://localhost/test"</span>)</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>运行之后在之前的mongod的tab中看到有了一个新的连接   </p>
-<p>==未完待续==</p>
+<p><strong>未完待续</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -225,11 +225,11 @@
     <link href="http://YongMaple.github.io/2017/01/18/JS-forEach%E5%92%8Cmap/"/>
     <id>http://YongMaple.github.io/2017/01/18/JS-forEach和map/</id>
     <published>2017-01-18T02:38:49.000Z</published>
-    <updated>2017-01-18T02:39:35.000Z</updated>
+    <updated>2017-02-04T07:40:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>第1个是遍历的数组内容；<br>第2个是对应的数组索引;<br>第3个是数组本身<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, array</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>举个栗子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>)</span>&#123;<span class="keyword">return</span> v &gt; <span class="number">3</span>;&#125;);</div><div class="line"><span class="comment">//[false, false, false, true, true]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>)</span>&#123;<span class="keyword">return</span> v &gt; <span class="number">3</span>;&#125;);</div><div class="line"><span class="comment">//undefined</span></div></pre></td></tr></table></figure></p>
-<p>==map()方法==：<br>若这个回调函数有返回值，map()方法会产生一个新数组，这个新数组由原数组元素对应的回调函数的返回值构成。<br>若没有返回值，则新数组的所有元素为undefined。<br>==forEach方法==：<br>仅仅为每个数组元素执行回调函数。   </p>
+<p><strong>map()方法</strong>：<br>若这个回调函数有返回值，map()方法会产生一个新数组，这个新数组由原数组元素对应的回调函数的返回值构成。<br>若没有返回值，则新数组的所有元素为undefined。<br><strong>forEach方法</strong>：<br>仅仅为每个数组元素执行回调函数。   </p>
 <p>再举一个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> v+<span class="number">1</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);    <span class="comment">//[2, 3, 4, 5, 6]</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(v,i)    <span class="comment">//1 0</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 ]]></content>
     
@@ -259,10 +259,10 @@
     <link href="http://YongMaple.github.io/2017/01/18/JS-sort/"/>
     <id>http://YongMaple.github.io/2017/01/18/JS-sort/</id>
     <published>2017-01-18T02:37:54.000Z</published>
-    <updated>2017-01-18T02:38:23.000Z</updated>
+    <updated>2017-02-04T07:40:16.000Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>);</div><div class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> b-a</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(arrSimple2.join());</div></pre></td></tr></table></figure>
-<p>==解释==：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br>==简化一下==：a-b输出从小到大排序，b-a输出从大到小排序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> objectList = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Persion</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'jack'</span>, <span class="number">20</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'tony'</span>, <span class="number">25</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'stone'</span>, <span class="number">26</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'mandy'</span>, <span class="number">23</span>));</div><div class="line"><span class="comment">//按年龄从小到大排序</span></div><div class="line">objectList.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.age - b.age</div><div class="line">&#125;);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objectList.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'age:'</span> + objectList[i].age + <span class="string">' name:'</span> + objectList[i].name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>解释</strong>：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br><strong>简化一下</strong>：a-b输出从小到大排序，b-a输出从大到小排序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> objectList = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Persion</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'jack'</span>, <span class="number">20</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'tony'</span>, <span class="number">25</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'stone'</span>, <span class="number">26</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'mandy'</span>, <span class="number">23</span>));</div><div class="line"><span class="comment">//按年龄从小到大排序</span></div><div class="line">objectList.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.age - b.age</div><div class="line">&#125;);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objectList.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'age:'</span> + objectList[i].age + <span class="string">' name:'</span> + objectList[i].name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>也可以对对象的属性进行排序</p>
 ]]></content>
     
@@ -694,20 +694,20 @@
     <link href="http://YongMaple.github.io/2017/01/17/Mac%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95/"/>
     <id>http://YongMaple.github.io/2017/01/17/Mac拼音输入法/</id>
     <published>2017-01-17T08:30:47.000Z</published>
-    <updated>2017-01-17T09:01:18.000Z</updated>
+    <updated>2017-02-04T07:39:16.000Z</updated>
     
     <content type="html"><![CDATA[<ol>
-<li>中英文切换<br>mac自身输入法：==Command＋空格==</li>
-<li>汉字输入切换下一页（用鼠标去点，太low了吧）<br>假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“==［==”，下一页是键盘上的“==］==”。<br>mac自身的输入法，也可以使用上下箭头来操作，但是，总是要低头找这个箭头，不方便。</li>
-<li>输入特殊符号<br>如果你记住了某个特殊字符的快捷键，那么，你只需使用 ==shift+option+键盘上的任何字符==，来输入。如：==shift+option+p==是符号：∏<br>当然，所有特殊符号都记住，是不可能的事情 ，所以，你也可以调出mac的特殊符号集，快捷键是==control+coomand+空格==，快去试试看，找到你想要的</li>
+<li>中英文切换<br>mac自身输入法：<strong>Command＋空格</strong></li>
+<li>汉字输入切换下一页（用鼠标去点，太low了吧）<br>假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“<strong>［</strong>”，下一页是键盘上的“<strong>］</strong>”。<br>mac自身的输入法，也可以使用上下箭头来操作，但是，总是要低头找这个箭头，不方便。</li>
+<li>输入特殊符号<br>如果你记住了某个特殊字符的快捷键，那么，你只需使用 <strong>shift+option+键盘上的任何字符</strong>，来输入。如：<strong>shift+option+p</strong>是符号：∏<br>当然，所有特殊符号都记住，是不可能的事情 ，所以，你也可以调出mac的特殊符号集，快捷键是<strong>control+coomand+空格</strong>，快去试试看，找到你想要的</li>
 </ol>
 ]]></content>
     
     <summary type="html">
     
       &lt;ol&gt;
-&lt;li&gt;中英文切换&lt;br&gt;mac自身输入法：==Command＋空格==&lt;/li&gt;
-&lt;li&gt;汉字输入切换下一页（用鼠标去点，太low了吧）&lt;br&gt;假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“==［==”，下一页是键盘上的“==］==”。&lt;br&gt;m
+&lt;li&gt;中英文切换&lt;br&gt;mac自身输入法：&lt;strong&gt;Command＋空格&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;汉字输入切换下一页（用鼠标去点，太low了吧）&lt;br&gt;假如你输入的文字不再第一页，这是需要我们切换页，上一页，是键盘上的“&lt;strong&gt;［&lt;/stro
     
     </summary>
     

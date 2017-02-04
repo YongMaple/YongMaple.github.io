@@ -28,7 +28,7 @@
 <meta property="og:site_name" content="YongMaple">
 <meta property="og:description" content="第1个是遍历的数组内容；第2个是对应的数组索引;第3个是数组本身123[].forEach(function(value, index, array) &amp;#123;  // ...&amp;#125;);
 举个栗子1234[1,2,3,4,5].map(function(v, i)&amp;#123;return v &amp;gt; 3;&amp;#125;);//[false, false, false, true, tru">
-<meta property="og:updated_time" content="2017-01-18T02:39:35.000Z">
+<meta property="og:updated_time" content="2017-02-04T07:40:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-forEach和map">
 <meta name="twitter:description" content="第1个是遍历的数组内容；第2个是对应的数组索引;第3个是数组本身123[].forEach(function(value, index, array) &amp;#123;  // ...&amp;#125;);
@@ -180,7 +180,7 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>第1个是遍历的数组内容；<br>第2个是对应的数组索引;<br>第3个是数组本身<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, array</span>) </span>&#123;</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <p>举个栗子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>)</span>&#123;<span class="keyword">return</span> v &gt; <span class="number">3</span>;&#125;);</div><div class="line"><span class="comment">//[false, false, false, true, true]</span></div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>)</span>&#123;<span class="keyword">return</span> v &gt; <span class="number">3</span>;&#125;);</div><div class="line"><span class="comment">//undefined</span></div></pre></td></tr></table></figure></p>
-<p>==map()方法==：<br>若这个回调函数有返回值，map()方法会产生一个新数组，这个新数组由原数组元素对应的回调函数的返回值构成。<br>若没有返回值，则新数组的所有元素为undefined。<br>==forEach方法==：<br>仅仅为每个数组元素执行回调函数。   </p>
+<p><strong>map()方法</strong>：<br>若这个回调函数有返回值，map()方法会产生一个新数组，这个新数组由原数组元素对应的回调函数的返回值构成。<br>若没有返回值，则新数组的所有元素为undefined。<br><strong>forEach方法</strong>：<br>仅仅为每个数组元素执行回调函数。   </p>
 <p>再举一个<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> v+<span class="number">1</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(result);    <span class="comment">//[2, 3, 4, 5, 6]</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">v, i</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(v,i)    <span class="comment">//1 0</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
         </div>
@@ -189,7 +189,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-18T02:39:35.000Z" itemprop="dateUpdated">2017年1月18日 10:39</time>
+    最后更新时间：<time datetime="2017-02-04T07:40:50.000Z" itemprop="dateUpdated">2017年2月4日 15:40</time>
 </span><br>
 
 

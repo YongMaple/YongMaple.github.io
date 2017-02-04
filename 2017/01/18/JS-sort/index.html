@@ -21,18 +21,18 @@
     
     <meta name="keywords" content="JavaScript,JS,基础,sort">
     <meta name="description" content="12345var arr=new Array(1,8,7,6);arr.sort(function(a,b)&amp;#123;    return b-a&amp;#125;);console.log(arrSimple2.join());
-==解释==：a,b表示数组中的任意两个元素，若return &amp;gt; 0 b前a后；reutrn &amp;lt; 0 a前b后；a=b时存在浏览器兼容==简化一下==：a-b输">
+解释：a,b表示数组中的任意两个元素，若return &amp;gt; 0 b前a后；reutrn &amp;lt; 0 a前b后；a=b时存在浏览器兼容简化一下：a-b输出从小到大排序，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS-sort">
 <meta property="og:url" content="http://YongMaple.github.io/2017/01/18/JS-sort/index.html">
 <meta property="og:site_name" content="YongMaple">
 <meta property="og:description" content="12345var arr=new Array(1,8,7,6);arr.sort(function(a,b)&amp;#123;    return b-a&amp;#125;);console.log(arrSimple2.join());
-==解释==：a,b表示数组中的任意两个元素，若return &amp;gt; 0 b前a后；reutrn &amp;lt; 0 a前b后；a=b时存在浏览器兼容==简化一下==：a-b输">
-<meta property="og:updated_time" content="2017-01-18T02:38:23.000Z">
+解释：a,b表示数组中的任意两个元素，若return &amp;gt; 0 b前a后；reutrn &amp;lt; 0 a前b后；a=b时存在浏览器兼容简化一下：a-b输出从小到大排序，">
+<meta property="og:updated_time" content="2017-02-04T07:40:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS-sort">
 <meta name="twitter:description" content="12345var arr=new Array(1,8,7,6);arr.sort(function(a,b)&amp;#123;    return b-a&amp;#125;);console.log(arrSimple2.join());
-==解释==：a,b表示数组中的任意两个元素，若return &amp;gt; 0 b前a后；reutrn &amp;lt; 0 a前b后；a=b时存在浏览器兼容==简化一下==：a-b输">
+解释：a,b表示数组中的任意两个元素，若return &amp;gt; 0 b前a后；reutrn &amp;lt; 0 a前b后；a=b时存在浏览器兼容简化一下：a-b输出从小到大排序，">
     
         <link rel="alternative" href="/atom.xml" title="YongMaple" type="application/atom+xml">
     
@@ -179,7 +179,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=<span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">6</span>);</div><div class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> b-a</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(arrSimple2.join());</div></pre></td></tr></table></figure>
-<p>==解释==：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br>==简化一下==：a-b输出从小到大排序，b-a输出从大到小排序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> objectList = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Persion</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'jack'</span>, <span class="number">20</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'tony'</span>, <span class="number">25</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'stone'</span>, <span class="number">26</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'mandy'</span>, <span class="number">23</span>));</div><div class="line"><span class="comment">//按年龄从小到大排序</span></div><div class="line">objectList.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.age - b.age</div><div class="line">&#125;);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objectList.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'age:'</span> + objectList[i].age + <span class="string">' name:'</span> + objectList[i].name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>解释</strong>：a,b表示数组中的任意两个元素，若return &gt; 0 b前a后；reutrn &lt; 0 a前b后；a=b时存在浏览器兼容<br><strong>简化一下</strong>：a-b输出从小到大排序，b-a输出从大到小排序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> objectList = <span class="keyword">new</span> <span class="built_in">Array</span>();</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Persion</span>(<span class="params">name, age</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'jack'</span>, <span class="number">20</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'tony'</span>, <span class="number">25</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'stone'</span>, <span class="number">26</span>));</div><div class="line">objectList.push(<span class="keyword">new</span> Persion(<span class="string">'mandy'</span>, <span class="number">23</span>));</div><div class="line"><span class="comment">//按年龄从小到大排序</span></div><div class="line">objectList.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> a.age - b.age</div><div class="line">&#125;);</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; objectList.length; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'age:'</span> + objectList[i].age + <span class="string">' name:'</span> + objectList[i].name);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>也可以对对象的属性进行排序</p>
 
         </div>
@@ -188,7 +188,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-18T02:38:23.000Z" itemprop="dateUpdated">2017年1月18日 10:38</time>
+    最后更新时间：<time datetime="2017-02-04T07:40:16.000Z" itemprop="dateUpdated">2017年2月4日 15:40</time>
 </span><br>
 
 
