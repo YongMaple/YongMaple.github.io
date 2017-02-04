@@ -151,6 +151,57 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-IOS设置document-title无效的解决办法"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年02月04日 16:54" datetime="2017-02-04T08:54:52.000Z"  itemprop="datePublished">2017-02-04</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/编程思考/">编程思考</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/02/04/IOS设置document-title无效的解决办法/">IOS设置document.title无效的解决办法</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        问题原因：因为浏览器首次加载页面初始化title后，就再也不监听 document.title的change事件。
+解决方案：修改title之后，给页面加上一个内容为空的iframe，随后立即删除这个iframe，这时候会刷新title。但是如果简单的这样设置，一般是会有闪动的，所以可以设置
+12345678910setTitle: function(title) &#123;    let...
+    
+
+        <a href="/2017/02/04/IOS设置document-title无效的解决办法/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/title/">title</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/手机端/">手机端</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-iTerm2配色修改"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -590,56 +641,6 @@
     <div class="post-footer">
         
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sort/">sort</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-JS-match和exec"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2017年01月18日 10:34" datetime="2017-01-18T02:34:52.000Z"  itemprop="datePublished">2017-01-18</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/JS基础/">JS基础</a></li></ul>
-
-
-
-        
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2017/01/18/JS-match和exec/">JS-match和exec</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        举个栗子12345678var order = 'is2'var arr = order.match(/\d+/)console.log(arr)//["2", index: 2, input: "is2"]var arr2 = /\d+/.exec(order);console.log(arr2)//["2", index: 2, input: "is2"]
-值得注意的是match和exe...
-    
-
-        <a href="/2017/01/18/JS-match和exec/" class="post-more waves-effect waves-button">
-            阅读全文...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS/">JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/exec/">exec</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/match/">match</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
 
     </div>
     

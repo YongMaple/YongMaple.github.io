@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-02-04T02:57:49.000Z</updated>
+  <updated>2017-02-04T08:56:15.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IOS设置document.title无效的解决办法</title>
+    <link href="http://YongMaple.github.io/2017/02/04/IOS%E8%AE%BE%E7%BD%AEdocument-title%E6%97%A0%E6%95%88%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://YongMaple.github.io/2017/02/04/IOS设置document-title无效的解决办法/</id>
+    <published>2017-02-04T08:54:52.000Z</published>
+    <updated>2017-02-04T08:56:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题原因："><a href="#问题原因：" class="headerlink" title="问题原因："></a>问题原因：</h2><p>因为浏览器首次加载页面初始化title后，就再也不监听 document.title的change事件。</p>
+<h2 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h2><p>修改title之后，给页面加上一个内容为空的iframe，随后立即删除这个iframe，这时候会刷新title。但是如果简单的这样设置，一般是会有闪动的，所以可以设置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">setTitle: <span class="function"><span class="keyword">function</span>(<span class="params">title</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> $body = $(<span class="string">'body'</span>)</div><div class="line">    <span class="built_in">document</span>.title = title</div><div class="line">    <span class="keyword">let</span> $iframe = $(<span class="string">'&lt;iframe src="/favicon.ico"&gt;&lt;/iframe&gt;'</span>)</div><div class="line">    $iframe.on(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        $iframe.off(<span class="string">'load'</span>).remove()</div><div class="line">      &#125;, <span class="number">0</span>)</div><div class="line">    &#125;).appendTo($body)</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<p>参考地址：<a href="http://www.cnblogs.com/lihanying/p/6227192.html" target="_blank" rel="external">http://www.cnblogs.com/lihanying/p/6227192.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;问题原因：&quot;&gt;&lt;a href=&quot;#问题原因：&quot; class=&quot;headerlink&quot; title=&quot;问题原因：&quot;&gt;&lt;/a&gt;问题原因：&lt;/h2&gt;&lt;p&gt;因为浏览器首次加载页面初始化title后，就再也不监听 document.title的change事件。&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="编程思考" scheme="http://YongMaple.github.io/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="title" scheme="http://YongMaple.github.io/tags/title/"/>
+    
+      <category term="ios" scheme="http://YongMaple.github.io/tags/ios/"/>
+    
+      <category term="手机端" scheme="http://YongMaple.github.io/tags/%E6%89%8B%E6%9C%BA%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>iTerm2配色修改</title>
@@ -120,9 +151,9 @@
       <category term="编程思考" scheme="http://YongMaple.github.io/categories/%E7%BC%96%E7%A8%8B%E6%80%9D%E8%80%83/"/>
     
     
-      <category term="适配" scheme="http://YongMaple.github.io/tags/%E9%80%82%E9%85%8D/"/>
-    
       <category term="手机端" scheme="http://YongMaple.github.io/tags/%E6%89%8B%E6%9C%BA%E7%AB%AF/"/>
+    
+      <category term="适配" scheme="http://YongMaple.github.io/tags/%E9%80%82%E9%85%8D/"/>
     
       <category term="Retina" scheme="http://YongMaple.github.io/tags/Retina/"/>
     
