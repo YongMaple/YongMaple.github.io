@@ -21,20 +21,23 @@
     
     <meta name="keywords" content="开发工具,iTerm2">
     <meta name="description" content="首先sudo vim ~/.bash_profile，输入密码后按e进入编辑，看别人的帖子是不需要sudo的。。。但是我需要
-然后i进入编辑模式，加入下面这段   1234567891011#enables colorin the terminal bash shell exportexport CLICOLOR=1#sets up thecolor scheme for list export">
+然后i进入编辑模式，加入下面这段，然后esc输入:wq保存   
+1234567891011#enables colorin the terminal bash shell exportexport CLICOLOR=1#sets up thecolor scheme f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iTerm2配色修改">
 <meta property="og:url" content="http://YongMaple.github.io/2017/02/04/iTerm2配色修改/index.html">
 <meta property="og:site_name" content="YongMaple">
 <meta property="og:description" content="首先sudo vim ~/.bash_profile，输入密码后按e进入编辑，看别人的帖子是不需要sudo的。。。但是我需要
-然后i进入编辑模式，加入下面这段   1234567891011#enables colorin the terminal bash shell exportexport CLICOLOR=1#sets up thecolor scheme for list export">
+然后i进入编辑模式，加入下面这段，然后esc输入:wq保存   
+1234567891011#enables colorin the terminal bash shell exportexport CLICOLOR=1#sets up thecolor scheme f">
 <meta property="og:image" content="http://okmneu7zl.bkt.clouddn.com/WX20170204-095600.png">
 <meta property="og:image" content="http://okmneu7zl.bkt.clouddn.com/WX20170204-095639.png">
-<meta property="og:updated_time" content="2017-02-04T02:26:17.000Z">
+<meta property="og:updated_time" content="2017-02-04T02:57:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iTerm2配色修改">
 <meta name="twitter:description" content="首先sudo vim ~/.bash_profile，输入密码后按e进入编辑，看别人的帖子是不需要sudo的。。。但是我需要
-然后i进入编辑模式，加入下面这段   1234567891011#enables colorin the terminal bash shell exportexport CLICOLOR=1#sets up thecolor scheme for list export">
+然后i进入编辑模式，加入下面这段，然后esc输入:wq保存   
+1234567891011#enables colorin the terminal bash shell exportexport CLICOLOR=1#sets up thecolor scheme f">
 <meta name="twitter:image" content="http://okmneu7zl.bkt.clouddn.com/WX20170204-095600.png">
     
         <link rel="alternative" href="/atom.xml" title="YongMaple" type="application/atom+xml">
@@ -183,12 +186,11 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <ol>
 <li>首先<code>sudo vim ~/.bash_profile</code>，输入密码后按e进入编辑，看别人的帖子是不需要sudo的。。。但是我需要</li>
-<li>然后i进入编辑模式，加入下面这段   <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#enables colorin the terminal bash <span class="keyword">shell</span> export</div><div class="line">export CLICOLOR=<span class="number">1</span></div><div class="line"></div><div class="line">#sets <span class="keyword">up</span> thecolor scheme <span class="keyword">for</span> <span class="keyword">list</span> export</div><div class="line">export LSCOLORS=gxfxcxdxbxegedabagacad</div><div class="line"></div><div class="line">#sets <span class="keyword">up</span> theprompt color (currently <span class="keyword">a</span> green similar <span class="keyword">to</span> linux terminal)</div><div class="line">export PS1=<span class="string">'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '</span></div><div class="line"></div><div class="line">#enables colorfor iTerm</div><div class="line">export TERM=xterm-color</div></pre></td></tr></table></figure>
+<li><p>然后i进入编辑模式，加入下面这段，然后<code>esc</code>输入<code>:wq</code>保存   </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#enables colorin the terminal bash <span class="keyword">shell</span> export</div><div class="line">export CLICOLOR=<span class="number">1</span></div><div class="line"></div><div class="line">#sets <span class="keyword">up</span> thecolor scheme <span class="keyword">for</span> <span class="keyword">list</span> export</div><div class="line">export LSCOLORS=gxfxcxdxbxegedabagacad</div><div class="line"></div><div class="line">#sets <span class="keyword">up</span> theprompt color (currently <span class="keyword">a</span> green similar <span class="keyword">to</span> linux terminal)</div><div class="line">export PS1=<span class="string">'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]\$ '</span></div><div class="line"></div><div class="line">#enables colorfor iTerm</div><div class="line">export TERM=xterm-color</div></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>然后<code>esc</code>输入<code>:wq</code>保存</p>
-<ol>
-<li>然后修改<code>preference-&gt;profiles-&gt;Terminal-&gt;xterm-new</code><br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170204-095600.png" alt="">   </li>
+<li><p>然后修改<code>preference-&gt;profiles-&gt;Terminal-&gt;xterm-new</code><br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170204-095600.png" alt="">   </p>
+</li>
 <li>去挑选喜欢的配色方案，我在这里找的<a href="http://iterm2colorschemes.com/" target="_blank" rel="external">http://iterm2colorschemes.com/</a></li>
 <li>下载到你喜欢的配色后，导入<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170204-095639.png" alt=""><br>导入后选择你的配色，然后注销mac，再打开就发现配色变了，之后再换配色只要直接改就行了</li>
 </ol>
@@ -199,7 +201,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-04T02:26:17.000Z" itemprop="dateUpdated">2017年2月4日 10:26</time>
+    最后更新时间：<time datetime="2017-02-04T02:57:49.000Z" itemprop="dateUpdated">2017年2月4日 10:57</time>
 </span><br>
 
 
