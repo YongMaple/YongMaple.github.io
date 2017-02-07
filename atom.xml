@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-02-07T09:11:26.000Z</updated>
+  <updated>2017-02-07T09:12:19.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://YongMaple.github.io/2017/02/07/Mongoose%E5%85%A5%E9%97%A8/"/>
     <id>http://YongMaple.github.io/2017/02/07/Mongoose入门/</id>
     <published>2017-02-07T09:05:05.000Z</published>
-    <updated>2017-02-07T09:11:26.000Z</updated>
+    <updated>2017-02-07T09:12:19.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装Node-js和MongoDB"><a href="#安装Node-js和MongoDB" class="headerlink" title="安装Node.js和MongoDB"></a>安装Node.js和MongoDB</h3><p>安装Node.js，地址：<a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a><br>安装MongoDB，地址：<a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank" rel="external">https://www.mongodb.com/</a>    </p>
 <h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><p>cd到mongodb下的bin文件夹，执行<code>./mongod</code>即可，但是我们执行后会出如下错误<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-131657.png" alt=""><br>这里提示我们没有/data/db文件夹，需要我们自己来新建，这里我在mongodb-3.4.0下新建了mydata文件夹，并通过<code>./mongod --dbpath ../mydata</code>启动了MongoDB，<code>--datapath</code>是用来指定路径的<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-133558@2x.png" alt=""><br>那么让我们来体验一下mongodb吧，首先要新建一个tab，然后同样cd到bin目录下，执行<code>./mongo</code><br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134433.png" alt=""><br>然后我们切回之前的tab可以看到有一个新的连接<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134649.png" alt="">   </p>
@@ -47,19 +47,27 @@
 <p><code>userSchema</code>定义了对象的原型   </p>
 </blockquote>
 <p><strong><em>举个栗子</em></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</div><div class="line">mongoose.connect(<span class="string">"mongodb://localhost/test"</span>)</div><div class="line"></div><div class="line">userSchema = <span class="keyword">new</span> mongoose.Schema(&#123;  <span class="comment">//如果只需要指定类型的话可以直接写，如果需要其他条件，需要写成对象的形式</span></div><div class="line">    name:<span class="built_in">String</span>,</div><div class="line">    <span class="attr">qq</span>:&#123;</div><div class="line">        <span class="attr">type</span>:<span class="built_in">String</span>,</div><div class="line">        <span class="attr">default</span>:<span class="string">"740534248"</span> <span class="comment">//默认</span></div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">const</span> User = mongoose.model(<span class="string">"User"</span>,userSchema)</div><div class="line"></div><div class="line"><span class="keyword">const</span> user = <span class="keyword">new</span> User(&#123;</div><div class="line">    <span class="attr">name</span>:<span class="string">"YongMaple"</span></div><div class="line">&#125;)</div><div class="line">user.save()</div></pre></td></tr></table></figure></p>
-<h3 id="指定对象的属性类型"><a href="#指定对象的属性类型" class="headerlink" title="指定对象的属性类型"></a>指定对象的属性类型</h3><h4 id="javascript内置类型"><a href="#javascript内置类型" class="headerlink" title="javascript内置类型"></a>javascript内置类型</h4><ul>
+<h3 id="指定对象的属性类型"><a href="#指定对象的属性类型" class="headerlink" title="指定对象的属性类型"></a>指定对象的属性类型</h3><ul>
+<li><p>javascript内置类型</p>
+<ul>
 <li>String</li>
 <li>Number</li>
 <li>Boolean</li>
 <li>Date</li>
 <li>Array   </li>
 </ul>
-<h4 id="node-js内置类型"><a href="#node-js内置类型" class="headerlink" title="node.js内置类型"></a>node.js内置类型</h4><ul>
+</li>
+<li><p>node.js内置类型</p>
+<ul>
 <li>Buffer</li>
 </ul>
-<h4 id="mongoose特有类型"><a href="#mongoose特有类型" class="headerlink" title="mongoose特有类型"></a>mongoose特有类型</h4><ul>
+</li>
+<li><p>mongoose特有类型</p>
+<ul>
 <li>Mixed</li>
 <li>ObjectId</li>
+</ul>
+</li>
 </ul>
 <p><strong><em>举个栗子</em></strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose  = <span class="built_in">require</span>(<span class="string">"mongoose"</span>)</div><div class="line">mongoose.connect(<span class="string">"mongodb://localhost/test"</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> ObjSchema = <span class="keyword">new</span> mongoose.Schema(&#123;</div><div class="line">    <span class="attr">str</span> : <span class="built_in">String</span>,</div><div class="line">    <span class="attr">num</span> : <span class="built_in">Number</span>,</div><div class="line">    <span class="attr">bool</span> : <span class="built_in">Boolean</span>,</div><div class="line">    <span class="attr">arr</span> : <span class="built_in">Array</span>,    <span class="comment">//[]</span></div><div class="line">    arr2 : [<span class="built_in">Date</span>],</div><div class="line">    <span class="attr">arr3</span> : [<span class="built_in">String</span>],</div><div class="line">    <span class="attr">time</span> : <span class="built_in">Date</span>,</div><div class="line"></div><div class="line">    <span class="attr">buf</span> : Buffer,</div><div class="line"></div><div class="line">    <span class="attr">mxo</span> : mongoose.Schema.Types.Mixed,  <span class="comment">//&#123;&#125;    混合数据类型</span></div><div class="line">    oid : mongoose.Schema.Types.ObjectId    <span class="comment">//唯一的</span></div><div class="line">&#125;)</div><div class="line"><span class="keyword">const</span> obj = mongoose.model(<span class="string">"obj"</span>,ObjSchema)</div><div class="line"><span class="keyword">const</span> o = <span class="keyword">new</span> obj(&#123;</div><div class="line">    <span class="attr">time</span> : <span class="keyword">new</span> <span class="built_in">Date</span>( <span class="number">42342342344</span>),  <span class="comment">//内部自动转化为Date类型，转化失败将报错</span></div><div class="line">    arr3 : [<span class="number">1234</span>,<span class="string">"jimmy"</span>,<span class="keyword">new</span> <span class="built_in">Date</span>],     <span class="comment">//内部自动转化 String</span></div><div class="line">    buf : <span class="keyword">new</span> Buffer([<span class="number">22</span>,<span class="number">33</span>,<span class="number">44</span>]),</div><div class="line"></div><div class="line">    <span class="attr">oid</span> : mongoose.Types.ObjectId()</div><div class="line">&#125;)</div><div class="line"></div><div class="line">o.save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(err);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <h3 id="自定义类型"><a href="#自定义类型" class="headerlink" title="自定义类型"></a>自定义类型</h3><p>使用自定义类型，需要：</p>
