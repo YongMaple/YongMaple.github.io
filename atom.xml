@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-02-07T09:12:19.000Z</updated>
+  <updated>2017-02-07T09:13:48.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://YongMaple.github.io/2017/02/07/Mongoose%E5%85%A5%E9%97%A8/"/>
     <id>http://YongMaple.github.io/2017/02/07/Mongoose入门/</id>
     <published>2017-02-07T09:05:05.000Z</published>
-    <updated>2017-02-07T09:12:19.000Z</updated>
+    <updated>2017-02-07T09:13:48.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装Node-js和MongoDB"><a href="#安装Node-js和MongoDB" class="headerlink" title="安装Node.js和MongoDB"></a>安装Node.js和MongoDB</h3><p>安装Node.js，地址：<a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a><br>安装MongoDB，地址：<a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank" rel="external">https://www.mongodb.com/</a>    </p>
 <h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><p>cd到mongodb下的bin文件夹，执行<code>./mongod</code>即可，但是我们执行后会出如下错误<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-131657.png" alt=""><br>这里提示我们没有/data/db文件夹，需要我们自己来新建，这里我在mongodb-3.4.0下新建了mydata文件夹，并通过<code>./mongod --dbpath ../mydata</code>启动了MongoDB，<code>--datapath</code>是用来指定路径的<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-133558@2x.png" alt=""><br>那么让我们来体验一下mongodb吧，首先要新建一个tab，然后同样cd到bin目录下，执行<code>./mongo</code><br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134433.png" alt=""><br>然后我们切回之前的tab可以看到有一个新的连接<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134649.png" alt="">   </p>
@@ -37,9 +37,9 @@
 <p><code>db.test.find()</code>查找集合中所有的，可以加入参数，如<code>db.test.find({name:&quot;Jimmy&quot;})</code>  </p>
 <p><code>db.test.remove({})</code>删除集合中所有元素，<code>{}</code>必须写   </p>
 <p><code>show collections</code>查看所有集合   </p>
+</blockquote>
 <h3 id="mongoose的安装"><a href="#mongoose的安装" class="headerlink" title="mongoose的安装"></a>mongoose的安装</h3><p>新建一个文件夹，通过<code>npm init</code>初始化，通过<code>npm install mongoose --save</code>安装mongoose<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-142334.png" alt="">   </p>
 <h3 id="通过mongoose连接数据库"><a href="#通过mongoose连接数据库" class="headerlink" title="通过mongoose连接数据库"></a>通过mongoose连接数据库</h3><p>新建一个js文件，复制以下代码并在shell运行<code>node xxx.js</code>，xxx为你的文件名<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</div><div class="line">mongoose.connect(<span class="string">"mongodb://localhost/test"</span>)</div></pre></td></tr></table></figure></p>
-</blockquote>
 <p>运行之后在之前的mongod的tab中看到有了一个新的连接   </p>
 <h2 id="Mongoose入门"><a href="#Mongoose入门" class="headerlink" title="Mongoose入门"></a>Mongoose入门</h2><h3 id="创建类Class的方式"><a href="#创建类Class的方式" class="headerlink" title="创建类Class的方式"></a>创建类Class的方式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> User = mongoose.model(<span class="string">"User"</span>,userSchema)</div></pre></td></tr></table></figure>
 <blockquote>
