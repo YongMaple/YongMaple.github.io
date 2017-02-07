@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://okmneu7zl.bkt.clouddn.com/WX20170131-134649.png">
 <meta property="og:image" content="http://okmneu7zl.bkt.clouddn.com/WX20170131-135808.png">
 <meta property="og:image" content="http://okmneu7zl.bkt.clouddn.com/WX20170131-142334.png">
-<meta property="og:updated_time" content="2017-02-07T09:19:33.000Z">
+<meta property="og:updated_time" content="2017-02-07T09:20:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mongoose入门">
 <meta name="twitter:description" content="准备工作安装Node.js和MongoDB安装Node.js，地址：https://nodejs.org/安装MongoDB，地址：https://www.mongodb.com/    
@@ -211,7 +211,7 @@
 <h3 id="mongoose的安装"><a href="#mongoose的安装" class="headerlink" title="mongoose的安装"></a>mongoose的安装</h3><p>新建一个文件夹，通过<code>npm init</code>初始化，通过<code>npm install mongoose --save</code>安装mongoose<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-142334.png" alt="">   </p>
 <h3 id="通过mongoose连接数据库"><a href="#通过mongoose连接数据库" class="headerlink" title="通过mongoose连接数据库"></a>通过mongoose连接数据库</h3><p>新建一个js文件，复制以下代码并在shell运行<code>node xxx.js</code>，xxx为你的文件名<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">"mongoose"</span>);</div><div class="line">mongoose.connect(<span class="string">"mongodb://localhost/test"</span>)</div></pre></td></tr></table></figure></p>
 <p>运行之后在之前的mongod的tab中看到有了一个新的连接   </p>
-<h2 id="Mongoose入门"><a href="#Mongoose入门" class="headerlink" title="Mongoose入门"></a>Mongoose入门</h2><h3 id="创建类Class的方式"><a href="#创建类Class的方式" class="headerlink" title="创建类Class的方式"></a>创建类Class的方式</h3><p><code>var User = mongoose.model(&quot;User&quot;,userSchema)</code></p>
+<h2 id="Mongoose入门"><a href="#Mongoose入门" class="headerlink" title="Mongoose入门"></a>Mongoose入门</h2><h3 id="创建类Class的方式"><a href="#创建类Class的方式" class="headerlink" title="创建类Class的方式"></a>创建类Class的方式</h3><p><code>var User = mongoose.model(&quot;User&quot;,userSchema)</code>   </p>
 <blockquote>
 <p><code>&quot;User&quot;</code>表示类名，在数据库中集合名会自动转化为小写加s<code>users</code>    </p>
 <p><code>userSchema</code>定义了对象的原型   ·</p>
@@ -410,7 +410,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-02-07T09:19:33.000Z" itemprop="dateUpdated">2017年2月7日 17:19</time>
+    最后更新时间：<time datetime="2017-02-07T09:20:10.000Z" itemprop="dateUpdated">2017年2月7日 17:20</time>
 </span><br>
 
 
