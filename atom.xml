@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-02-07T09:24:07.000Z</updated>
+  <updated>2017-02-09T10:10:23.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -16,11 +16,135 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一小时入门Vue</title>
+    <link href="http://YongMaple.github.io/2017/02/09/%E4%B8%80%E5%B0%8F%E6%97%B6%E5%85%A5%E9%97%A8Vue/"/>
+    <id>http://YongMaple.github.io/2017/02/09/一小时入门Vue/</id>
+    <published>2017-02-09T10:09:19.000Z</published>
+    <updated>2017-02-09T10:10:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
+<li>我是一个Vue的狂热粉丝，使用Vue半年左右时间，写这个文章主要是为了给自己做个系统的回顾，顺便给同样有需要的人参考一下，如果文中有不对的地方，欢迎留言指出。   </li>
+<li>我一直认为兴趣是最好的老师，在深入学习Vue之前，先跑起来一个简单的Vue的项目，先感受到Vue的魅力，再结合项目看文档会更加简单。   </li>
+<li>这会是一个简单（极其丑陋）的图书馆里系统，包含服务端和客户端。   </li>
+<li>跟着我动手写，光看不写学不好</li>
+</ul>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>再开始教程之前，我们先配置好环境</p>
+<ul>
+<li>安装node，包括npm <a href="https://nodejs.org" target="_blank" rel="external">https://nodejs.org</a></li>
+<li>安装vue-cli   <code>npm install -g vue-cli</code><blockquote>
+<p>vue-cli 是vue.js的脚手架，用于自动生成vue.js模板工程的</p>
+</blockquote>
+</li>
+<li>安装好yarn（非必须，推荐使用） <a href="https://yarnpkg.com" target="_blank" rel="external">https://yarnpkg.com</a><blockquote>
+<p>yarn是Facebook推出了一款开源JavaScript包管理器，比npm更可靠，且速度更快</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="项目创建"><a href="#项目创建" class="headerlink" title="项目创建"></a>项目创建</h2><p>首先执行<code>vue init webpack-simple vue-curd</code>，<code>vue-curd</code>是文件夹名，会自动创建，会有3个设置项，分别是项目名、描述和作者，一路回车就行了。由于是教学项目，不会使用有太多的依赖，所以这里我们使用<code>webpack-simple</code>模版来创建，在实际使用中可以使用<code>webpack</code>来创建   </p>
+<p><img src="http://okmneu7zl.bkt.clouddn.com/vue-cli%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE.png" alt=""></p>
+<p>现在能看到vue-cli为我们建好了项目，<strong><em>后面文中所有的路径根目录都表示该项目目录</em></strong></p>
+<h2 id="服务端搭建"><a href="#服务端搭建" class="headerlink" title="服务端搭建"></a>服务端搭建</h2><p>这里我们借助json-server这个工具快速搭建后台管理系统的服务端程序：</p>
+<ul>
+<li>执行<code>npm i json-server -g</code>，Mac加上<code>sudo</code></li>
+<li>新建<code>/server</code>目录，用于防止服务端的文件</li>
+<li>新建<code>/server/db.json</code>文件，作为服务端的数据库文件</li>
+<li><p>在/server/db.json文件中写入以下数据：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"user"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="number">10000</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Jimmy"</span>,</div><div class="line">      <span class="attr">"age"</span>: <span class="number">28</span>,</div><div class="line">      <span class="attr">"gender"</span>: <span class="string">"male"</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="number">10001</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"张三"</span>,</div><div class="line">      <span class="attr">"age"</span>: <span class="number">30</span>,</div><div class="line">      <span class="attr">"gender"</span>: <span class="string">"female"</span></div><div class="line">    &#125;</div><div class="line">  ],</div><div class="line">  <span class="attr">"book"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"前端从入门到精通"</span>,</div><div class="line">      <span class="attr">"price"</span>: <span class="number">9300</span>,</div><div class="line">      <span class="attr">"owner_id"</span>: <span class="number">10000</span>,</div><div class="line">      <span class="attr">"id"</span>: <span class="number">10000</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">      <span class="attr">"id"</span>: <span class="number">10001</span>,</div><div class="line">      <span class="attr">"name"</span>: <span class="string">"Java从入门到放弃"</span>,</div><div class="line">      <span class="attr">"price"</span>: <span class="number">1990</span>,</div><div class="line">      <span class="attr">"owner_id"</span>: <span class="number">10001</span></div><div class="line">    &#125;</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>最后在<code>/server</code>目录执行<code>json-server db.json -w -p 3000</code>   </p>
+</li>
+</ul>
+<p>现在打开浏览器，访问网址<code>http://localhost:3000</code>，可以看到如下界面：  </p>
+<p><img src="http://okmneu7zl.bkt.clouddn.com/localhost3000.png" alt=""></p>
+<p>点击Routes下面的user会跳转到<code>http://localhost:3000/user</code>，可以看到我们之前在db.json中写入的user数组   </p>
+<p><img src="http://okmneu7zl.bkt.clouddn.com/json.png" alt=""></p>
+<p>我们在db.json文件中写入了标准的JSON格式数据，这个json里有一个user数组和一个book数组，这就告诉json-server，我们的数据库里有一个名为user的“表”和一个名为book的“表”，并且表里的数据为xxx，然后json-server就会启动服务器，并且以每个”表”为单位为我们注册一系列标准的RESTFull形式的API接口（路由），以user为例：</p>
+<ul>
+<li>[GET] /user #获取用户列表的接口</li>
+<li>[GET] /user/:id #获取单个用户的接口</li>
+<li>[POST] /user #新增用户的接口</li>
+<li>[PUT] /user/:id #修改用户的接口</li>
+<li>[DELETE] /user/:id #删除用户的接口   </li>
+</ul>
+<p>在获取列表的接口中也可以追加查询参数，来限定查询的结果，比如：</p>
+<ul>
+<li>查询所有男性用户： /user?gender=male</li>
+<li>查询年龄大于等于20并且小于等于29的用户：/user?age_gte=20&amp;age_lte=29</li>
+</ul>
+<p>此外还有分页、排序、匹配、关系查询等查询方式，可以在<a href="https://github.com/typicode/json-server#routes" target="_blank" rel="external">这里查看更多</a>   </p>
+<p>至此我们就拥有了一套强大的数据接口。</p>
+<h2 id="客户端搭建"><a href="#客户端搭建" class="headerlink" title="客户端搭建"></a>客户端搭建</h2><p>之前我们创建好了项目，但是还没下载依赖，现在根目录执行<code>yarn install</code>   </p>
+<p>安装好依赖后，执行<code>yarn run dev</code>，就能看到下图的欢迎页了   </p>
+<p><img src="http://okmneu7zl.bkt.clouddn.com/vue-welcome.png" alt=""></p>
+<h3 id="开始改造模版项目"><a href="#开始改造模版项目" class="headerlink" title="开始改造模版项目"></a>开始改造模版项目</h3><ul>
+<li>删除<code>/src/assets/</code>下的图片</li>
+<li>修改<code>/src/main.js</code>改名为<code>app.js</code>，<strong><em>个人习惯，可以不改，不改的话下两步也跳过</em></strong></li>
+<li>修改<code>/webpack.config.js</code>中第5行<code>entry: &#39;./src/main.js&#39;,</code>为<code>entry: &#39;./src/app.js&#39;,</code>，这个是入口文件。修改第8行<code>publicPath: &#39;/dist/&#39;,</code>为<code>publicPath: &#39;/build/&#39;,</code>，这个是编译后文件的存放路径</li>
+<li>修改<code>/index.html</code>中第9行<code>&lt;script src=&quot;/dist/build.js&quot;&gt;&lt;/script&gt;</code>为<code>&lt;script src=&quot;/build/build.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>将<code>/src/App.vue</code>中的内容删除，只留下下面这些<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;script&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;style&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在Vue中<code>&lt;template&gt;</code>中写html，<code>&lt;script&gt;</code>中写脚本，<code>&lt;style&gt;</code>中写样式</p>
+<h3 id="添加用户页面"><a href="#添加用户页面" class="headerlink" title="添加用户页面"></a>添加用户页面</h3><p><code>/src/App.vue</code>添加如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;label&gt;姓名：&lt;/label&gt;</div><div class="line">        &lt;input type="text"&gt;&lt;br&gt;</div><div class="line">        &lt;label&gt;年龄：&lt;/label&gt;</div><div class="line">        &lt;input type="number"&gt;&lt;br&gt;</div><div class="line">        &lt;label&gt;性别：&lt;/label&gt;</div><div class="line">        &lt;select&gt;</div><div class="line">            &lt;option value=""&gt;请选择&lt;/option&gt;</div><div class="line">            &lt;option value="male"&gt;男&lt;/option&gt;</div><div class="line">            &lt;option value="female"&gt;女&lt;/option&gt;</div><div class="line">        &lt;/select&gt;&lt;br&gt;</div><div class="line">        &lt;button type="button"&gt;添加&lt;/button&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/template&gt;</div></pre></td></tr></table></figure></p>
+<p>可以看到添加页面的样子了，在<code>&lt;template&gt;</code>中有一点需要注意，<strong><em>每个组件只能有一个根节点</em></strong>，所以我们用<code>&lt;div&gt;</code>包起来   </p>
+<p><img src="http://okmneu7zl.bkt.clouddn.com/1.png" alt=""></p>
+<p>现在我们需要获取用户输入的数据，在Vue中可以采取双向绑定的方式来实现，我们先在<code>&lt;script&gt;</code>中添加如下代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data()&#123;</div><div class="line">        <span class="keyword">return</span> &#123;</div><div class="line">            <span class="attr">form</span>:&#123;</div><div class="line">                <span class="attr">name</span>:<span class="string">''</span>,</div><div class="line">                <span class="attr">age</span>:<span class="string">''</span>,</div><div class="line">                <span class="attr">gender</span>:<span class="string">''</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里我们定义了一个<code>form</code>对象   </p>
+<blockquote>
+<p><code>data</code>是个<code>funciton</code>，要设置的值是<code>retrun</code>回来的一个对象中的属性</p>
+</blockquote>
+<p>下面将实现数据的绑定，改造<code>&lt;template&gt;</code>中代码为如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;</div><div class="line">    <span class="xml"><span class="tag">&lt;<span class="name">label</span>&gt;</span>姓名：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></div><div class="line">    &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"form.name"</span>&gt;&lt;br&gt;</div><div class="line">    &lt;label&gt;年龄：&lt;/label&gt;</div><div class="line">    &lt;input type="number" v-model="form.age"&gt;&lt;br&gt;</div><div class="line">    &lt;label&gt;性别：&lt;/label&gt;</div><div class="line">    &lt;select v-model="form.gender"&gt;</div><div class="line">        &lt;option value=""&gt;请选择&lt;/option&gt;</div><div class="line">        &lt;option value="male"&gt;男&lt;/option&gt;</div><div class="line">        &lt;option value="female"&gt;女&lt;/option&gt;</div><div class="line">    &lt;/select&gt;&lt;br&gt;</div><div class="line">    &lt;button type="button"&gt;添加&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>通过<code>v-model</code>实现了数据的绑定   </p>
+</blockquote>
+<p>此时<code>data</code>中的值就是用户输入的值了，那么我们如何来确认呢？</p>
+<p>我们来给添加按钮绑定事件，通过点击添加按钮来弹框显示输入的内容，修改<code>&lt;button type=&quot;button&quot;&gt;添加&lt;/button&gt;</code>为<code>&lt;button type=&quot;button&quot; @click=&quot;submit&quot;&gt;添加&lt;/button&gt;</code></p>
+<blockquote>
+<p>Vue中通过<code>@click</code>来监听点击事件</p>
+</blockquote>
+<p>并在<code>&lt;script&gt;</code>中添加如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</div><div class="line">    data()&#123; ... &#125;,</div><div class="line">    <span class="attr">methods</span>:&#123;</div><div class="line">        submit()&#123;</div><div class="line">            alert(<span class="string">`输入的姓名：<span class="subst">$&#123; <span class="keyword">this</span>.form.name &#125;</span>，输入的年龄：<span class="subst">$&#123; <span class="keyword">this</span>.form.age &#125;</span>，选择的性别：<span class="subst">$&#123; <span class="keyword">this</span>.form.gender &#125;</span>`</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>来试一下吧</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://okmneu7zl.bkt.clouddn.com/2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>现在，让我们把这条数据存到我们的数据库中吧，改写<code>submit</code>为如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">submit()&#123;</div><div class="line">    fetch(<span class="string">'http://localhost:3000/user'</span>,&#123;</div><div class="line">        <span class="attr">method</span>: <span class="string">'POST'</span>,</div><div class="line">        <span class="attr">headers</span>: &#123;</div><div class="line">            <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span></div><div class="line">        &#125;,</div><div class="line">        <span class="attr">body</span>: <span class="built_in">JSON</span>.stringify(<span class="keyword">this</span>.form)</div><div class="line">    &#125;).then(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</div><div class="line">        alert(<span class="string">"添加成功"</span>)</div><div class="line">    &#125;).catch(<span class="function"><span class="params">response</span> =&gt;</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(response);</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里我们使用<code>fetch</code>来提交数据</p>
+<blockquote>
+<p>Fetch被称为下一代Ajax技术,采用Promise方式来处理数据。是一种简洁明了的API，比XMLHttpRequest更加简单易用。</p>
+</blockquote>
+<p>然后看一下<code>http://localhost:3000/user</code>，刚才添加的数据就在里面了   </p>
+<p><img src="http://okmneu7zl.bkt.clouddn.com/3.png" alt=""></p>
+<p><strong><em>未完待续</em></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; title=&quot;引言&quot;&gt;&lt;/a&gt;引言&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;我是一个Vue的狂热粉丝，使用Vue半年左右时间，写这个文章主要是为了给自己做个系统的回顾，顺便给同样有需要的人参考一下，如果文
+    
+    </summary>
+    
+      <category term="教程" scheme="http://YongMaple.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Vue" scheme="http://YongMaple.github.io/categories/%E6%95%99%E7%A8%8B/Vue/"/>
+    
+    
+      <category term="Vue" scheme="http://YongMaple.github.io/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mongoose入门</title>
     <link href="http://YongMaple.github.io/2017/02/07/Mongoose%E5%85%A5%E9%97%A8/"/>
     <id>http://YongMaple.github.io/2017/02/07/Mongoose入门/</id>
     <published>2017-02-07T09:05:05.000Z</published>
-    <updated>2017-02-07T09:24:07.000Z</updated>
+    <updated>2017-02-09T10:10:50.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="安装Node-js和MongoDB"><a href="#安装Node-js和MongoDB" class="headerlink" title="安装Node.js和MongoDB"></a>安装Node.js和MongoDB</h3><p>安装Node.js，地址：<a href="https://nodejs.org/" target="_blank" rel="external">https://nodejs.org/</a><br>安装MongoDB，地址：<a href="https://www.mongodb.com/download-center?jmp=nav#community" target="_blank" rel="external">https://www.mongodb.com/</a>    </p>
 <h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><p>cd到mongodb下的bin文件夹，执行<code>./mongod</code>即可，但是我们执行后会出如下错误<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-131657.png" alt=""><br>这里提示我们没有/data/db文件夹，需要我们自己来新建，这里我在mongodb-3.4.0下新建了mydata文件夹，并通过<code>./mongod --dbpath ../mydata</code>启动了MongoDB，<code>--datapath</code>是用来指定路径的<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-133558@2x.png" alt=""><br>那么让我们来体验一下mongodb吧，首先要新建一个tab，然后同样cd到bin目录下，执行<code>./mongo</code><br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134433.png" alt=""><br>然后我们切回之前的tab可以看到有一个新的连接<br><img src="http://okmneu7zl.bkt.clouddn.com/WX20170131-134649.png" alt="">   </p>
@@ -239,7 +363,9 @@
     
     </summary>
     
-      <category term="Mongoose" scheme="http://YongMaple.github.io/categories/Mongoose/"/>
+      <category term="教程" scheme="http://YongMaple.github.io/categories/%E6%95%99%E7%A8%8B/"/>
+    
+      <category term="Mongoose" scheme="http://YongMaple.github.io/categories/%E6%95%99%E7%A8%8B/Mongoose/"/>
     
     
       <category term="mongodb" scheme="http://YongMaple.github.io/tags/mongodb/"/>
