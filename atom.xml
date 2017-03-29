@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://YongMaple.github.io/"/>
-  <updated>2017-03-19T06:12:09.000Z</updated>
+  <updated>2017-03-29T05:21:17.000Z</updated>
   <id>http://YongMaple.github.io/</id>
   
   <author>
@@ -16,11 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>编写高质量JavaScript代码的68个有效方法（译）</title>
+    <link href="http://YongMaple.github.io/2017/03/29/%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8FJavaScript%E4%BB%A3%E7%A0%81%E7%9A%8468%E4%B8%AA%E6%9C%89%E6%95%88%E6%96%B9%E6%B3%95%EF%BC%88%E8%AF%91%EF%BC%89/"/>
+    <id>http://YongMaple.github.io/2017/03/29/编写高质量JavaScript代码的68个有效方法（译）/</id>
+    <published>2017-03-29T05:20:09.000Z</published>
+    <updated>2017-03-29T05:21:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-了解JavaScript"><a href="#1-了解JavaScript" class="headerlink" title="1.了解JavaScript"></a>1.了解JavaScript</h1><p>JavaScript的设计让我们觉得很熟悉。语法让人联想到Java和许多脚本语言中常见的构造（例如：函数，数组，字典和正则表达式）。JavaScript看起来似乎是一个任何有点编程经验或新手程序员都可以快速上手的语言。因为它语言中的核心概念很少。</p>
+<h2 id="知道你正在使用的JavaSctipt版本"><a href="#知道你正在使用的JavaSctipt版本" class="headerlink" title="知道你正在使用的JavaSctipt版本"></a>知道你正在使用的JavaSctipt版本</h2><p>和大多数成功的技术一样，JavaScript随着时间的推移而发展。从最初作为Java在网页互动编程上的补充，最终取代了Java成为Web开发上主流的编程语言。因其受欢迎程度，1997年形成了国际标准，官方命名为ECMAScript。目前已经有了很多实现了ECMAScript标准的JavaScipt版本。</p>
+<p>1999年定稿的第三版ECMAScript标准（通常称为ES3），依然是目前使用最广泛的JavaScript版本。后一代标准是2009发布的第5版（或者叫ES5），ES5引入了许多新功能，并且将一些之前广泛支持却没有被指定的特性标准化。由于ES5还没有被普遍支持，所以我将在本书中标注出哪些语句或块中使用了ES5。</p>
+<p>除了标准版本之外，还有很多非标准的特性，受到一些JavaScript实现的支持。例如,许多JavaScript引擎支持一个<code>const</code>关键字来定义变量,然而ECMAScript标准并没有定义任何关于常量的语法或行为。而且,在不同实现中<code>const</code>的行为也是不同的。在某些情况下,阻止常量变量更新:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> PI = <span class="number">3.141592653589793</span>;</div><div class="line">PI = <span class="string">"modified!"</span>;</div><div class="line">PI;  <span class="comment">// 3.141592653589793</span></div></pre></td></tr></table></figure>
+<p>还有一些实现中，则直接将<code>const</code>是为<code>var</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> PI = <span class="number">3.141592653589793</span>;</div><div class="line">PI = <span class="string">"modified!"</span>;</div><div class="line">PI;  <span class="comment">// "modified!"</span></div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-了解JavaScript&quot;&gt;&lt;a href=&quot;#1-了解JavaScript&quot; class=&quot;headerlink&quot; title=&quot;1.了解JavaScript&quot;&gt;&lt;/a&gt;1.了解JavaScript&lt;/h1&gt;&lt;p&gt;JavaScript的设计让我们觉得很熟悉。
+    
+    </summary>
+    
+      <category term="翻译" scheme="http://YongMaple.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+    
+      <category term="翻译" scheme="http://YongMaple.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一小时入门Vue</title>
     <link href="http://YongMaple.github.io/2017/02/09/%E4%B8%80%E5%B0%8F%E6%97%B6%E5%85%A5%E9%97%A8Vue/"/>
     <id>http://YongMaple.github.io/2017/02/09/一小时入门Vue/</id>
     <published>2017-02-09T10:09:19.000Z</published>
-    <updated>2017-03-19T06:12:09.000Z</updated>
+    <updated>2017-03-19T11:00:08.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
 <li>我是一个Vue的狂热粉丝，使用Vue半年左右时间，写这个文章主要是为了给自己做个系统的回顾，顺便给同样有需要的人参考一下，如果文中有不对的地方，欢迎留言指出。   </li>
