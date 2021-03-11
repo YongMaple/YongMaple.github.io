@@ -111,3 +111,5 @@ theme: maupassant
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+favicon: /favicon.ico
