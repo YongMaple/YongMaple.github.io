@@ -9,6 +9,7 @@ branches:
 env:
   global:
     - GH_REF: github.com/YongMaple/YongMaple.github.io.git
+    - CO_REF: e.coding.net/YongMaple/YongMaple.git
 # 缓存依赖，节省持续集成时间
 cache:
   yarn: true
@@ -17,8 +18,6 @@ cache:
     # - themes
 
 before_install:
-  - git config user.name "YongMaple"
-  - git config user.email "740534248@qq.com"
   # 由于使用了yarn，所以需要下载，如不用yarn这两行可以删除
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
@@ -37,6 +36,16 @@ script:
 after_script:
   - cd ./public
   - git init
+  - git config user.name "YongMaple"
+  - git config user.email "740534248@qq.com"
   - git add --all .
-  - git commit -m "Update docs"
+  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+  # Coding Pages
+  - git push --force --quiet "https://${CO_NAME}:${CO_TOKEN}@${CO_REF}" master:master
+  - git tag v0.0.$TRAVIS_BUILD_NUMBER -a -m "Auto Taged By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --quiet "https://${CI_TOKEN}@${GH_REF}" master:master --tags
+  # Coding Pages
+  - git push --quiet "https://${CO_NAME}:${CO_TOKEN}@${CO_REF}" master:master --tags
