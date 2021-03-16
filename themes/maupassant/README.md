@@ -78,12 +78,12 @@ twikoo: ## See: https://twikoo.js.org
   region: ## Tencent CloudBase region, e.g. ap-shanghai
   path: ## Article path, e.g. window.location.pathname
 
-google_search: true ## Use Google search, true/false.
+google_search: false ## Use Google search, true/false.
 baidu_search: false ## Use Baidu search, true/false.
 swiftype: ## Your swiftype_key, e.g. m7b11ZrsT8Me7gzApciT
-self_search: false ## Use a jQuery-based local search engine, true/false.
-google_analytics: ## Your Google Analytics tracking id, e.g. UA-42425684-2
-baidu_analytics: ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
+self_search: true ## Use a jQuery-based local search engine, true/false.
+google_analytics: G-Z06B9NZ0K4 ## Your Google Analytics tracking id, e.g. UA-42425684-2
+baidu_analytics: da39e67eca8f9b3743e259caf04feb96 ## Your Baidu Analytics tracking id, e.g. 8006843039519956000
 fancybox: true ## If you want to use fancybox please set the value to true.
 show_category_count: false ## If you want to show the count of categories in the sidebar widget please set the value to true.
 toc_number: true ## If you want to add list number to toc please set the value to true.

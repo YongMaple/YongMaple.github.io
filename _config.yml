@@ -28,7 +28,9 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
+# 跳过渲染
 skip_render:
+
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -40,7 +42,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -97,13 +99,13 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 #RSS订阅
-plugin:
-  - hexo-generator-feed
-#Feed Atom
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
+# plugin:
+#   - hexo-generator-feed
+# #Feed Atom
+# feed:
+#   type: atom
+#   path: atom.xml
+#   limit: 20
 ## Themes: https://hexo.io/themes/
 theme: maupassant
 
