@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo中图片组件hexo-asset-image的使用</title>
+      <link href="2021/03/16/hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6hexo-asset-image%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+      <url>2021/03/16/hexo%E4%B8%AD%E5%9B%BE%E7%89%87%E7%BB%84%E4%BB%B6hexo-asset-image%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>hexo中直接通过<code>npm i hexo-asset-image</code>下载的组件由于没人维护，目前无法直接使用。<br>根据<a href="https://blog.csdn.net/xjm850552586/article/details/84101345">https://blog.csdn.net/xjm850552586/article/details/84101345</a>的代码.<br>我fork了原<code>hexo-asset-image</code>项目，在npm上发布了<code>hexo-assets-images</code>组件。</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-<span class="built_in">image</span> --<span class="built_in">save</span></span><br></pre></td></tr></table></figure><p><code>hexo new post [title]</code>后，会在_posts文件夹下生成同名文件夹<br>在需要插入图片的地方写<code>![logo](logo.jpg)</code>，将插入<code>[title]</code>文件夹下logo.jpg.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
