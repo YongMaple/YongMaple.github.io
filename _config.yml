@@ -111,6 +111,14 @@ theme: maupassant
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+- type: baidu_url_submitter        #新加的主动推送
 
 favicon: /favicon.ico
+
+baidu_url_submit:
+  count: 100                 # 提交最新的多少个链接
+  host: yongmaple.com       # 在百度站长平台中添加的域名
+  token: F2xj9mcNKVdJYMvj                    # 秘钥
+  path: baidu_urls.txt
+
+
