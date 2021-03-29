@@ -33,6 +33,7 @@ install:
 script:
   - hexo clean
   - hexo generate
+  - hexo deploy
   - gulp
 
 after_script:
