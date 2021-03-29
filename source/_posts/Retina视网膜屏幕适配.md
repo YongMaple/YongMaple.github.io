@@ -7,6 +7,8 @@ tags:
     - 手机端
     - Retina
 ---
+直接上代码：
+<!--more-->
 ```html
 <!DOCTYPE>
 <html>

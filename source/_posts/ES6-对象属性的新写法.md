@@ -5,6 +5,7 @@ categories: ES6笔记
 tags:
     - ES6
 ---
+<!--more-->
 ```javascript
 class A {
     constructor() {

@@ -7,7 +7,7 @@ tags:
 ---
 
 今天遇到个问题，大致是这样的：从父组件向子组件传值，第三层数据终端报错undefined，先上测试代码：
-
+<!--more-->
 ```javascript
 //父组件
 <template lang="html">

@@ -6,6 +6,7 @@ tags:
     - ES6
 ---
 Object.assign将可以枚举的属性赋值给对象
+<!--more-->
 ```javascript
 var obj = {};
 var skey = Symbol('testname');

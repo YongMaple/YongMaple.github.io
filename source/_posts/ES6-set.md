@@ -5,16 +5,16 @@ categories: ES6笔记
 tags:
     - ES6
 ---
-## 是什么？
+#### 是什么？
 set是类数组
-## 可以用来做什么？
+#### 可以用来做什么？
 可以用来给数组去重
 ```javascript
 let arr =  ['jiayongfeng','jimmy','jimmy']
 let newArr = Array.from(new Set(arr))
 console.log(newArr)
 ```
-## 怎么用？
+#### 怎么用？
 ```javascript
 let user = {name:'jiayongfeng',age:'28'}
 let st = new Set()  

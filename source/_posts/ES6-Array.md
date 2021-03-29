@@ -5,7 +5,7 @@ categories: ES6笔记
 tags:
     - ES6
 ---
-### Array.from
+#### Array.from
 类似数组的数据结构转换为数组   
 可以把带有length属性的对象和实现了iterator接口的对象转换为数组
 ```javascript
@@ -38,7 +38,7 @@ querySelectorAll查询出的类数组也能转换
     console.log(Array.from(list));  //ArrayList[5]
 </script>
 ```
-### Array.of
+#### Array.of
 用来构建数组，防止Array(7)这种情况发生
 ```javascript
 Array.of(7);       // [7]
@@ -47,7 +47,7 @@ Array.of(1, 2, 3); // [1, 2, 3]
 Array(7);          // [ , , , , , , ]
 Array(1, 2, 3);    // [1, 2, 3]
 ```
-### find
+#### find
 找到符合函数的第一个值
 ```javascript
 var arr = [  22,33,44,55 ];
@@ -59,7 +59,7 @@ var value = arr.find(function(value,index,arr){ //值，索引，原数组
 console.log(value); //44
 ```
 
-### findIndex
+#### findIndex
 找到符合函数的第一个值的索引
 ```javascript
 var arr = [  22,33,44,55 ];
@@ -79,7 +79,7 @@ console.log(arr2.findIndex(function(v){
    return Object.is(NaN,v);
 }));    //1
 ```
-### copyWithin
+#### copyWithin
 copyWithin(position,start,end);
 要被替换的开始位置，用于替换的起始位置，用于替换的结束位置（不包含）   
 也可以用负数，代表从后往前数第几个，如-3代表正数第4个
@@ -90,7 +90,7 @@ ar arr = [1,2,3,4,5,6,7];
 arr.copyWithin(2,-3,6); //[ 1, 2, 5, 6, 5, 6, 7 ]
 console.log(arr);
 ```
-### fill
+#### fill
 填充数组   
 fill(value,start,end)   
 用来填充的值，被填充的起始位置，被填充的结束位置

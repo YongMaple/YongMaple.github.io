@@ -8,6 +8,7 @@ tags:
 ---
 1. 首先`sudo vim ~/.bash_profile`，输入密码后按e进入编辑，看别人的帖子是不需要sudo的。。。但是我需要
 2. 然后i进入编辑模式，加入下面这段，然后`esc`输入`:wq`保存   
+<!--more-->
 ```vim
 #enables colorin the terminal bash shell export
 export CLICOLOR=1

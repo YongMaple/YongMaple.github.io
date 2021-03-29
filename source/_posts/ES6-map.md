@@ -5,10 +5,10 @@ categories: ES6笔记
 tags:
     - ES6
 ---
-## 是什么？
+#### 是什么？
 map是键值对的类数组
 
-## 可以用来做什么？
+#### 可以用来做什么？
 对象中的key必须是`string`，map中key可以是任意值
 ```javascript
 let user = {
@@ -22,7 +22,7 @@ let map = new Map([
 ])
 ```
 
-## 怎么用？
+#### 怎么用？
 ```javascript
 let map = new Map()
 map.set('name','jiayongfeng')   //赋值

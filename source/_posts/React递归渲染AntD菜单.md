@@ -7,6 +7,7 @@ tags:
   - Menu
 ---
 ### layouts的写法
+<!--more-->
 ```javascript
 const renderMenu = (data) => {
   return data.map((item) => {
