@@ -1,0 +1,189 @@
+---
+title: 设计模式
+date: 2021-01-05 15:07:22
+tags:
+    - 设计模式
+---
+
+#### 设计模式
+1、单例模式\
+这种设计模式的思想是确保一个类只有唯一实例，一般用于全局缓存，比如全局window，唯一登录浮窗等。采用闭包的方式实现如下：
+<!--more-->
+```js
+var single = (function(){
+    let instance;
+
+    function getInstance(){
+　　　　// 如果该实例存在，则直接返回，否则就对其实例化
+        if( instance=== undefined ){
+            instance= new Construct();
+        }
+        return instance;
+    }
+
+    function Construct(){
+        // ... 生成单例的构造函数的代码
+    }
+
+    return {
+        getInstance : getInstance
+    }
+})();
+```
+2、工厂模式\
+工厂模式是创建对象的常用设计模式，为了不暴露创建对象的具体逻辑，将逻辑封装在一个函数中，这个函数就称为一个工厂。本质上是一个负责生产对象实例的工厂。
+```js
+//安全模式创建的工厂方法函数
+let UserFactory = function(role) {
+  if(this instanceof UserFactory) {
+    var s = new this[role]();
+    return s;
+  } else {
+    return new UserFactory(role);
+  }
+}
+
+//工厂方法函数的原型中设置所有对象的构造函数
+UserFactory.prototype = {
+  SuperAdmin: function() {
+    this.name = "超级管理员",
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据', '权限管理']
+  },
+  Admin: function() {
+    this.name = "管理员",
+    this.viewPage = ['首页', '通讯录', '发现页', '应用数据']
+  },
+  NormalUser: function() {
+    this.name = '普通用户',
+    this.viewPage = ['首页', '通讯录', '发现页']
+  }
+}
+
+//调用
+let superAdmin = UserFactory('SuperAdmin');
+let admin = UserFactory('Admin') 
+let normalUser = UserFactory('NormalUser')
+```
+3、策略模式\
+策略模式的本意将算法的使用与算法的实现分离开来，避免多重判断调用哪些算法。适用于有多个判断分支的场景，如解决表单验证的问题。你可以创建一个validator对象，有一个validate()方法。这个方法被调用时不用区分具体的表单类型，它总是会返回同样的结果——一个没有通过验证的列表和错误信息。实现方式如下：
+```js
+// 对于vip客户
+function vipPrice() {
+    this.discount = 0.5;
+}
+ 
+vipPrice.prototype.getPrice = function(price) {
+　　return price * this.discount;
+}
+// 对于老客户
+function oldPrice() {
+    this.discount = 0.3;
+}
+ 
+oldPrice.prototype.getPrice = function(price) {
+    return price * this.discount;
+}
+// 对于普通客户
+function Price() {
+    this.discount = 1;
+}
+ 
+Price.prototype.getPrice = function(price) {
+    return price ;
+}
+
+// 上下文，对于客户端的使用
+function Context() {
+    this.name = '';
+    this.strategy = null;
+    this.price = 0;
+}
+ 
+Context.prototype.set = function(name, strategy, price) {
+    this.name = name;
+    this.strategy = strategy;
+    this.price = price;
+}
+Context.prototype.getResult = function() {
+    console.log(this.name + ' 的结账价为: ' + this.strategy.getPrice(this.price));
+}
+
+var context = new Context();
+var vip = new vipPrice();
+context.set ('vip客户', vip, 200);
+context.getResult();   // vip客户 的结账价为: 100
+
+var old = new oldPrice();
+context.set ('老客户', old, 200);
+context.getResult();  // 老客户 的结账价为: 60
+
+var Price = new Price();
+context.set ('普通客户', Price, 200);
+context.getResult();  // 普通客户 的结账价为: 200
+```
+4、代理模式\
+代理模式是为其他对象提供一种代理，也就是当其他对象直接访问该对象时，如果开销较大，就可以通过这个代理层控制对该对象的访问。常见的使用场景为懒加载，合并http请求和缓存。代理模式的实现如下：
+```js
+(function(){
+    // 目标对象，是真正被代理的对象
+    function Subject(){}
+    Subject.prototype.request = function(){};
+
+    function Proxy(realSubject){
+        this.realSubject = realSubject;
+    }
+    Proxy.prototype.request = function(){
+        this.realSubject.request();
+    };
+}());
+```
+5、观察者模式\
+也叫发布订阅模式，在这种模式中，一个订阅者订阅发布者，当一个特定的事件发生的时候，发布者会通知（调用）所有的订阅者。实现代码如下：
+```js
+var EventCenter = (function(){
+    var events = {};
+    function on(event, handler){
+        events[event] = events[event] || [];
+        events[event].push({
+            handler: handler
+        });
+    }
+
+    function fire(event, args){
+        if (!events[event]) {return}
+        for (var i = 0; i < events[event].length; i++) {
+            events[event][i].handler(args);
+        }
+    }
+
+    function off(event){
+        delete events[event];
+    }
+
+    return {
+        on: on,
+        fire: fire,
+        off: off
+    }
+})();
+
+EventCenter.on('event', function(data){
+console.log('event received...');
+});
+```
+6、模块模式\
+模块模式可以指定类想暴露的属性和方法，并且不会污染全局。采用闭包的形式，实现如下：
+```js
+var Person = (function() {
+    var name = 'xxx'
+    function sayName() {
+        console.log(name)
+    }
+    return{
+        name: name,
+        sayName: sayName
+    }
+})()
+```
+7、构造函数模式和混合模式\
+构造函数和混合模式就是js中继承的两种实现方式，前者通过构造函数的形式定义类，通过new新增实例。而后者是将构造函数的引用属性和方法放到其原型上，子类是父类原型的一个实例。

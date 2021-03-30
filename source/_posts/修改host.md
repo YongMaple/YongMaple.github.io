@@ -1,0 +1,44 @@
+---
+title: 修改host
+date: 2017-12-14 15:51:52
+tags:
+  - host
+---
+
+```shell
+cd /etc
+sudo vim hosts
+```
+
+最下面添加一行：如 61.155.197.246 travelbusinessapi.17u.cn
+
+```bash
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+
+# Block Adobe Activation
+127.0.0.1       activate.adobe.com
+127.0.0.1       practivate.adobe.com
+127.0.0.1       ereg.adobe.com
+127.0.0.1       activate.wip3.adobe.com
+127.0.0.1       wip3.adobe.com
+127.0.0.1       3dns-3.adobe.com
+127.0.0.1       3dns-2.adobe.com
+127.0.0.1       adobe-dns.adobe.com
+127.0.0.1       adobe-dns-2.adobe.com
+127.0.0.1       adobe-dns-3.adobe.com
+127.0.0.1       ereg.wip3.adobe.com
+127.0.0.1       activate-sea.adobe.com
+127.0.0.1       wwis-dubc1-vip60.adobe.com
+127.0.0.1       activate-sjc0.adobe.com
+127.0.0.1       hl2rcv.adobe.com
+61.155.197.246 travelbusinessapi.17u.cn
+
+```
