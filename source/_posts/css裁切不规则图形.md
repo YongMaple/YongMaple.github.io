@@ -1,6 +1,7 @@
 ---
 title: css裁切不规则图形
 date: 2020-08-28 15:07:58
+categories: 前端
 tags:
   - css
 ---

@@ -1,6 +1,7 @@
 ---
 title: CSS实现单行、多行文本溢出显示省略号
 date: 2018-04-01 15:07:58
+categories: 前端
 tags:
   - css
 ---

@@ -1,7 +1,7 @@
 ---
 title: iTerm2配色修改
 date: 2017-02-04 10:25:12
-categories: 工具使用
+categories: 工具
 tags:
     - 开发工具
     - iTerm2

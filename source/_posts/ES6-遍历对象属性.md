@@ -1,7 +1,7 @@
 ---
 title: ES6-遍历对象属性
 date: 2017-01-19 15:07:58
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

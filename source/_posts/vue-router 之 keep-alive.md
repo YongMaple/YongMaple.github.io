@@ -1,6 +1,7 @@
 ---
 title: vue-router 之 keep-alive
 date: 2017-11-15 07:44:09
+categories: 前端
 tags:
   - vue-router
 ---

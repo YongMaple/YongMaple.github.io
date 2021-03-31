@@ -1,6 +1,7 @@
 ---
 title: 安装yarn create nuxt-app xxx时报错
 date: 2020-08-30 13:20:09
+categories: 报错
 tags:
   - 报错
 ---

@@ -1,6 +1,7 @@
 ---
 title: throw new _ValidationError2.default(ajv.errors, name)
 date: 2020-08-11 15:07:22
+categories: 报错
 tags:
   - 报错
 ---

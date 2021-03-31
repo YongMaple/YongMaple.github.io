@@ -1,6 +1,7 @@
 ---
 title: this指向的4种情况
 date: 2021-01-05 15:07:22
+categories: 前端
 tags:
   - this
 ---

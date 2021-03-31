@@ -1,6 +1,7 @@
 ---
 title: 设置iTerm2免密登陆ssh远程服务器
 date: 2021-03-27 15:51:52
+categories: 工具
 tags:
   - iTerm2
 ---

@@ -1,7 +1,7 @@
 ---
 title: JS-forEach和map
 date: 2017-01-18 10:38:49
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

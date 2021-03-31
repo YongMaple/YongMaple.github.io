@@ -1,7 +1,7 @@
 ---
 title: JS-join拼接
 date: 2017-01-18 10:30:45
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

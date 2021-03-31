@@ -1,8 +1,7 @@
 ---
 title: IOS设置document.title无效的解决办法
 date: 2017-02-04 16:54:52
-categories:
-    - 编程思考
+categories: 前端
 tags:
     - title
     - ios

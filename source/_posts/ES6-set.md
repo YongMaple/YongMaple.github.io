@@ -1,7 +1,7 @@
 ---
 title: ES6-set
 date: 2017-01-18 10:22:29
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

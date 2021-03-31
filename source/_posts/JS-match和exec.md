@@ -1,7 +1,7 @@
 ---
 title: JS-match和exec
 date: 2017-01-18 10:34:52
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

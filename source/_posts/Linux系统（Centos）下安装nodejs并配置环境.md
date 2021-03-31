@@ -1,6 +1,7 @@
 ---
 title: Linux系统（Centos）下安装nodejs并配置环境
 date: 2017-08-30 15:07:22
+categories: 工具
 tags:
   - nodejs
   - CentOS

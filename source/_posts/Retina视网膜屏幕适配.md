@@ -1,7 +1,7 @@
 ---
 title: Retina视网膜屏幕适配
 date: 2017-01-19 15:10:57
-categories: 编程思考
+categories: 前端
 tags:
     - 适配
     - 手机端

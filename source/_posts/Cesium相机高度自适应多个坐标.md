@@ -1,6 +1,7 @@
 ---
 title: Cesium相机高度自适应多个坐标
 date: 2020-08-26 15:07:58
+categories: 前端
 tags:
   - Cesium
 ---

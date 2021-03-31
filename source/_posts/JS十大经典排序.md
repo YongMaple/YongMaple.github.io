@@ -1,6 +1,7 @@
 ---
 title: JS十大经典排序
 date: 2021-01-05 15:07:22
+categories: 思维
 tags:
   - 排序
 ---

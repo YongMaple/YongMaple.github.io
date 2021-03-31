@@ -1,6 +1,7 @@
 ---
 title: input调出只有数字的键盘
 date: 2017-12-08 17:30:10
+categories: 前端
 tags:
   - 键盘
 ---

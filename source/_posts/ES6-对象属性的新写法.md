@@ -1,7 +1,7 @@
 ---
 title: ES6-对象属性的新写法
 date: 2017-01-19 15:07:22
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

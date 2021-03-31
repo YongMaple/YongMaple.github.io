@@ -1,7 +1,7 @@
 ---
 title: Atom使用eslint需要安装的包
 date: 2017-01-17 16:39:41
-categories: 工具使用
+categories: 工具
 tags:
     - Atom
     - eslint

@@ -1,7 +1,7 @@
 ---
 title: JS-arguments
 date: 2017-01-18 10:29:30
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

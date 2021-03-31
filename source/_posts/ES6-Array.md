@@ -1,7 +1,7 @@
 ---
 title: ES6-Array
 date: 2017-01-18 10:20:04
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

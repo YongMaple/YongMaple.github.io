@@ -1,7 +1,7 @@
 ---
 title: ES6-map
 date: 2017-01-18 10:21:15
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

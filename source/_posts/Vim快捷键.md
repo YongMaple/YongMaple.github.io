@@ -2,6 +2,7 @@
 layout: _post
 title: Vim快捷键
 date: 2017-08-11 19:58:03
+categories: 工具
 tags:
   - Vim
 ---

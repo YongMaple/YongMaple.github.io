@@ -1,6 +1,7 @@
 ---
 title: NUXT第三方组件只在客户端运行
 date: 2020-08-11 10:30:55
+categories: 报错
 tags:
   - 报错
 ---

@@ -1,6 +1,7 @@
 ---
 title: 在 CentOS7 上安装 MongoDB
 date: 2017-08-09 15:07:58
+categories: 工具
 tags:
   - MongoDB
   - CentOS

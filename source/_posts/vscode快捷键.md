@@ -2,6 +2,7 @@
 layout: _post
 title: vscode快捷键
 date: 2017-10-09 19:58:03
+categories: 工具
 tags:
   - vscode
 ---

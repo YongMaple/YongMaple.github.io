@@ -1,7 +1,7 @@
 ---
 title: JS-数组比较
 date: 2017-01-18 10:27:39
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

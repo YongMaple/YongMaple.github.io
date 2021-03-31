@@ -1,7 +1,7 @@
 ---
 title: ES6-Object.assign
 date: 2017-01-19 15:07:47
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

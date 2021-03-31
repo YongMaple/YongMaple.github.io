@@ -1,7 +1,7 @@
 ---
 title: JS-String转数字类型
 date: 2017-01-18 10:24:43
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

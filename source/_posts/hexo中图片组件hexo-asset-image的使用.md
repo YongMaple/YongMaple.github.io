@@ -1,6 +1,7 @@
 ---
 title: hexo中图片组件hexo-asset-image的使用
 date: 2021-03-16 17:30:10
+categories: 其他
 tags:
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 编写高质量JavaScript代码的68个有效方法（译）
 date: 2017-03-29 13:20:09
-categories: 翻译
+categories: 其他
 tags: 
     - 翻译
 ---

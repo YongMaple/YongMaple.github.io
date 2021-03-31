@@ -1,6 +1,7 @@
 ---
 title: CentOS设置redis开机启动
 date: 2018-04-01 15:07:58
+categories: 工具
 tags:
   - redis
   - CentOS

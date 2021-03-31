@@ -1,6 +1,7 @@
 ---
 title: Vue3中app.config.globalProperties在build后指向错误
 date: 2020-09-29 07:44:09
+categories: 报错
 tags:
   - Vue3
   - 报错

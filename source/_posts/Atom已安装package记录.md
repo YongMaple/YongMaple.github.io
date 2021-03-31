@@ -1,7 +1,7 @@
 ---
 title: Atom已安装package记录
 date: 2017-01-17 15:36:13
-categories: 工具使用    #分类
+categories: 工具    #分类
 tags:   #标签
     - Atom
     - 开发工具

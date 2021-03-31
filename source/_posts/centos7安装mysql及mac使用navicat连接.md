@@ -1,6 +1,7 @@
 ---
 title: centos7安装mysql及mac使用navicat连接
 date: 2017-08-29 15:07:58
+categories: 工具
 tags:
   - mysql
   - CentOS

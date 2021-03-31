@@ -1,9 +1,7 @@
 ---
 title: 一小时入门Vue
 date: 2017-02-09 18:09:19
-categories:
-    - 教程
-    - Vue
+categories: 前端
 tags:
     - Vue
 ---

@@ -1,7 +1,7 @@
 ---
 title: 关于Vue生命周期的一些理解记录
 date: 2017-01-17 16:34:06
-categories: Vue笔记
+categories: 前端
 tags:
     - Vue
 ---

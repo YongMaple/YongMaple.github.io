@@ -1,6 +1,7 @@
 ---
 title: 修改host
 date: 2017-12-14 15:51:52
+categories: 工具
 tags:
   - host
 ---

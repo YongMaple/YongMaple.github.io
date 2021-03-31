@@ -1,7 +1,7 @@
 ---
 title: JS-includes和indexOf
 date: 2017-01-18 10:33:03
-categories: JS基础
+categories: 前端
 tags:
     - JavaScript
     - JS

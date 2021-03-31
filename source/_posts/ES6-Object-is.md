@@ -1,7 +1,7 @@
 ---
 title: ES6-Object.is
 date: 2017-01-19 15:07:35
-categories: ES6笔记
+categories: 前端
 tags:
     - ES6
 ---

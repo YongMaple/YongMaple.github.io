@@ -1,9 +1,7 @@
 ---
 title: Mongoose入门
 date: 2017-02-07 17:05:05
-categories:
-    - 教程
-    - Mongoose
+categories: 后端
 tags:
     - mongodb
     - mongoose

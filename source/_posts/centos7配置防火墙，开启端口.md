@@ -1,6 +1,7 @@
 ---
 title: centos7配置防火墙，开启端口
 date: 2017-08-10 15:07:58
+categories: 工具
 tags:
   - CentOS
 ---

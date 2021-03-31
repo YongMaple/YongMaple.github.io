@@ -1,7 +1,7 @@
 ---
 title: Mac拼音输入法
 date: 2017-01-17 16:30:47
-categories: 工具使用
+categories: 工具
 tags:
     - 开发工具
     - Mac
