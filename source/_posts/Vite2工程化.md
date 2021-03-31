@@ -27,7 +27,7 @@ import logo from './assets/logo.png'  // 输出/src/assets/logo.png
 <img :src="logo" />
 ```
 可以打开Chrome Network，看App.vue，可以看到里面的地址是被解析后的公共路径
-![image](./Vite2工程化/20210330162917.jpg)
+![](./Vite2工程化/20210330162917.jpg)
 
 #### 设置别名
 vite.config.js：
