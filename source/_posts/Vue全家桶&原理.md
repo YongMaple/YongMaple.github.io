@@ -6,7 +6,7 @@ tags:
 
 #### 准备工作
 
-创建一个新的项目，`vue create vue-study`，选择 vue2，添加 vue-router 和 vuex，` vue add router``vue add vux `
+创建一个新的项目，`vue create vue-study`，选择 vue2，添加 vue-router 和 vuex，` vue add router`、`vue add vux `
 
 #### vue-router
 
@@ -286,4 +286,5 @@ class VueRouter {
 
 > Vuex集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以可预测的方式发生变化
 
-未完待续
+和router一样，先把`src/store/index.js`中的引用改掉`import Vuex from './vuex.js'`
+
