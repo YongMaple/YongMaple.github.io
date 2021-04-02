@@ -1,11 +1,16 @@
 ---
 title: Vue全家桶&原理
 date: 2021-04-01 19:47:56
+categories: 前端
 tags:
+  - Vue
+  - vue-router
+  - vuex
+  - 手撕源码
 ---
 
-> 项目地址见本文结尾
-
+*项目地址见本文结尾*
+---
 #### 准备工作
 
 创建一个新的项目，`vue create vue-study`，选择 vue2，添加 vue-router 和 vuex，` vue add router`、`vue add vux `
@@ -636,4 +641,4 @@ Object.keys(this._getters).forEach((key) => {
 
 🎉getters完成
 
-> > 项目地址：[https://github.com/YongMaple/vue-study](https://github.com/YongMaple/vue-study)
+*项目地址：[https://github.com/YongMaple/vue-study](https://github.com/YongMaple/vue-study)*
