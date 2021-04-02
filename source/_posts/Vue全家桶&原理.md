@@ -4,6 +4,8 @@ date: 2021-04-01 19:47:56
 tags:
 ---
 
+> 项目地址：[https://github.com/YongMaple/vue-study](https://github.com/YongMaple/vue-study)
+
 #### 准备工作
 
 创建一个新的项目，`vue create vue-study`，选择 vue2，添加 vue-router 和 vuex，` vue add router`、`vue add vux `
