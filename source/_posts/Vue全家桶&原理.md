@@ -9,17 +9,17 @@ tags:
   - 手撕源码
 ---
 
-*项目地址见本文结尾*
----
-#### 准备工作
+##### _项目地址见本文结尾_
+
+### 准备工作
 
 创建一个新的项目，`vue create vue-study`，选择 vue2，添加 vue-router 和 vuex，` vue add router`、`vue add vux `
 
-#### vue-router
+### vue-router
 
-*Vue router 是 Vue.js 官方的路由管理器。它和 Vue 的核心深度集成，让构建单页面应用易如反掌*
+_Vue router 是 Vue.js 官方的路由管理器。它和 Vue 的核心深度集成，让构建单页面应用易如反掌_
 
-##### 核心步骤
+#### 核心步骤
 
 ```js
 // src/router/index.js
@@ -47,7 +47,7 @@ this.$router.push('/')
 this.$router.push('/about')
 ```
 
-##### 目标
+#### 目标
 
 - 实现一个插件
   - 实现 VueRouter 类
@@ -58,7 +58,7 @@ this.$router.push('/about')
     - $router注册（this.$router.push）
     - 两个全局组件（router-link,router-view）
 
-##### 实现
+#### 实现
 
 为了检测后续成果，直接在`src/router/`下新建一个`vuerouter.js`，并将`src/router/index.js`中的`import VueRouter from 'vue-router'`改为`import VueRouter from './vuerouter'`。如果实现了目标，可以直接查看效果。
 
@@ -73,7 +73,10 @@ export default VueRouter
 ```
 
 为了组件中能够使用`this.$router.push()`，需要挂载路由器实例$router
-需要实现`Vue.prototype.$router = router` router在`/src/router/index.js`的`const router = new VueRouter({ routes })`中传入 但是`Vue.use(VueRouter)`时会立刻调用`install`方法，在install执行时router实例还不存在 所以需要使用`Vue.mixin`
+
+需要实现`Vue.prototype.$router = router` router 在`/src/router/index.js`的`const router = new VueRouter({ routes })`中传入
+
+但是`Vue.use(VueRouter)`时会立刻调用`install`方法，在 install 执行时 router 实例还不存在 所以需要使用`Vue.mixin`
 
 ```js
 let Vue
@@ -97,7 +100,7 @@ export default VueRouter
 
 此时如果运行项目，会报错`Unknown custom element: <router-link>`和`Unknown custom element: <router-view>`
 
-###### router-link
+##### router-link
 
 注册全局组件`router-view`和`router-link`
 
@@ -195,7 +198,7 @@ Vue.component('router-link', {
 
 🎉 router-link 完成
 
-###### router-view
+##### router-view
 
 现在如果直接把组件拿过来，render 出来，就可以在页面上展示出来了
 
@@ -289,11 +292,11 @@ class VueRouter {
 
 🎉router-view 完成
 
-#### Vuex
+### Vuex
 
-*Vuex 集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以可预测的方式发生变化*
+_Vuex 集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以可预测的方式发生变化_
 
-##### 目标
+#### 目标
 
 - 实现插件
   - 实现 Store 类
@@ -303,11 +306,12 @@ class VueRouter {
     - getters
   - 挂载$store
 
-##### 实现
+#### 实现
 
 和 router 一样，先把`src/store/index.js`中的引用改掉`import Vuex from './vuex.js'`
 
 并添加检测成果逻辑
+
 `/src/store/index.js`
 
 ```js
@@ -338,7 +342,7 @@ export default new Vuex.Store({
 
 `src/App.vue`
 
-```vue
+```html
 <template>
   <div id="app">
     <div id="nav">
@@ -357,6 +361,7 @@ export default new Vuex.Store({
 ```js
 class Store {}
 function install(_Vue) {}
+// 导出的对象才是Vuex
 export default { Store, install }
 ```
 
@@ -376,6 +381,7 @@ function install(_Vue) {
     },
   })
 }
+// 导出的对象才是Vuex
 export default { Store, install }
 ```
 
@@ -497,12 +503,13 @@ constructor(options) {
 }
 ```
 
-##### 实现 getters
+#### 实现 getters
 
 同样先添加检验的代码
+
 App.vue
 
-```vue
+```html
 <template>
   <div id="app">
     <div id="nav">
@@ -593,6 +600,7 @@ class Store {
 ```
 
 遍历`this._getters`执行
+
 `this._getters`是这样的结构`{doubleCounter(state) {}}`，但是需要的是无参数的函数，所以需要封装一下
 
 ```js
@@ -639,6 +647,180 @@ Object.keys(this._getters).forEach((key) => {
 })
 ```
 
-🎉getters完成
+🎉getters 完成
 
-*项目地址：[https://github.com/YongMaple/vue-study](https://github.com/YongMaple/vue-study)*
+#### 解决路由嵌套
+
+还是先写个验证，`/src/router/index.js`中改写`about`，如下：
+
+```js
+{
+  path: '/about',
+  name: 'About',
+  // route level code-splitting
+  // this generates a separate chunk (about.[hash].js) for this route
+  // which is lazy-loaded when the route is visited.
+  component: () =>
+    import(/* webpackChunkName: "about" */ '../views/About.vue'),
+  children: [
+    {
+      path: '/about/info',
+      component: {
+        render(h) {
+          return h('div', 'info page')
+        },
+      },
+    },
+  ],
+},
+```
+
+在`/src/views/About.vue`中添加`<router-view />`
+
+```html
+<template>
+  <div class="about">
+    <h1>This is an about page</h1>
+    <router-view />
+  </div>
+</template>
+```
+
+先做 router-view 的深度标记
+
+```js
+Vue.component('router-view', {
+  render(h) {
+    // 标记当前router-view深度
+    this.$vnode.data.routerView = true
+
+    let depth = 0
+    let parent = this.$parent
+    while (parent) {
+      const vnodeData = parent.$vnode && parent.$vnode.data
+      if (vnodeData) {
+        if (vnodeData.routerView) {
+          // 说明当前parent是一个router-view
+          depth++
+        }
+      }
+      parent = parent.$parent
+    }
+    // 获取当前路由对应的组件
+    let component = null
+    const route = this.$router.$options.routes.find(
+      (route) => route.path === this.$router.current
+    )
+    if (route) {
+      component = route.component
+    }
+    return h(component)
+  },
+})
+```
+
+路由匹配时获取代表深度层级的 matched 数组
+
+改写`this.current`
+
+```js
+class VueRouter {
+  constructor(options) {
+    // 保存一下，以便在router-view中拿，通过this.$router.$options拿
+    // options就是 new VueRouter({routes: [...]}) 里面传过来的
+    this.$options = options
+    // 把current作为响应式数据
+    // 将来发生变化，router-view的render函数能够再次执行
+    // const initial = window.location.hash.slice(1) || '/'
+    // Vue.util.defineReactive(this, 'current', initial)
+
+    this.current = window.location.hash.slice(1) || '/'
+    Vue.util.defineReactive(this, 'matched', [])
+    // match方法可以递归遍历路由表，获取匹配关系的数组
+    this.match()
+
+    window.addEventListener('hashchange', () => {
+      this.current = window.location.hash.slice(1)
+    })
+  }
+
+  match() {}
+}
+```
+
+match 是一个递归方法
+
+```js
+ match(routes) {
+  routes = routes || this.$options.routes
+
+  // 递归遍历
+  for (const route of routes) {
+    if (route.path === '/' && this.current === '/') {
+      this.matched.push(route)
+      return
+    }
+
+    // /about/info
+    if (route.path !== '/' && this.current.indexOf(route.path) !== -1) {
+      this.matched.push(route)
+      if (route.children) {
+        this.match(route.children)
+      }
+      return
+    }
+  }
+}
+```
+
+修改获取组件的方式
+
+```js
+Vue.component('router-view', {
+  render(h) {
+    // 标记当前router-view深度
+    this.$vnode.data.routerView = true
+
+    let depth = 0
+    let parent = this.$parent
+    while (parent) {
+      const vnodeData = parent.$vnode && parent.$vnode.data
+      if (vnodeData) {
+        if (vnodeData.routerView) {
+          // 说明当前parent是一个router-view
+          depth++
+        }
+      }
+      parent = parent.$parent
+    }
+    // 获取当前路由对应的组件
+    let component = null
+    // const route = this.$options.routes.find(
+    //   (route) => route.path === this.$router.current
+    // )
+
+    const route = this.$router.matched[depth]
+
+    if (route) {
+      component = route.component
+    }
+    return h(component)
+  },
+})
+```
+
+当 hashchange 时，清空 matched，并重新获取
+
+```js
+window.addEventListener('hashchange', () => {
+  this.current = window.location.hash.slice(1)
+  this.matched = []
+  this.match()
+})
+```
+
+🎉 完成路由嵌套
+
+**全文结束**
+
+_项目地址：[https://github.com/YongMaple/vue-study](https://github.com/YongMaple/vue-study)_
