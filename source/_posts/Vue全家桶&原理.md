@@ -263,7 +263,7 @@ class VueRouter {
 这里申明响应式属性的方式：
 
 1. `new Vue({data: { current: ... }})`
-2. `Vue.util.defineReactive`，这是隐藏api
+2. `Vue.util.defineReactive`，这是隐藏 api
 
 ```js
 class VueRouter {
@@ -280,11 +280,206 @@ class VueRouter {
 }
 ```
 
-🎉router-view完成
+🎉router-view 完成
 
 #### Vuex
 
-> Vuex集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以可预测的方式发生变化
+> Vuex 集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以可预测的方式发生变化
 
-和router一样，先把`src/store/index.js`中的引用改掉`import Vuex from './vuex.js'`
+##### 目标
 
+- 实现插件
+  - 实现 Store 类
+    - 维持一个响应式状态 state
+    - 实现 commit()
+    - 实现 dispatch()
+    - getters
+  - 挂载$store
+
+##### 实现
+
+和 router 一样，先把`src/store/index.js`中的引用改掉`import Vuex from './vuex.js'`
+
+并添加检测成果逻辑
+`/src/store/index.js`
+
+```js
+import Vue from 'vue'
+import Vuex from './vuex.js'
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+  state: {
+    counter: 0,
+  },
+  mutations: {
+    add(state) {
+      state.counter++
+    },
+  },
+  actions: {
+    add({ commit }) {
+      setTimeout(() => {
+        commit('add')
+      }, 1000)
+    },
+  },
+  modules: {},
+})
+```
+
+`src/App.vue`
+
+```vue
+<template>
+  <div id="app">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+      <p @click="$store.commit('add')">commit:{{ $store.state.counter }}</p>
+      <p @click="$store.dispatch('add')">dispatch:{{ $store.state.counter }}</p>
+    </div>
+    <router-view />
+  </div>
+</template>
+```
+
+在正常使用时，使用`new Vuex.Store`的方式，所以区别于 router 如下写：
+
+```js
+class Store {}
+function install(_Vue) {}
+export default { Store, install }
+```
+
+和 router 一样，挂载$store
+
+```js
+let Vue
+class Store {}
+function install(_Vue) {
+  Vue = _Vue
+  // 挂载$store
+  Vue.mixin({
+    beforeCreate() {
+      if (this.$options.store) {
+        Vue.prototype.$store = this.$options.store
+      }
+    },
+  })
+}
+export default { Store, install }
+```
+
+添加响应式属性 state
+
+在这里不能使用`Vue.set(this, 'xxx', {})`，因为 Vue.set 是给响应式对象动态添加一个属性，这里的 this 不是一个响应式对象
+
+router 已经用过`Vue.util.defineReactive`，这里用`new Vue()`
+
+```js
+class Store {
+  constructor(options) {
+    // 保存选项
+    this.$options = options
+
+    // 响应式操作
+    this.state = new Vue({
+      data: options.state,
+    })
+  }
+}
+```
+
+现在直接给用户暴露了 state，用户可以直接接触到 Vue 实例，需要把 Vue 实例藏起来，让用户不能直接修改 state，而是通过 commit、dispatch 的方式修改
+
+```js
+class Store {
+  constructor(options) {
+    // 保存选项
+    this.$options = options
+
+    // 响应式操作
+    this._vm = new Vue({
+      data: {
+        // 加上$$，既要对state做响应式，还不做代理
+        $$state: options.state,
+      },
+    })
+  }
+
+  get state() {
+    console.log(this._vm)
+    // _data和$data是一回事
+    return this._vm._data.$$state
+  }
+
+  set state(v) {
+    console.error('请使用replaceState重置状态')
+  }
+}
+```
+
+控制台打印_vm
+
+![]('./Vue全家桶&原理/2.jpg')
+
+`__ob__`表示这是一个响应式对象
+
+同时，_vm上并没有$state，加上$之后$state被隐藏起来了，这是Vue内部约定
+
+实现commit
+```js
+constructor(options) {
+  ...
+  // 保存mutations
+  this._mutations = options.mutations
+  ...
+}
+
+// type 调用的mutation的名字 payload 参数
+commit(type, payload) {
+  const entry = this._mutations[type]
+  if (!entry) {
+    console.error('unknown mutation');
+    return
+  }
+  entry(this.state, payload)
+}
+```
+实现dispath
+```js
+constructor(options) {
+  ...
+  // 保存actions
+  this._actions = options.actions
+  ...
+}
+dispatch(type, payload) {
+  const entry = this._actions[type]
+  if (!entry) {
+    console.error('unknown action');
+    return
+  }
+  // 使用时如下： add({ commit, dispatch, state, rootState ...}) {}
+  // 就是store实例，所以传this
+  entry(this, payload)
+}
+```
+现在commit可以正常使用，dispatch会报错
+```
+Uncaught TypeError: Cannot read property '_mutations' of undefined
+```
+
+这是因为this指向问题
+
+这里锁死上下文
+```js
+constructor(options) {
+  ...
+  // 绑定commit和dispatch上下文为store实例
+  this.commit = this.commit.bind(this)
+  this.dispatch = this.dispatch.bind(this)
+}
+```
