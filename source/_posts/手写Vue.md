@@ -198,6 +198,6 @@ function set(obj, key, val) {
 set(obj, 'dong', 'dong')
 ```
 
-用户直接使用defineReactive，这里除了set写起来简单之外，set还需要处理其他逻辑，比如数组的处理。这里暂不处理
+用户直接使用 defineReactive，这里除了 set 写起来简单之外，set 还需要处理其他逻辑，比如数组的处理。这里暂不处理
 
 未完待续
