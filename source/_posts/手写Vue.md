@@ -695,6 +695,173 @@ class Watcher {
 }
 ```
 
-完成
+### 数组响应式
+
+1. 找到数组原型
+2. 覆盖那些能够修改数组的更新方法，使其可以通知更新
+3. 将得到的新的原型设置到数组实例原型上
+
+先处理原型
+
+```js
+// 数组响应式
+// 1. 替换数组原型中7个方法
+const orginalProto = Array.prototype
+// 备份，修改此备份
+const arrayProto = Object.create(orginalProto)
+
+;['push', 'pop', 'shift', 'unshift', 'reverse', 'sort', 'splice'].forEach(
+  (method) => {
+    arrayProto[method] = function () {
+      // 原始操作
+      orginalProto[method].apply(this, arguments)
+      // 覆盖操作：通知更新
+      console.log(`数组执行：${method}操作`)
+    }
+  }
+)
+```
+
+应用新的原型
+
+```js
+class Observer {
+  // 核心功能：根据传入对象的类型做不同的相应处理
+  constructor(obj) {
+    if (Array.isArray(obj)) {
+      // 数组处理
+      // 覆盖原型，替换7个变更操作
+      obj.__proto__ = arrayProto
+      // 对数组内部元素执行响应化
+      Object.keys(obj).forEach((key) => {
+        observe(obj[i])
+      })
+    } else {
+      // 对象响应式
+      this.walk(obj)
+    }
+  }
+
+  walk(obj) {
+    Object.keys(obj).forEach((key) => {
+      defineReactive(obj, key, obj[key])
+    })
+  }
+}
+```
+
+简单测试，改下 vue.html
+
+```html
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      counter: 1,
+      desc: 'foo<span style="color:red">bar</span>',
+      arr: [],
+    },
+  })
+  setInterval(() => {
+    app.counter++
+  }, 1000)
+  app.arr.push('foo')
+</script>
+```
+
+### 事件处理
+
+和指令一样，先判断，再写一个处理函数
+
+```js
+class Compile {
+  ...
+  // 编译元素
+  compileElement(node) {
+    // 遍历所有属性：检查是否存在指令和事件
+    const attrs = node.attributes
+    Array.from(attrs).forEach((attr) => {
+      console.log(attr)
+      // 例如：v-text="counter"
+      // attrName就是v-text
+      // expression就是counter
+      const attrName = attr.name
+      const expression = attr.value
+
+      // 只处理动态值
+      // 指令 v-
+      if (this.isDirective(attrName)) {
+        // 希望执行一个指令处理函数
+        const directive = attrName.substring(2)
+        // 如果存在这个指令对应的函数就执行，比如v-text就执行text()
+        this[directive] && this[directive](node, expression)
+      }
+      // 判断事件
+      if (this.isEvent(attrName)) {
+        const event = attrName.substring(1)
+        this.eventHandler(node, expression, event)
+      }
+    })
+  }
+  eventHandler(node, expression, event) {
+    const fn = this.$vm.$options.methods && this.$vm.$options.methods[expression]
+    node.addEventListener(event, fn.bind(this.$vm))
+  }
+  // 判断事件
+  isEvent(attrName) {
+    return attrName.startsWith('@')
+  }
+  ...
+```
+
+测试一下
+
+```html
+...
+<p v-html="desc" @click="onClick"></p>
+...
+<script>
+  const app = new Vue({
+    ...
+    methods: {
+      onClick() {
+        console.log('barrrrr')
+      }
+    }
+  })
+  ...
+</script>
+```
+
+### 双向绑定
+
+v-model 实际上是语法糖，解决 value 设定和事件监听
+
+```js
+// v-model
+model(node, expression) {
+  // update方法只完成赋值和更新
+  this.update(node, expression, 'model')
+  // 事件监听
+  node.addEventListener('input', e => {
+    // 将新的值赋值给数据
+    this.$vm[expression] = e.target.value
+  })
+}
+modelUpdater(node, val) {
+  // 给表单元素赋值
+  node.value = val
+}
+```
+
+这里只考虑了 input，其他不考虑
+
+测试代码
+
+```html
+<input type="text" v-model="desc" />
+```
+
+_全文完_
 
 项目地址[https://github.com/YongMaple/my-vue](https://github.com/YongMaple/my-vue)
