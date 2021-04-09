@@ -4,6 +4,8 @@ date: 2021-04-07 20:31:46
 tags:
 ---
 
+##### _项目地址见本文结尾_
+
 ### MVVM 框架的三要素：数据响应式、模板引擎及其渲染
 
 1. 数据响应式：监听数据变化并在视图中更新
@@ -489,4 +491,209 @@ text(node, expression) {
 
 在页面中添加`<p v-text="counter"></p>`，已经可以正常显示了
 
-未完待续
+再添加一个`v-html`
+
+```js
+// v-html
+html(node, expression) {
+  node.innerHTML = this.$vm[expression]
+}
+```
+
+页面上添加
+
+```html
+<p v-html="desc"></p>
+...
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      counter: 1,
+      desc: 'foo<span style="color:red">bar</span>'
+    }
+  })
+  ...
+</script>
+```
+
+同样生效了
+
+#### 依赖收集
+
+给每个 key 创建一个 Dep，用来管理这个 key 的 Watcher
+
+```js
+const watchers = []
+// 更新执行者Watcher
+class Watcher {
+  constructor(vm, key, updater) {
+    this.vm = vm
+    this.key = key
+    this.updater = updater
+
+    watchers.push(this)
+  }
+
+  update() {
+    this.updater.call(this.vm, this.vm[this.key])
+  }
+}
+```
+
+先不做依赖收集，简单的把 watcher 放到 watchers 数组中
+
+改造`Compile`
+
+```js
+class Compile {
+  ...
+  // v-text
+  text(node, expression) {
+    this.update(node, expression, 'text')
+  }
+
+  textUpdater(node, val) {
+    node.textContent = val
+  }
+
+  update(node, expression, directive) {
+    // 在解析指令时，不光要给它初始化，还要给它做更新函数的创建
+    // 执行directive对应的实操函数
+    const fn = this[directive + 'Updater']
+    fn && fn(node, this.$vm[expression])
+
+    // 创建Watcher
+    new Watcher(this.$vm, expression, function (val) {
+      // 形成闭包
+      fn && fn(node, val)
+    })
+  }
+}
+```
+
+改造`defineReactive`，每次 set 时把 watchers 遍历
+
+```js
+// 数据响应式
+function defineReactive(obj, key, val) {
+  // 递归
+  observe(val)
+  Object.defineProperty(obj, key, {
+    get() {
+      console.log(`get ${key}:${val}`)
+      return val
+    },
+    set(newVal) {
+      if (newVal !== val) {
+        observe(newVal)
+        console.log(`set ${key}:${newVal}`)
+        // 函数内部有一个函数，并把值暴露出去，形成了闭包
+        val = newVal
+        // update()
+        watchers.forEach((w) => w.update())
+      }
+    },
+  })
+}
+```
+
+现在`v-text`已经可以更新了
+
+改造插值文本
+
+```js
+// 解析插值文本
+compileText(node) {
+  this.update(node, RegExp.$1, 'text')
+}
+```
+
+改造`v-html`
+
+```js
+// v-html
+html(node, expression) {
+  this.update(node, expression, 'html')
+}
+
+htmlUpdater(node, val) {
+  node.innerHTML = val
+}
+```
+
+上面是通过 watchers 是全量更新，现在创建 Dep，用来收集每个 key 的 watcher
+
+```js
+class Dep {
+  constructor() {
+    this.deps = []
+  }
+
+  addDep(dep) {
+    this.deps.push(dep)
+  }
+
+  notify() {
+    this.deps.forEach((w) => w.update())
+  }
+}
+```
+
+改造 defineReactive 和 Watcher
+
+```js
+// 数据响应式
+function defineReactive(obj, key, val) {
+  // 递归
+  observe(val)
+
+  // 创建一个对应的Dep实例
+  const dep = new Dep() // 这里也是闭包，dep和key是一对一的对应关系
+
+  Object.defineProperty(obj, key, {
+    get() {
+      console.log(`get ${key}:${val}`)
+
+      // 依赖收集
+      Dep.target && dep.addDep(Dep.target)
+
+      return val
+    },
+    set(newVal) {
+      if (newVal !== val) {
+        observe(newVal)
+        console.log(`set ${key}:${newVal}`)
+        // 函数内部有一个函数，并把值暴露出去，形成了闭包
+        val = newVal
+        // update()
+        // watchers.forEach((w) => w.update())
+        dep.notify()
+      }
+    },
+  })
+}
+...
+class Watcher {
+  constructor(vm, key, updater) {
+    this.vm = vm
+    this.key = key
+    this.updater = updater
+
+    // watchers.push(this)
+    // 保存Watcher引用，放到静态变量里
+    Dep.target = this
+    // 放进去立刻读取，触发defineReactive中的get
+    this.vm[this.key]
+    Dep.target = null
+  }
+
+  update() {
+    this.updater.call(this.vm, this.vm[this.key])
+  }
+}
+```
+
+完成
+
+项目地址[https://github.com/YongMaple/my-vue](https://github.com/YongMaple/my-vue)
