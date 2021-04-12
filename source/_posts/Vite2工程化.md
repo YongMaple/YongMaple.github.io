@@ -132,42 +132,71 @@ module 写法：
 
 ![module](./Vite2工程化/3.png)
 
-#### 加载模块化css
+#### 加载模块化 css
 
-约定，在名称与css之间加上module，例如：`App.module.css`
+约定，在名称与 css 之间加上 module，例如：`App.module.css`
 
 新建`src/App.module.css`，将`.logo {}`移入，改写`App.vue`
 
 ```html
 <template>
-	<img alt="Vue logo" :src="Logo" />
-	<div :class="classes.logo" />
-	<HelloWorld msg="Hello Vue 3 + Vite" />
+  <img alt="Vue logo" :src="Logo" />
+  <div :class="classes.logo" />
+  <HelloWorld msg="Hello Vue 3 + Vite" />
 </template>
 
 <script setup>
-import HelloWorld from 'comps/HelloWorld.vue'
-import Logo from '@/assets/logo.png'
-// 加载模块化css
-import classes from './App.module.css'
+  import HelloWorld from 'comps/HelloWorld.vue'
+  import Logo from '@/assets/logo.png'
+  // 加载模块化css
+  import classes from './App.module.css'
 </script>
 ```
 
-#### 使用less/sass
+#### 使用 less/sass
 
 `npm i less -D`
 
-然后就可以直接用了，sass同理
+然后就可以直接用了，sass 同理
 
 #### postcss
 
 只要在项目中添加`postcss.config.js`就可以了
+
+添加需要的插件`npm i autoprefixer -D`
+
+```js
+module.exports = {
+  plugins: [require('autoprefixer')],
+}
+```
 
 #### TS 整合
 
 默认整合 ts，可以直接使用，`<script lang="ts">`即可，需要固定 ts 版本的话，在`package.json`的`devDependencies`中直接添加`"typescript": "4.1.5"`即可
 
 tsconfig.json 可以自行配置后放入项目即可
+
+```json
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "types": ["vite/client"],
+    "isolatedModules": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/unit"
+  ]
+}
+```
 
 #### 代理
 
@@ -248,4 +277,136 @@ export default [
 }
 ```
 
-未完待续
+添加配置文件`.eslintrc.js`
+
+```js
+module.exports = {
+  root: true,
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'plugin:vue/vue3-recommended',
+    'eslint:recommended',
+    '@vue/typescript/recommended',
+    '@vue/prettier',
+    '@vue/prettier/@typescript-eslint',
+  ],
+  parserOptions: {
+    ecmaVersion: 2021,
+  },
+  plugins: [],
+  rules: {
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+  },
+}
+```
+
+package.json 中添加如下命令
+
+`"lint": "eslint --ext .ts,vue src/** --no-error-on-unmatched-pattern"`
+
+`"lint:fix": "eslint --ext .ts,vue src/** --no-error-on-unmatched-pattern --fix"`
+
+#### 单元测试
+
+添加依赖
+
+```json
+{
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "@types/jest": "^26.0.20",
+    "vue-jest": "^5.0.0-alpha.7",
+    "babel-jest": "^26.6.3",
+    "@babel/preset-env": "^7.12.17",
+    "@vue/test-utils": "^2.0.0-beta.9",
+    "ts-jest": "^26.5.1",
+    "@babel/preset-typescript": "^7.12.17"
+  }
+}
+```
+
+创建配置文件`jest.config.js`
+
+```js
+module.exports = {
+  transform: {
+    // 用 vue-jest 处理 *.vue 文件
+    '^.+\\.vue$': 'vue-jest',
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
+  },
+  // support alias
+  moduleNameMapper: {
+    '^@/components(.*)$': '<rootDir>/src/components$1',
+  },
+  testMatch: ['**/test/unit/**/*.[jt]s?(x)'],
+}
+```
+
+`tsconfig.json`中需要加上
+
+```json
+{
+  "compilerOptions": {
+    "types": ["vite/client", "jest"]
+  }
+}
+```
+
+package.json 中添加单测命令
+
+`"test:unit": "jest"`
+
+例子：
+
+`/test/unit/example.spec.ts`
+
+```ts
+import HelloWorld from '@/components/HelloWorld.vue'
+import { shallowMount } from '@vue/test-utils'
+
+describe('aaa', () => {
+  test('should', () => {
+    const wrapper = shallowMount(HelloWorld, {
+      props: {
+        msg: 'hello,vue3',
+      },
+    })
+    expect(wrapper.test()).toMatch('hello,vue3')
+  })
+})
+```
+
+添加`babel.condig.js`
+
+```js
+module.exports = {
+  presets: [
+    ['@babel/preset-env', { targets: { node: 'current' } }],
+    '@babel/preset-typescript',
+  ],
+}
+```
+
+在 git 提交时 lint 和单测
+
+添加依赖`npm i lint-staged yorkie -D`
+
+package.json 添加配置
+
+```json
+"gitHooks": {
+  "pre-commit": "lint-staged",
+  "pre-push": "npm run test:unit"
+},
+"lint-staged": {
+  "*.{js,vue}": "eslint --fix"
+}
+```
+
+**全文完**
