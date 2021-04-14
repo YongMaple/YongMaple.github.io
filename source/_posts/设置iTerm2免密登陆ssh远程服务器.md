@@ -8,6 +8,9 @@ tags:
 转载自[https://zhuanlan.zhihu.com/p/180500618](https://zhuanlan.zhihu.com/p/180500618)
 
 原文中代码存在bug，已修改，如下：
+
+<!-- more -->
+
 ```sh
 #!/usr/bin/expect -f
 #trap sigwinch spawned

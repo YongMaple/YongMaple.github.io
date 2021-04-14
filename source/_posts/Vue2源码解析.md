@@ -235,7 +235,7 @@ export default Vue
 
 在使用自定义事件时，类似这种写法`<Child @my-click="onClick"></Child>`
 
-回调函数（onClick）在父组件中声明的，所以用在initEvents中使用`_parentListeners`
+回调函数（onClick）在父组件中声明的，所以用在 initEvents 中使用`_parentListeners`
 
 `updateComponentListeners`是事件的监听
 
@@ -250,9 +250,9 @@ child.$on('my-click', listeners)
 
 ![initRender](./Vue2源码解析/4.png)
 
-在render中处理`$slots`和`$scopedSlots`这个比较好理解，在渲染前肯定是要把内部插槽先解析
+在 render 中处理`$slots`和`$scopedSlots`这个比较好理解，在渲染前肯定是要把内部插槽先解析
 
-`$_c`和`$createElement`就是 render(h)中的那个 h
+`$_c`和`$createElement`就是 render(h)中的那个 h，可以得到虚拟 dom
 
 `$_c`给编译器生成的渲染函数去使用
 
@@ -266,3 +266,15 @@ child.$on('my-click', listeners)
 2. 同时对当前自定义组件的自定义事件的监听
 3. 派发一些生命周期钩子，beforeCreate、created
 4. 在这两个钩子中间，对组件的状态进行初始化，比如 data/props/methods/computed/watch，对他们进行数据响应式处理
+
+### 数据响应式
+
+开始研究`initState`
+
+问：data 为什么是个函数 return 出去，不能直接写对象？
+
+答：一个组件可能有多个实例，如果写成对象，变成引用类型，如果创建了多个组件实例，那么就会串台，一个组件的属性发生变化，另一个会跟着变
+
+问：props、methods、data 中如果有重名的属性，优先谁？
+
+答：props > methods > data。从上往下处理，在处理时如果发现有重名的，就会报错
