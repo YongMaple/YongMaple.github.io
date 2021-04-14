@@ -269,12 +269,150 @@ child.$on('my-click', listeners)
 
 ### 数据响应式
 
+可以先看下之前的这篇文章进行大致的了解
+
+[https://yongmaple.com/2021/04/07/手写 Vue/](https://yongmaple.com/2021/04/07/手写Vue/)
+
 开始研究`initState`
 
-问：data 为什么是个函数 return 出去，不能直接写对象？
-
-答：一个组件可能有多个实例，如果写成对象，变成引用类型，如果创建了多个组件实例，那么就会串台，一个组件的属性发生变化，另一个会跟着变
+![initState](./Vue2源码解析/6.png)
+可以看到 initState 里面，对 props、methods、data、computed、watch 进行了初始化
 
 问：props、methods、data 中如果有重名的属性，优先谁？
 
 答：props > methods > data。从上往下处理，在处理时如果发现有重名的，就会报错
+
+![initData](./Vue2源码解析/7.png)
+
+通常 data 都是 function，只有在根组件的时候可以是对象
+
+问：为什么这里的 data 可以是对象？为什么 data 一般都是个函数，需要 return 出去，不能直接写对象？
+
+- 组件复用时所有组件实例都会共享 data，如果 data 是对象的话，就会造成一个组件修改 data 以后会影响到其他所有组件，所以需要将 data 写成函数，每次用到就调用一次函数获得新的数据。
+- 当我们使用 new Vue() 的方式的时候，无论我们将 data 设置为对象还是函数都是可以的，因为 new Vue() 的方式是生成一个根组件，该组件不会复用，也就不存在共享 data 的情况了
+
+这里进入`observe`方法（`src/core/observer/index.js`）
+
+![observe](./Vue2源码解析/8.png)
+
+可以知道，在 observe 时，每个对象会创建一个 Observer
+
+先看测试代码`examples/test/02-1-reactive.html`中的问题
+
+![02-1-reactive.html](./Vue2源码解析/9.png)
+
+再看下`src/core/observer/index.js`
+
+![Observer](./Vue2源码解析/10.png)
+
+再看上面的问题，这个例子中有几个 Dep，现在就知道应该是 4 个了
+
+每个对象创建一个 Dep，每个属性又会创建一个子 Dep，所以这里是 4 个 Dep
+
+一个组件一个 Watcher，这个例子中只有一个 new Vue()，所以这里是 1 个 Watcher
+
+进入 Observer 中的 this.walk
+
+![walk](./Vue2源码解析/11.png)
+
+这里 walk 遍历了对象的所有 key，进行了一个响应式的处理
+
+进入 defineReactive
+
+![defineReactive](./Vue2源码解析/12.png)
+
+这里每个 key 都 new Dep()
+
+还可以看到`let childOb = !shallow && observe(val)`
+
+这里又对属性做了一次 observe
+
+如果这里 childOb 存在，就说明子 Ob 内部的 dep 和当前组件的 watcher 建立了依赖关系
+
+Dep 与 Watcher 的关系
+
+- 一个组件内部只有一个 Watcher
+- 一个组件内部有多个 Dep
+- 组件内部出了 render watcher，可能还会有 user watcher，用户会自定义($watch、watch:{})
+- 所以他们之间是多对多的关系
+
+先看下 depend
+
+![depend](./Vue2源码解析/13.png)
+
+这里面 Dep.target 就是 WatcheraddDep
+
+再看下 Watcher 的 addDep
+
+![addDep](./Vue2源码解析/14.png)
+
+这里面把 watcher 和 dep 相互建立了关系
+
+- 建立 Dep 与 Watcher 的关系是为了通知更新，这个很好理解
+
+- 建立 Watcher 与 Dep 的关系是为了清除 watcher 时使用
+
+如何清除 watcher？
+
+```js
+const unWatch = app.$watch('text', (newVal, oldVal) => {
+  console.log(`${newVal} : ${oldVal}`)
+})
+// 手动注销watch
+unWatch()
+```
+
+### 数组响应式
+
+数组和对象不同，操作数组时使用 7 个方法（数组变更方法），没办法得知数据变化，vue 中采取的策略是拦截这些方法并通知 dep
+
+先看对数组的拦截和通知 `src/core/observer/array.js`
+
+![array.js](./Vue2源码解析/15.png)
+
+再找`arrayMethods`在哪使用的
+
+Observer 中有对数组和对象分别做处理
+
+```js
+export class Observer {
+  ...
+  // 根据Object或者Array做不同的操作
+    if (Array.isArray(value)) {
+      // 判断是否有原型
+      if (hasProto) {
+        protoAugment(value, arrayMethods)
+      } else {
+        // IE等老版本浏览器
+        copyAugment(value, arrayMethods, arrayKeys)
+      }
+      this.observeArray(value)
+    } else {
+      this.walk(value)
+    }
+}
+```
+
+有原型时，直接替换掉原型
+
+```js
+function protoAugment(target, src: Object) {
+  /* eslint-disable no-proto */
+  // 覆盖当前数组实例的原型
+  target.__proto__ = src
+  /* eslint-enable no-proto */
+}
+```
+
+没有原型时，直接把方法定义上去
+
+```js
+function copyAugment(target: Object, src: Object, keys: Array<string>) {
+  for (let i = 0, l = keys.length; i < l; i++) {
+    const key = keys[i]
+    def(target, key, src[key])
+  }
+}
+```
+
+**本文完**
