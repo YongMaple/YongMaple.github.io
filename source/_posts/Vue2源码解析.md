@@ -415,4 +415,8 @@ function copyAugment(target: Object, src: Object, keys: Array<string>) {
 }
 ```
 
+### 全流程图
+
+![](./Vue2源码解析/16.png)
+
 **本文完**
