@@ -6,6 +6,8 @@ tags:
   - 手撕源码
 ---
 
+本文项目地址：[https://github.com/YongMaple/vue](https://github.com/YongMaple/vue) 内含测试用代码`/examples/test/`
+
 ### 获取 Vue
 
 项目地址：[https://github.com/vuejs/vue](https://github.com/vuejs/vue)
@@ -59,8 +61,6 @@ npm i roll-up -g
 需要源码映射，所以在 package.json 中添加`--sourcemap`
 
 `"dev": "rollup -w -c scripts/config.js --sourcemap --environment TARGET:web-full-dev",`
-
-本文项目地址：[https://github.com/YongMaple/vue](https://github.com/YongMaple/vue) 内含测试用代码`/examples/test/`
 
 术语解释：
 
@@ -423,7 +423,7 @@ _图中删了两个:any，不然颜色有问题……_
 
 ![set](./Vue2源码解析/17.png)
 
-del 就在set的下面，比较简单，只是删除后通知了一下
+del 就在 set 的下面，比较简单，只是删除后通知了一下
 
 ![del](./Vue2源码解析/18.png)
 
