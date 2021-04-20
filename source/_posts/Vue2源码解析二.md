@@ -211,7 +211,7 @@ Watcher 是什么时候建的？
 ```
 
 问： 此时 2 次 p1.innerHTML 的值是？
-答：ready~~，3
+答：`ready~~，3`
 
 ```html
 <div id="demo">
@@ -242,7 +242,7 @@ Watcher 是什么时候建的？
 ```
 
 问： 此时 2 次 p1.innerHTML 的值是？
-答：ready~~，3
+答：`ready~~，3`
 
 ```html
 <div id="demo">
@@ -273,7 +273,7 @@ Watcher 是什么时候建的？
 ```
 
 问： 此时 2 次 p1.innerHTML 的值是？
-答：ready~~，ready~~
+答：`ready~~，ready~~`
 
 原因：
 $nextTick 会让 callbacks 数组中存放回调函数
@@ -313,7 +313,7 @@ $nextTick 会让 callbacks 数组中存放回调函数
 ```
 
 问：Promise 和 nextTick 谁先输出？
-答：nextTick
+答：`nextTick`
 
 原因：
 `this.foo = 1`导致在 callbacks 中添加一个`flusScheduleQueue`，并将 callbacks 添加到微任务队列
@@ -321,3 +321,130 @@ Promise 执行时，将回调函数进入微任务队列
 nextTick 执行时将回调函数进入 callbacks，此时 callbacks 类似`[flusScheduleQueue, nextTick.cb]`
 此时因为上面的微任务队列中是`[callbacks, Promise.then]`的样子
 所以在执行 callbacks 时，会将 nextTick 一并执行后再执行 Promise.then
+
+### 虚拟 DOM
+
+**虚拟 DOM（Virtual DOM）是对 DOM 的 JS 抽象表示，它们是 JS 对象，能够描述 DOM 结构和关系。应用的各种状态变化会作用于虚拟 DOM，最终映射到 DOM 上。**
+
+vue 中虚拟 dom 基于 `snabbdom` 实现，安装 snabbdom 并体验
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+    <div id="app"></div>
+    <!--安装并引入snabbdom-->
+    <script src="https://cdn.bootcdn.net/ajax/libs/snabbdom/0.7.4/snabbdom.min.js"></script>
+    <script>
+      // 之前编写的响应式函数
+      function defineReactive(obj, key, val) {
+        Object.defineProperty(obj, key, {
+          get() {
+            return val
+          },
+          set(newVal) {
+            val = newVal
+            // 通知更新
+            update()
+          },
+        })
+      }
+      // 导入patch的工厂init，h是产生vnode的工厂
+      const { init, h } = snabbdom
+      // 获取patch函数
+      const patch = init([])
+      // 上次vnode，由patch()返回
+      let vnode
+      // 更新函数，将数据操作转换为dom操作，返回新vnode
+      function update() {
+        if (!vnode) {
+          // 初始化，没有上次vnode，传入宿主元素和vnode
+          vnode = patch(app, render())
+        } else {
+          // 更新，传入新旧vnode对比并做更新
+          vnode = patch(vnode, render())
+        }
+      }
+      // 渲染函数，返回vnode描述dom结构
+      function render() {
+        return h('div', obj.foo)
+      }
+      // 数据
+      const obj = {}
+      // 定义响应式
+      defineReactive(obj, 'foo', '')
+      // 赋一个日期作为初始值
+      obj.foo = new Date().toLocaleTimeString()
+      // 定时改变数据，更新函数会重新执行
+      setInterval(() => {
+        obj.foo = new Date().toLocaleTimeString()
+      }, 1000)
+    </script>
+  </body>
+</html>
+```
+
+### DIFF
+
+从`_update`看起
+
+`src/core/instance/lifecycle.js`
+
+![_update](./Vue2源码解析二/14.png)
+
+`__patch__`从何而来？
+
+`src/platforms/web/runtime/index.js`
+
+![__patch__](./Vue2源码解析二/15.png)
+
+`__patch`是在平台特有代码中指定的
+
+`src/core/vdom/patch.js`
+
+![createPatchFunction](./Vue2源码解析二/16.png)
+
+![初始化](./Vue2源码解析二/17.png)
+
+**diff 原则：深度优先，同层比较(为了降低时间复杂度)**
+
+比较两个 VNode，包括三种类型操作：_属性更新_、_文本更新_、_子节点更新_
+
+具体规则如下：
+
+1. 新老节点均有 children 子节点，则对子节点进行 diff 操作，调用 updateChildren
+2. 如果新节点有子节点而老节点没有子节点，先清空老节点的文本内容，然后为其新增子节点。
+3. 当新节点没有子节点而老节点有子节点的时候，则移除该节点的所有子节点。
+4. 当新老节点都无子节点的时候，只是文本的替换。
+
+![patchVnode](./Vue2源码解析二/18.png)
+
+updateChildren 算法：
+
+1. 新老 vnode 各创建一个首尾标记，向内双循环，直到`oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx`
+2. oldStartVnode 和 newStartVnodel 满足 sameVnode，就直接 patchVnode
+3. oldStartVnode 和 newEndVnode 满足 sameVnode， patchVnode 同时将真实 dom 移到 oldEndVnode 后面
+4. oldEndVnode 和 newStartVnode 满足 sameVnode，patchVnode 同时将真实 dom 移到 oldStartVnode 前面
+5. 如果都不满足，就在 oldVnode 中找和 newStartVnode 相同的节点，如果存在就 patchVnode 把真实 dom 添加到 oldStartIndex 前面
+6. 如果在 oldVnode 中找不到和 newStartVnode 相同的节点，就 调用 createElm，patchVnode 到 oldStartIndex 前面
+7. 如果 oldVnode 先遍历完，说明新的比老的多，就把剩下的 newVnode 插入真实 dom
+8. 如果 newVnode 先遍历完，说明老的比新的多，就把剩下的 oldVnode 对应的真实 dom 删除
+
+![updateChildren](./Vue2源码解析二/19.png)
+
+key 的作用：
+
+先看`sameVnode`方法
+
+![sameVnode](./Vue2源码解析二/20.png)
+
+sameVnode 通过判断 tag（div、span……），注释，data，input 判断 type 等来判断是否相同
+
+当不设置 key 的时候，key 就是`undefined`，`undefined === undefined`，在列表操作时，就会进行强制更新
+
+例：数组`[1,2,3]`在 2 前面添加 4
+有 key 时，`[1,2,3][1,4,2,3] => [2,3][4,2,3] => [2][4,2] => [][4]` 最后创建 4
+无 key 时，`[1,2,3][1,4,2,3] => [2,3][4,2,3] => [3][2,3] => [][3]` 全都强制更新一遍，最后创建 3
+
+所以平常使用时要加 key，且 key 要保持唯一，且不要用索引，不然会导致强制更新
