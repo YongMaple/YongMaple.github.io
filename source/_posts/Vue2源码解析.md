@@ -1,6 +1,7 @@
 ---
 title: Vue2源码解析
 date: 2021-04-13 17:09:57
+categories: 前端
 tags:
   - Vue
   - 手撕源码
