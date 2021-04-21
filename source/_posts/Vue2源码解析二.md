@@ -487,4 +487,4 @@ modules 是把平台 modules 和 baseModules 做了一个拼接
 
 ![](./Vue2源码解析二/29.png)
 
-**全文完**
+**本文完**
