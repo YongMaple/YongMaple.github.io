@@ -6,6 +6,12 @@ tags:
   - 手撕源码
 ---
 
+目录：
+
+- [Vue2 源码解析](https://yongmaple.com/2021/04/13/Vue2源码解析/)
+- [Vue2 源码解析二](https://yongmaple.com/2021/04/15/Vue2源码解析二/)
+- [Vue2 源码解析三](https://yongmaple.com/2021/04/21/Vue2源码解析三/)
+
 本文项目地址：[https://github.com/YongMaple/vue](https://github.com/YongMaple/vue) 内含测试用代码`/examples/test/`
 
 ### 获取 Vue
@@ -433,7 +439,7 @@ watch 所在位置`src/core/instance/state.js`
 
 ![createWatcher](./Vue2源码解析/20.png)
 
-### 全流程图
+### 思维导图
 
 ![](./Vue2源码解析/16.png)
 

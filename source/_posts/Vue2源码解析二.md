@@ -2,12 +2,15 @@
 title: Vue2源码解析二
 date: 2021-04-15 16:00:05
 tags:
+  - Vue
+  - 手撕源码
 ---
 
 目录：
 
 - [Vue2 源码解析](https://yongmaple.com/2021/04/13/Vue2源码解析/)
-- [Vue2 源码解析二](https://yongmaple.com/2021/04/13/Vue2源码解析二/)
+- [Vue2 源码解析二](https://yongmaple.com/2021/04/15/Vue2源码解析二/)
+- [Vue2 源码解析三](https://yongmaple.com/2021/04/21/Vue2源码解析三/)
 
 本文项目地址：[https://github.com/YongMaple/vue](https://github.com/YongMaple/vue) 内含测试用代码`/examples/test/`
 
@@ -28,7 +31,7 @@ tags:
 - 浏览器端的宏任务：setTimeout、setInterval、requestAnimationFrame、I/O、UI rendering
 - 浏览器端的微任务：Promise、Object.observe、MutationObserver
 
-简单总结下浏览器下的 Event loop 流程：
+##### 简单总结下浏览器下的 Event loop 流程：
 
 1. 先走完全局同步任务
 2. 然后走完当前所有的微任务
@@ -158,7 +161,7 @@ Watcher 是什么时候建的？
 
 所以 Watcher 是在组件挂载的时候创建的
 
-组件更新流程：
+#### 组件更新流程：
 
 1. 当组件内有一个数据发生变化的时候，会通知更新
 2. 通知更新之后。组件会被放到队列
@@ -420,7 +423,7 @@ vue 中虚拟 dom 基于 `snabbdom` 实现，安装 snabbdom 并体验
 
 ![patchVnode](./Vue2源码解析二/18.png)
 
-updateChildren 算法：
+#### updateChildren 算法：
 
 1. 新老 vnode 各创建一个首尾标记，向内双循环，直到`oldStartIdx <= oldEndIdx && newStartIdx <= newEndIdx`
 2. oldStartVnode 和 newStartVnodel 满足 sameVnode，就直接 patchVnode
@@ -433,7 +436,7 @@ updateChildren 算法：
 
 ![updateChildren](./Vue2源码解析二/19.png)
 
-key 的作用：
+#### key 的作用：
 
 先看`sameVnode`方法
 
@@ -448,3 +451,39 @@ sameVnode 通过判断 tag（div、span……），注释，data，input 判断 
 无 key 时，`[1,2,3][1,4,2,3] => [2,3][4,2,3] => [3][2,3] => [][3]` 全都强制更新一遍，最后创建 3
 
 所以平常使用时要加 key，且 key 要保持唯一，且不要用索引，不然会导致强制更新
+
+#### patch 函数是怎么获取的？
+
+`src/platforms/web/runtime/index.js`
+
+![Vue.prototype.__patch__ ](./Vue2源码解析二/21.png)
+
+传递平台特有的节点操作选项给工厂函数，返回 patch
+
+这里 nodeOps 就是是 web 平台特有的 dom 操作
+
+![nodeOps](./Vue2源码解析二/22.png)
+
+modules 是把平台 modules 和 baseModules 做了一个拼接
+
+![platformModules](./Vue2源码解析二/23.png)
+
+![baseModules](./Vue2源码解析二/24.png)
+
+平台属性相关的操作会以 module 的形式暴露，都会有钩子函数的名字，最终 patch 里执行的时候调用这个钩子对应的方法
+
+![钩子函数](./Vue2源码解析二/25.png)
+
+#### 节点属性如何更新？
+
+![createPatchFunction](./Vue2源码解析二/27.png)
+
+![patchVnode](./Vue2源码解析二/28.png)
+
+![cbs](./Vue2源码解析二/26.png)
+
+### 思维导图
+
+![](./Vue2源码解析二/29.png)
+
+**全文完**
