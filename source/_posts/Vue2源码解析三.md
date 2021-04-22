@@ -55,7 +55,7 @@ anonymous() {
 
 `src/core/instance/render.js`
 
-![_c]('./Vue2源码解析三/4.png)
+![_c](./Vue2源码解析三/4.png)
 
 `src/core/vdom/create-element.js`
 
