@@ -445,6 +445,8 @@ vue 中虚拟 dom 基于 `snabbdom` 实现，安装 snabbdom 并体验
 
 sameVnode 通过判断 tag（div、span……），注释，data，input 判断 type 等来判断是否相同
 
+这是 isDef 方法`function isDef (v) { return v !== undefined && v !== null }`
+
 当不设置 key 的时候，key 就是`undefined`，`undefined === undefined`，在列表操作时，就会进行强制更新
 
 例：数组`[1,2,3]`在 2 前面添加 4

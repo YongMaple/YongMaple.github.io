@@ -7,8 +7,12 @@ tags:
   - 手撕源码
 ---
 
-##### _项目地址见本文结尾_
+目录：
 
+- [手写Vue](https://yongmaple.com/2021/04/07/手写Vue/)
+- [手写Vue二](https://yongmaple.com/2021/04/26/手写Vue二/)
+
+本文项目地址：[https://github.com/YongMaple/my-vue](https://github.com/YongMaple/my-vue)
 ### MVVM 框架的三要素：数据响应式、模板引擎及其渲染
 
 1. 数据响应式：监听数据变化并在视图中更新
@@ -865,6 +869,6 @@ modelUpdater(node, val) {
 <input type="text" v-model="desc" />
 ```
 
-_全文完_
+**本文完**
 
-项目地址[https://github.com/YongMaple/my-vue](https://github.com/YongMaple/my-vue)
+
