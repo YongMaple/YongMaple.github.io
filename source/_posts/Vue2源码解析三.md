@@ -121,3 +121,4 @@ patch 中使用了 createElm 递归创建 dom 树
 - 问：有 parent、child 父子嵌套组件，请问生命周期顺序
 - 答：parent.created => child.created => child.mounted => parent.mounted 类似于洋葱模型，先进后出
 
+**全文完**
