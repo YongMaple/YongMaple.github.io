@@ -199,3 +199,37 @@ patch 的时候会比较新旧是否一致，如果一致不执行更新，不�
 1. key 的作用主要是为了高效的更新虚拟 dom，其原理是 vue 在 patch 过程中通过 key 可以精准判断两个节点是否是用一个，从而避免频繁更新不同元素，使得整个 patch 过程更加高效，减少 dom 操作量，提高性能。
 2. 另外，若不设置 key 还可能在列表更新时引发一些隐蔽的 bug
 3. vue 中使用相同标签名元素的过渡（transition）切换时，也会使用到 key 属性，其目的也是为了让 vue 可以区分它们，否则 vue 只会替代其内部属性而不会触发过渡效果
+
+### 4. 怎么理解 vue 中的 diff 算法
+
+#### 分析
+
+1. 必要性： `src/core/instance/lifecycle.js`中的 mountComponent
+
+- 组件中可能存在很多个 data 中的 key 使用
+
+2. 执行方式： `src/core/vdom/patch.js`中的 patchVnode
+
+- patchVnode 是 diff 发生的地方，整体策略：深度优先，同层比较
+
+3. 高效性： `src/core/vdom/patch.js`中的 updateChildren
+
+#### 结论
+
+1. diff 算法是虚拟 dom 技术的必然产物：通过新旧虚拟 dom 作对比（即 diff），将变化的地方更新在真实 dom 上，另外也需要 diff 高效的执行对比过程，从何降低时间复杂度 O(n)
+2. vue 2.x 中为了降低 Watcher 粒度，每个组件只有一个 Watcher 与之对应，只有引入 diff 才能精确找到发生变化的地方
+3. vue 中 diff 执行的时刻是组件实例执行其更新函数时，它会比对上一次渲染结果 oldVnode 和新的渲染结果 newVnode，此过程称为 patch
+4. diff 过程整体遵循深度优先、同层比较的策略。两个节点之间比较会根据它们是否拥有子节点或者文本节点做不同操作。比较两组子节点是算法的重点，首先假设头尾节点可能相同做 4 次比对尝试，如果没有找到相同节点才按照通用方式遍历查找，查找结束再按情况处理剩下的节点。借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效
+
+### 5. 对 vue 组件化的理解
+
+#### 分析
+
+1. 组件化定义
+ - `Vue.component('comp', { template: '<div></div>'})`全局定义。源码位置：`src/core/global-api/assets.js`
+ - `<template><div></div></template>` 单文件组件
+
+2. 组件化优点
+
+3. 组件化实现
+

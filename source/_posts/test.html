@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: 64px 1fr;
+      grid-template-areas: 'left header'
+        'left main';
+    }
+
+    .left {
+      grid-area: left;
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .main {
+      grid-area: main;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="left"></div>
+    <div class="header"></div>
+    <div class="main"></div>
+  </div>
+</body>
+<script>
+  for (let i = 0; i < 10; i++) {
+    const dom = document.createElement('a')
+    dom.innerText = i
+    dom.onclick = () => {
+      alert(i)
+    }
+    document.body.appendChild(dom)
+  }
+
+  const original = [1, [2, [3, 4]], 5]
+
+  // const result = original.flat(Infinity)
+
+  const result = [];
+
+  function unfold(original) {
+    for (let i = 0; i < original.length; i++) {
+      const item = original[i];
+      if (Array.isArray(item)) {
+        unfold(item);
+      } else {
+        result.push(item);
+      }
+    }
+  }
+  unfold(original)
+  console.log(result)
+
+
+  function fn(arr) {
+    let result = 0
+    for (let i = 0; i < arr.length; i++) {
+      result ^= arr[i]
+    }
+    return result
+  }
+  console.log(fn([2, 3, 6, 3, 6, 1, 1]))
+</script>
+
+</html>
