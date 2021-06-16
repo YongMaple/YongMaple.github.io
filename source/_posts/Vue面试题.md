@@ -137,7 +137,7 @@ with(this){return _c('div',{attrs:{"id":"demo"}},[(isShow)?_l((list),function(it
 
 `src/core/util/options.js`
 
-![校验]('./Vue面试题/4.png)
+![校验](./Vue面试题/4.png)
 
 - 数据初始化的时候会去检测 data 的形式，从而去执行具体的执行方式。
 - 由于根实例在创建的时候，它会有实例，只有根实例才会有，所以它可以躲过关于 data 选项的校验。
