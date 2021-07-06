@@ -1,10 +1,19 @@
 ---
 title: Vue2源码解析
 date: 2021-04-13 17:09:57
+categories: 前端
 tags:
   - Vue
   - 手撕源码
 ---
+
+目录：
+
+- [Vue2 源码解析](https://yongmaple.com/2021/04/13/Vue2源码解析/)
+- [Vue2 源码解析二](https://yongmaple.com/2021/04/15/Vue2源码解析二/)
+- [Vue2 源码解析三](https://yongmaple.com/2021/04/21/Vue2源码解析三/)
+
+本文项目地址：[https://github.com/YongMaple/vue](https://github.com/YongMaple/vue) 内含测试用代码`/examples/test/`
 
 ### 获取 Vue
 
@@ -59,8 +68,6 @@ npm i roll-up -g
 需要源码映射，所以在 package.json 中添加`--sourcemap`
 
 `"dev": "rollup -w -c scripts/config.js --sourcemap --environment TARGET:web-full-dev",`
-
-本文项目地址：[https://github.com/YongMaple/vue](https://github.com/YongMaple/vue) 内含测试用代码`/examples/test/`
 
 术语解释：
 
@@ -333,7 +340,7 @@ Dep 与 Watcher 的关系
 
 - 一个组件内部只有一个 Watcher
 - 一个组件内部有多个 Dep
-- 组件内部出了 render watcher，可能还会有 user watcher，用户会自定义($watch、watch:{})
+- 组件内部除了 render watcher，可能还会有 user watcher，用户会自定义($watch、watch:{})
 - 所以他们之间是多对多的关系
 
 先看下 depend
@@ -415,7 +422,25 @@ function copyAugment(target: Object, src: Object, keys: Array<string>) {
 }
 ```
 
-### 全流程图
+### set，del，watch
+
+set 所在位置`src/core/observer/index.js`
+
+_图中删了两个:any，不然颜色有问题……_
+
+![set](./Vue2源码解析/17.png)
+
+del 就在 set 的下面，比较简单，只是删除后通知了一下
+
+![del](./Vue2源码解析/18.png)
+
+watch 所在位置`src/core/instance/state.js`
+
+![$watch](./Vue2源码解析/19.png)
+
+![createWatcher](./Vue2源码解析/20.png)
+
+### 思维导图
 
 ![](./Vue2源码解析/16.png)
 
