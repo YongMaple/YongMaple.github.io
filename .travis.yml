@@ -1,8 +1,5 @@
 language: node_js
 node_js: 14.16.0
-npm: 7.18.1
-nvm: 0.37.2
-yarn: 1.22.4
 # node版本更新导致sass报错
 # node_js: stable
 
@@ -26,7 +23,6 @@ before_install:
   # 由于使用了yarn，所以需要下载，如不用yarn这两行可以删除
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn config set registry https://registry.yarnpkg.com
   - yarn global add hexo-cli
   - yarn global add gulp
 # S: Build Lifecycle
