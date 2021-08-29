@@ -1,5 +1,8 @@
 language: node_js
 node_js: 16.4.2
+npm: 7.18.1
+nvm: 0.37.2
+yarn: 1.22.4
 # node版本更新导致sass报错
 # node_js: stable
 
