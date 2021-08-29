@@ -17,7 +17,7 @@ env:
     - CO_REF: e.coding.net/YongMaple/YongMaple.git
 # 缓存依赖，节省持续集成时间
 cache:
-  yarn: true
+  yarn: false
   directories:
     - node_modules
     # - themes
