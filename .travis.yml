@@ -1,5 +1,6 @@
 language: node_js
-node_js: 11.10.0
+node_js: 16.4.2
+# node版本更新导致sass报错
 # node_js: stable
 
 # 只监听 source 分支的改动
