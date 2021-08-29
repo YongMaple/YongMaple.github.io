@@ -17,7 +17,7 @@ env:
     - CO_REF: e.coding.net/YongMaple/YongMaple.git
 # 缓存依赖，节省持续集成时间
 cache:
-  yarn: false
+  yarn: true
   directories:
     - node_modules
     # - themes
@@ -26,6 +26,7 @@ before_install:
   # 由于使用了yarn，所以需要下载，如不用yarn这两行可以删除
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
+  - yarn config set registry https://registry.yarnpkg.com
   - yarn global add hexo-cli
   - yarn global add gulp
 # S: Build Lifecycle
